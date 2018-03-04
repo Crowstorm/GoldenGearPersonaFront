@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import logo from './mgp.png'
+import {connect} from 'react-redux';
+
+import * as actions from './actions';
+import logo from './mgp.png';
 
 import HeaderContainer from './containers/headerContainer'
 import TitleScreenContainer from './containers/titleScreenContainer'
@@ -10,9 +13,12 @@ const Landing = () => <h2>Landing </h2>
 const Footer = () => <h2>Footer </h2>
 
 class App extends Component {
+  componentDidMount(){
+    this.props.fetchUser();
+  }
   render() {
     return (
-      <div className="App">
+      <div className="container App">
         <div className="gameContainer">
         {/* <img src={logo} /> */}
 
@@ -31,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App);

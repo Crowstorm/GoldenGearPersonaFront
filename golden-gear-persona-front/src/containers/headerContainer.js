@@ -1,12 +1,20 @@
 import React from 'react';
-import Header from '../components/header'
+import Header from '../components/header';
+
+import {connect} from 'react-redux';
 
 class HeaderContainer extends React.Component{
     render(){
         return(
-            <Header />
+            <Header {...this.props}/>
         )
     }
 }
 
-export default HeaderContainer;
+function mapStateToProps(store){
+    return{
+        auth: store.auth
+    }
+}
+
+export default connect(mapStateToProps)(HeaderContainer);
