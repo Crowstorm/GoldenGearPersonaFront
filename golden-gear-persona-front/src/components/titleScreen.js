@@ -4,7 +4,7 @@ class TitleScreen extends React.Component{
     render(){
         return(
             <div>
-                test
+                <a href="http://localhost:8000/auth/google">Sign in with Google</a>
             </div>
         )
     }
