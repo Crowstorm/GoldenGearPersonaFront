@@ -1,11 +1,15 @@
 import React from 'react';
 
-import Game from '../components/game';
+import Game from '../components/overworld/game';
+import OverworldInterface from '../components/overworld/overworldInterface'
 
-class GameContainer extends React.Component{
-    render(){
-        return(
-            <Game />
+class GameContainer extends React.Component {
+    render() {
+        return (
+            <div>
+                <OverworldInterface />
+                <Game />
+            </div>
         )
     }
 }
