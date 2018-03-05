@@ -18,13 +18,14 @@ class Header extends React.Component {
     render() {
         return (
             <nav>
-                <div className="nav-wrapper">
-                    <a href="#" className="left brand-logo">
+                <div className="navbar">
+                    <a href="/" className="left navbar-brand">
                         GGP
                      </a>
                     <ul className="right">
-
-                        {this.renderContent()}
+                        <li> <a href='/character_creation'>CharC </a> </li>
+                        <li> <a href='/game'>Game </a> </li>
+                        <li> {this.renderContent()} </li>
                     </ul>
                 </div>
             </nav>

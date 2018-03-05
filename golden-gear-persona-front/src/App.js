@@ -5,10 +5,11 @@ import {connect} from 'react-redux';
 import * as actions from './actions';
 import logo from './mgp.png';
 
-import HeaderContainer from './containers/headerContainer'
-import TitleScreenContainer from './containers/titleScreenContainer'
+import GameContainer from './containers/gameContainer';
+import HeaderContainer from './containers/headerContainer';
+import TitleScreenContainer from './containers/titleScreenContainer';
+import CharacterCreationContainer from './containers/characterCreationContainer';
 
-const Dashboard = () => <h2>Dashboard </h2>
 const Landing = () => <h2>Landing </h2>
 const Footer = () => <h2>Footer </h2>
 
@@ -16,6 +17,7 @@ class App extends Component {
   componentDidMount(){
     this.props.fetchUser();
   }
+
   render() {
     return (
       <div className="container App">
@@ -26,9 +28,9 @@ class App extends Component {
             <div>
               <HeaderContainer />
               <Route exact={true} path="/" component={Landing} />
-              <Route path="/surveys" component={Dashboard} />
-
-              <Footer />
+              <Route path="/character_creation" component={CharacterCreationContainer} />
+              <Route path="/game" component={GameContainer} />
+              {/* <Footer /> */}
             </div>
           </BrowserRouter>
         </div>
