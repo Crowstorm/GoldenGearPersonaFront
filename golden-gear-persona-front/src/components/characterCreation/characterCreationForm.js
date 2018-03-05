@@ -11,5 +11,6 @@ class CharacterCreationForm extends React.Component{
 }
 
 export default reduxForm({
-    form: 'characterCreationForm'
+    form: 'characterCreationForm',
+    fields: ['name', 'portrait', 'class']
 })(CharacterCreationForm);
