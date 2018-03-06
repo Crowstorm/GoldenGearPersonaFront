@@ -23,12 +23,6 @@ class CharacterCreationForm extends React.Component {
         });
     }
 
-    // renderPortraits(){
-    //     return _.map(PORTRAITS, port =>{
-    //         return <Field key={port.img} component={portraitPicker} type="radio" label={port.id} name={port.id} src={port.img} />
-    //     })
-    // }
-
     render() {
         return (
             <div className="container">
@@ -37,8 +31,8 @@ class CharacterCreationForm extends React.Component {
                     <div>
                         <label>Pick your character's portrait</label>
                         <div>
-                            <label>   <Field name="portrait" component="input" type="radio" value="bigboss1" />{' '} <img src={PORTRAITS[0].img} /></label>
-                            <label>   <Field name="portrait" component="input" type="radio" value="bigboss2" />{' '} <img src={PORTRAITS[1].img} /></label>
+                            <label>   <Field name="portrait" component="input" type="radio" value="bigboss1" /> <img src={PORTRAITS[0].img} /></label>
+                            <label>   <Field name="portrait" component="input" type="radio" value="bigboss2" /> <img src={PORTRAITS[1].img} /></label>
                         </div>
                     </div>
                     <Link className="red btn-flat white-text" to='/'>Cancel </Link>
