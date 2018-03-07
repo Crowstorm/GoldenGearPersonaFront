@@ -7,17 +7,17 @@ class Header extends React.Component {
                 return;
             }
             case false: {
-                return (<li><a href="/auth/google">Sign in with Google</a></li>)
+                return (<a href="/auth/google">Sign in with Google</a>)
             }
             default: {
-                return (<li><a href="/api/logout"><p>{this.props.auth.name}</p> Logout</a></li>);
+                return (<a href="/api/logout">{this.props.auth.name} Logout</a>);
             }
         }
     }
 
     render() {
         return (
-            <nav>
+            <nav style={{minWidth: 1000 + 'px'}}>
                 <div className="navbar">
                     <a href="/" className="left navbar-brand">
                         GGP
