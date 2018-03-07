@@ -13,41 +13,41 @@ class Game extends React.Component {
     renderGrid() {
         return _.map(GRID, row => {
             return <div key={1} className="row"> {_.map(row, cell => {
-                return <div key={cell.x +'.'+ cell.y}style={{ height: 100, width: 100 }}> x: {cell.x}, y: {cell.y} </div>
+                return <div key={cell.x + '.' + cell.y} style={{ height: 100, width: 100 }}> x: {cell.x}, y: {cell.y} </div>
             })
             } </div>
         })
     }
 
-    handleClick = () =>{
+    handleClick = () => {
         console.log(this.props)
         this.props.moveCharUp();
     }
 
-    handleKeyDown = (e) =>{
+    handleKeyDown = (e) => {
         console.log(e);
-        switch(e.key){
-            case "ArrowUp":{
+        switch (e.key) {
+            case "ArrowUp": {
                 this.props.moveCharUp();
                 break;
             }
-            case "ArrowDown":{
+            case "ArrowDown": {
                 this.props.moveCharDown();
                 break;
             }
-            case "ArrowLeft":{
+            case "ArrowLeft": {
                 this.props.moveCharLeft();
                 break;
             }
-            case "ArrowRight":{
+            case "ArrowRight": {
                 this.props.moveCharRight();
                 break;
             }
-            default:{return}
+            default: { return }
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         document.addEventListener("keydown", this.handleKeyDown);
     }
 
@@ -55,10 +55,13 @@ class Game extends React.Component {
         console.log('props in game', this.props)
 
         return (
-            <div  className="game">
+            <div className="game">
                 <div onKeyDown={this.handleKeyDown} className="container">
                     {this.renderGrid()}
                     <button onClick={this.handleClick}>Move up</button>
+                </div>
+                <div>
+                    <p>Obecna pozycja: {this.props.charPosition.x}, {this.props.charPosition.y} </p>
                 </div>
             </div>
         )
