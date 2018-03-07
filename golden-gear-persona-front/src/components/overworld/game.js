@@ -52,8 +52,6 @@ class Game extends React.Component {
     }
 
     render() {
-        console.log('props in game', this.props)
-
         return (
             <div className="game">
                 <div onKeyDown={this.handleKeyDown} className="container">
