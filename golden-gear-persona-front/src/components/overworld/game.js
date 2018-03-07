@@ -13,7 +13,7 @@ class Game extends React.Component {
     renderGrid() {
         return _.map(GRID, row => {
             return <div key={1} className="row"> {_.map(row, cell => {
-                return <div key={cell.x +'.'+ cell.y}style={{ height: 100 + 'px', width: 100 + 'px' }}> x: {cell.x}, y: {cell.y} </div>
+                return <div key={cell.x +'.'+ cell.y}style={{ height: 100, width: 100 }}> x: {cell.x}, y: {cell.y} </div>
             })
             } </div>
         })
@@ -21,15 +21,29 @@ class Game extends React.Component {
 
     handleClick = () =>{
         console.log(this.props)
-       //const x = 2; const y = 2;
-        //this.props.moveChar(x, y);
         this.props.moveCharUp();
     }
 
     handleKeyDown = (e) =>{
         console.log(e);
-        if(e.key === "ArrowUp"){
-            this.props.moveCharUp();
+        switch(e.key){
+            case "ArrowUp":{
+                this.props.moveCharUp();
+                break;
+            }
+            case "ArrowDown":{
+                this.props.moveCharDown();
+                break;
+            }
+            case "ArrowLeft":{
+                this.props.moveCharLeft();
+                break;
+            }
+            case "ArrowRight":{
+                this.props.moveCharRight();
+                break;
+            }
+            default:{return}
         }
     }
 

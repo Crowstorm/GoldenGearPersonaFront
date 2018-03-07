@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {moveChar, moveCharUp} from '../actions/index'
+import {moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft} from '../actions/index'
 import Game from '../components/overworld/game';
 import OverworldInterface from '../components/overworld/overworldInterface'
 
@@ -29,7 +29,16 @@ function mapDispatchToProps(dispatch){
         },
         moveCharUp: () =>{
             dispatch(moveCharUp())
-        }
+        },
+        moveCharDown: () =>{
+            dispatch(moveCharDown())
+        },
+        moveCharRight: () =>{
+            dispatch(moveCharRight())
+        },
+        moveCharLeft: () =>{
+            dispatch(moveCharLeft())
+        },
     }
 }
 
