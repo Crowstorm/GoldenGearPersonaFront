@@ -26,12 +26,23 @@ class Game extends React.Component {
         this.props.moveCharUp();
     }
 
+    handleKeyDown = (e) =>{
+        console.log(e);
+        if(e.key === "ArrowUp"){
+            this.props.moveCharUp();
+        }
+    }
+
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleKeyDown);
+    }
+
     render() {
         console.log('props in game', this.props)
 
         return (
-            <div className="game">
-                <div className="container">
+            <div  className="game">
+                <div onKeyDown={this.handleKeyDown} className="container">
                     {this.renderGrid()}
                     <button onClick={this.handleClick}>Move up</button>
                 </div>
