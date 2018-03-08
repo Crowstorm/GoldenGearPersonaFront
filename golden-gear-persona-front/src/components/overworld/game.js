@@ -10,14 +10,23 @@ const GRID = [
 ]
 class Game extends React.Component {
 
+    renderPosition = (cell) =>{
+        if(this.props.charPosition.x == cell.x && this.props.charPosition.y == cell.y){
+            return 'Tu jestem xD'
+        }
+    }
+    
     renderGrid() {
         return _.map(GRID, row => {
-            return <div key={1} className="row"> {_.map(row, cell => {
-                return <div key={cell.x + '.' + cell.y} style={{ height: 100, width: 100 }}> x: {cell.x}, y: {cell.y} </div>
+            return <div key={`row${row[0].y}`} className="row"> {_.map(row, cell => {
+                return <div key={cell.x + '.' + cell.y} style={{ height: 100, width: 100 }}> x: {cell.x}, y: {cell.y} {this.renderPosition(cell)} </div>
             })
             } </div>
         })
     }
+
+    
+
 
     handleClick = () => {
         console.log(this.props)
