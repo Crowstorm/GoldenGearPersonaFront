@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 import { textInputs as characterCreationFormField, portraitPicker } from './characterCreationFormField';
 
+
 const FIELDS = [
     { label: "Character Name", name: "name" },
     { label: "Character Title", name: "title" }
@@ -49,7 +50,23 @@ class CharacterCreationForm extends React.Component {
     }
 }
 
+function validate(values){
+    const errors ={};
+
+    if(!values.name){
+        errors.name = 'You must name your character';
+    }
+    if(!values.title){
+        errors.title = 'Title required';
+    }
+    if(!values.portrait){
+        errors.portrait = 'You must pick a portrait for your character';
+    }
+    
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'characterCreationForm',
-    // fields: ['name', 'portrait', 'class']
 })(CharacterCreationForm);

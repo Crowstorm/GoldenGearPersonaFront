@@ -9,10 +9,9 @@ const GRID = [
     [{ x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 1 }],
 ]
 class Game extends React.Component {
-
     renderPosition = (cell) =>{
         if(this.props.charPosition.x == cell.x && this.props.charPosition.y == cell.y){
-            return 'Tu jestem xD'
+            return "i'm here";
         }
     }
     
@@ -23,14 +22,6 @@ class Game extends React.Component {
             })
             } </div>
         })
-    }
-
-    
-
-
-    handleClick = () => {
-        console.log(this.props)
-        this.props.moveCharUp();
     }
 
     handleKeyDown = (e) => {
@@ -65,7 +56,6 @@ class Game extends React.Component {
             <div className="game">
                 <div onKeyDown={this.handleKeyDown} className="container">
                     {this.renderGrid()}
-                    <button onClick={this.handleClick}>Move up</button>
                 </div>
                 <div>
                     <p>Obecna pozycja: {this.props.charPosition.x}, {this.props.charPosition.y} </p>

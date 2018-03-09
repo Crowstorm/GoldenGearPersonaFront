@@ -1,9 +1,11 @@
 import React from 'react';
 
-class CharacterCreationReview extends React.Component{
-    render(){
-        return(
-            <div> Review </div>
+class CharacterCreationReview extends React.Component {
+    render() {
+        return (
+            <div>
+                <h5>Confirm </h5>
+            </div>
         )
     }
 }

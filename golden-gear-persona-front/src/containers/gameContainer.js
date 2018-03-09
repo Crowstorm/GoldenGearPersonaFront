@@ -24,9 +24,6 @@ function mapStateToProps(store){
 
 function mapDispatchToProps(dispatch){
     return{
-        moveChar: (x, y) =>{
-            dispatch(moveChar(x,y));
-        },
         moveCharUp: () =>{
             dispatch(moveCharUp())
         },
