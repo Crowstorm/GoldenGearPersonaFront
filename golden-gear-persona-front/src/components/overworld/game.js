@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import './game.css';
 
+import _walk from '../../assets/phWalk.gif'
+
 
 const GRID = [
     [{ x: 1, y: 3 }, { x: 2, y: 3 }, { x: 3, y: 3 }],
@@ -11,7 +13,7 @@ const GRID = [
 class Game extends React.Component {
     renderPosition = (cell) =>{
         if(this.props.charPosition.x == cell.x && this.props.charPosition.y == cell.y){
-            return "i'm here";
+            return <img src={_walk} style={{'height': 80 +'px'}}/>;
         }
     }
     
