@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT} from './types'
+import {FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT, CREATE_CHARACTER} from './types'
 
 export const fetchUser = () => {
     return function(dispatch){
@@ -50,6 +50,14 @@ export const moveCharLeft = () =>{
     return function(dispatch){
         dispatch({
             type: MOVE_CHAR_LEFT
+        })
+    }
+}
+
+export const createCharacter = (formValues) =>{
+    return function(dispatch){
+        dispatch({
+            type: CREATE_CHARACTER
         })
     }
 }

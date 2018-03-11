@@ -31,9 +31,10 @@ class CharacterCreationForm extends React.Component {
     }
 
     render() {
+        console.log('props', this.props)
         return (
             <div className="container">
-                <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+                <form onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
                     {this.renderFields()}
                     <div>
                         <label>Pick your character's portrait</label>
@@ -69,4 +70,5 @@ function validate(values){
 export default reduxForm({
     validate,
     form: 'characterCreationForm',
+    destroyOnUnmount: false
 })(CharacterCreationForm);
