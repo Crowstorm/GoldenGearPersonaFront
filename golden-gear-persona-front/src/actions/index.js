@@ -1,17 +1,31 @@
 import axios from 'axios';
+import Api from '../services/api';
 
-import {FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT, CREATE_CHARACTER} from './types'
 
-export const fetchUser = () => {
-    return function(dispatch){
-        axios.get('/api/current_user').then(res =>{
-            dispatch({type: FETCH_USER, payload: res.data})
+import { FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT, CREATE_CHARACTER } from './types'
+
+export const createCharacter = (payload) => {
+    return function (dispatch) {
+        console.log('payload', payload)
+        //const params = {id, name, title, portrait, classGame}
+        const params = payload;
+        console.log('params', params)
+        Api.post('/api/createCharacter', params).then(result => {
+            console.log(result);
         })
     }
 }
 
-export const moveChar = (x, y) =>{
-    return function(dispatch){
+export const fetchUser = () => {
+    return function (dispatch) {
+        axios.get('/api/current_user').then(res => {
+            dispatch({ type: FETCH_USER, payload: res.data })
+        })
+    }
+}
+
+export const moveChar = (x, y) => {
+    return function (dispatch) {
         const _x = x;
         const _y = y;
         dispatch({
@@ -22,42 +36,42 @@ export const moveChar = (x, y) =>{
     }
 }
 
-export const moveCharUp = () =>{
-    return function(dispatch){
+export const moveCharUp = () => {
+    return function (dispatch) {
         dispatch({
             type: MOVE_CHAR_UP
         })
     }
 }
 
-export const moveCharDown = () =>{
-    return function(dispatch){
+export const moveCharDown = () => {
+    return function (dispatch) {
         dispatch({
             type: MOVE_CHAR_DOWN
         })
     }
 }
 
-export const moveCharRight = () =>{
-    return function(dispatch){
+export const moveCharRight = () => {
+    return function (dispatch) {
         dispatch({
             type: MOVE_CHAR_RIGHT
         })
     }
 }
 
-export const moveCharLeft = () =>{
-    return function(dispatch){
+export const moveCharLeft = () => {
+    return function (dispatch) {
         dispatch({
             type: MOVE_CHAR_LEFT
         })
     }
 }
 
-export const createCharacter = (formValues) =>{
-    return function(dispatch){
-        dispatch({
-            type: CREATE_CHARACTER
-        })
-    }
-}
+// export const createCharacter = (formValues) =>{
+//     return function(dispatch){
+//         dispatch({
+//             type: CREATE_CHARACTER
+//         })
+//     }
+// }

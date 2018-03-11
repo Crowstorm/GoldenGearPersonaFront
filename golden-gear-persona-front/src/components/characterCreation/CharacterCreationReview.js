@@ -4,6 +4,19 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class CharacterCreationReview extends React.Component {
+
+    handleCreateCharacter(values, user) {
+       // console.log('val', values);
+       // console.log('user', user);
+        const payload = {
+            id: user.googleId,
+            name: values.name,
+            title: values.title,
+            portrait: 1
+        }
+        this.props.createCharacter(payload);
+    }
+
     render() {
         return (
             <div>
@@ -22,7 +35,7 @@ class CharacterCreationReview extends React.Component {
                     Go back
                 </button>
 
-                <button onClick={() => this.props.createCharacter(this.props.formValues)} className="green btn-flat right"> Create Character </button>
+                <button onClick={() => this.handleCreateCharacter(this.props.formValues, this.props.user)} className="green btn-flat right"> Create Character </button>
             </div>
         )
     }
@@ -30,7 +43,8 @@ class CharacterCreationReview extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        formValues: state.form.characterCreationForm.values
+        formValues: state.form.characterCreationForm.values,
+        user: state.auth
     };
 };
 
