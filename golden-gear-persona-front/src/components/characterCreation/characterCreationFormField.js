@@ -43,7 +43,7 @@ export function portraitPicker(props) {
 
             <input type="radio" name={props.id} id={props.id} />
             <label for={props.id}> <img src={props.img} /></label>
-
+            {props.touched && props.error}
         </div>
     )
 }

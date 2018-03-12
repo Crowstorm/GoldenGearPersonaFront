@@ -12,6 +12,7 @@ class CharacterCreationReview extends React.Component {
             id: user.googleId,
             name: values.name,
             title: values.title,
+            classGame: values.classGame,
             portrait: 1
         }
         this.props.createCharacter(payload);
@@ -29,6 +30,9 @@ class CharacterCreationReview extends React.Component {
                 </div>
                 <div>
                     <div><img src={this.props.formValues.portrait} /></div>
+                </div>
+                <div>
+                    <div>{this.props.formValues.classGame}</div>
                 </div>
 
                 <button className="yellow darken-3 btn-flat" onClick={this.props.onCancel}>

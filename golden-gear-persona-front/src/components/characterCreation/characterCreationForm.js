@@ -41,7 +41,7 @@ class CharacterCreationForm extends React.Component {
 
     renderPortraits() {
         return _.map(PORTRAITS, port => {
-            return <label key={port.id}> <Field className="form-check-input"  component="input" type="radio" name="portrait" value={port.img} />  <img src={port.img} /></label> 
+            return <div className="custom-radio custom-control"><label key={port.id}> <Field className="custom-control-input" component="input" type="radio" name="portrait" value={port.img} /> <img style={{'paddingLeft': 10}} src={port.img} /> </label>  </div>
         })
     }
 
@@ -95,7 +95,11 @@ function validate(values) {
     if (!values.portrait) {
         errors.portrait = 'You must pick a portrait for your character';
     }
+    if (!values.classGame) {
+        errors.classGame = 'You must pick a class for your character';
+    }
 
+    console.log('err', errors)
     return errors;
 }
 
