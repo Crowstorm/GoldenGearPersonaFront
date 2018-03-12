@@ -1,5 +1,28 @@
 import React from 'react';
 
+import TextField from 'material-ui/TextField'
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import Checkbox from 'material-ui/Checkbox'
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
+
+export const renderTextField = props => (
+    <TextField hintText={props.label}
+      floatingLabelText={props.label}
+      errorText={props.touched && props.error}
+      {...props}
+    />
+  )
+
+  export const renderSelectField = props => (
+    <SelectField
+      floatingLabelText={props.label}
+      errorText={props.touched && props.error}
+      {...props}
+      onChange={(event, index, value) => props.onChange(value)}>
+    </SelectField>
+  )
+
 export function textInputs({ input, label, meta: { error, touched } }) {  //this.props.input
     return (
         <div>

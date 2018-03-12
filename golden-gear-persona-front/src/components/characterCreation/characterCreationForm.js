@@ -4,6 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom'
 
 import { textInputs as characterCreationFormField, portraitPicker } from './characterCreationFormField';
+import {renderTextField} from './characterCreationFormField';
 
 
 const FIELDS = [
@@ -16,17 +17,37 @@ const PORTRAITS = [
     { img: "https://orig00.deviantart.net/2497/f/2009/195/4/9/big_boss_avatar_by_near_8.png", id: "por2" }
 ]
 
+const CLASSES = [
+    {classGame: 'warrior'},
+    {classGame: 'thief'},
+    {classGame: 'mage'},
+]
+
+
+
 
 class CharacterCreationForm extends React.Component {
     renderFields() {
         return _.map(FIELDS, field => {
-            return <Field key={field.name} component={characterCreationFormField} type="text" label={field.label} name={field.name} />
+            return <div key={field.name} className="form-group"><Field className="form-control" component={characterCreationFormField} type="text" label={field.label} name={field.name} /> </div>
         });
     }
 
+    // renderFields() {
+    //     return _.map(FIELDS, field => {
+    //         return <Field key={field.name} component={characterCreationFormField} type="text" label={field.label} name={field.name} />
+    //     });
+    // }
+
     renderPortraits() {
         return _.map(PORTRAITS, port => {
-            return <label> <Field key={port.id} component="input" type="radio" name="portrait" value={port.img} />  <img src={port.img} /></label>
+            return <label key={port.id}> <Field className="form-check-input"  component="input" type="radio" name="portrait" value={port.img} />  <img src={port.img} /></label> 
+        })
+    }
+
+    renderClasses(){
+        return _.map(CLASSES, classGame => {
+            return <label key={classGame.classGame}> <Field className="form-check-input"  component="input" type="radio" name="classGame" value={classGame.classGame} />  {classGame.classGame}</label> 
         })
     }
 
@@ -38,11 +59,22 @@ class CharacterCreationForm extends React.Component {
                     {this.renderFields()}
                     <div>
                         <label>Pick your character's portrait</label>
-                        <div>
+                        <div className="form-check">
                             {this.renderPortraits()}
                         </div>
                     </div>
-
+               
+                    <div>
+                        <label>Pick your class</label>
+                        <div>
+                            <Field className="custom-select" name="classGame" component="select">
+                                <option></option>
+                                <option value="warrior">Warrior</option>
+                                <option value="thief">Thief</option>
+                                <option value="mage">Mage</option>
+                            </Field>
+                        </div>
+                    </div>
                     <Link className="red btn-flat white-text" to='/'>Cancel </Link>
                     <button className="teal btn-flat right white-text" type="submit">Next</button>
                 </form>
@@ -51,19 +83,19 @@ class CharacterCreationForm extends React.Component {
     }
 }
 
-function validate(values){
-    const errors ={};
+function validate(values) {
+    const errors = {};
 
-    if(!values.name){
+    if (!values.name) {
         errors.name = 'You must name your character';
     }
-    if(!values.title){
+    if (!values.title) {
         errors.title = 'Title required';
     }
-    if(!values.portrait){
+    if (!values.portrait) {
         errors.portrait = 'You must pick a portrait for your character';
     }
-    
+
     return errors;
 }
 
