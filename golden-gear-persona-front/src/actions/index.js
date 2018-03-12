@@ -10,7 +10,7 @@ export const createCharacter = (payload) => {
         //const params = {id, name, title, portrait, classGame}
         const params = payload;
         console.log('params', params)
-        Api.post('/api/createCharacter', params).then(result => {
+        axios.post('/api/createCharacter', params).then(result => {
             console.log(result);
         })
     }
