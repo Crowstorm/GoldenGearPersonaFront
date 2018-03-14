@@ -11,6 +11,7 @@ import _walk from '../../assets/phWalk.gif'
 //     [{ x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 1 }],
 // ]
 
+//Cala mapka
 const GRID = [
     [{ x: 1, y: 15 }, { x: 2, y: 15 }, { x: 3, y: 15 }, { x: 4, y: 15 }, { x: 5, y: 15 }, { x: 6, y: 15 }, { x: 7, y: 15 }, { x: 8, y: 15 }, { x: 9, y: 15 }, { x: 10, y: 15 }, { x: 11, y: 15 }, { x: 12, y: 15 }, { x: 13, y: 15 }, { x: 14, y: 15 }, { x: 15, y: 15 } ],
 [{ x: 1, y: 14 }, { x: 2, y: 14 }, { x: 3, y: 14 }, { x: 4, y: 14 }, { x: 5, y: 14 }, { x: 6, y: 14 }, { x: 7, y: 14 }, { x: 8, y: 14 }, { x: 9, y: 14 }, { x: 10, y: 14 }, { x: 11, y: 14 }, { x: 12, y: 14 }, { x: 13, y: 14 }, { x: 14, y: 14 }, { x: 15, y: 14 } ],
@@ -30,18 +31,21 @@ const GRID = [
 
 ]
 
+//lista zablokowanych pol
 const BLOCKED = [
     {x:3, y: 9}, {x:4, y: 9}, 
 ]
 
-//sprawdz po id elementu
 class Game extends React.Component {
+    //Funckja ktora zwraca img z ludzikiem
     renderPosition = (cell) =>{
         if(this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y){
             return <img src={this.props.charPosition.model} style={{'height': 50 +'px'}}/>;
         }
     }
     
+    //Funkcja, ktora leci po kazdym rzadku i po kazdej komorce rzadku. Nadaje im odpowiednie atrybuty i ma w sobie funkcje powyzej, ktora uaktywnia sie kiedy pozycja w stanie aplikacji
+    //zgadza sie z x i y komorki
     renderGrid() {
         return _.map(GRID, row => {
             return <div key={`row${row[0].y}`} className="row" style={{margin: 0}}> {_.map(row, cell => {
@@ -51,20 +55,25 @@ class Game extends React.Component {
         })
     }
  
+    //Funkcja "nasluchujaca" klikniesz klawiszem. Gora dol, lewo prawo
     handleKeyDown = (e) => {
         console.log(e);
         switch (e.key) {
             case "ArrowUp": {
+                //pusta tablica na bledy
                 let err = [];
-                console.log('err',err)
+
+                //funkcja ktora leci po wszystkich elementach, ktore zdecydowalismy, ze beda zablokowane
                 _.forEach(BLOCKED, cell =>{
+                    //po kliknieciu strzalki w gore to obecnej pozycji funkcja dodaje 1 i porownuje je. Jesli postac mialaby wejsc na pole, ktore byloby zablokowane dodaje do tablicy
+                    //z bledami blad
                     if(this.props.charPosition.y+1 === cell.y && this.props.charPosition.x === cell.x){
                         console.log('blocked')
                         err.push('blocked');
                     }
                 })
                 
-                //if check false
+                //Jesli tablica z bledami jest pusta = nie napotkamy zablokowanego elementu, odpala sie funkcja, ktora zmieni stan aplikacji i przeniesie ludzika. Jesli ma bledy, nie odpali sie
                 if(err.length === 0){
                     this.props.moveCharUp();
                 }
