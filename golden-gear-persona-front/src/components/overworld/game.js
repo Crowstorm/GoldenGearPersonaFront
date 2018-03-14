@@ -32,7 +32,7 @@ const GRID = [
 class Game extends React.Component {
     renderPosition = (cell) =>{
         if(this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y){
-            return <img src={_walk} style={{'height': 50 +'px'}}/>;
+            return <img src={this.props.charPosition.model} style={{'height': 50 +'px'}}/>;
         }
     }
     
