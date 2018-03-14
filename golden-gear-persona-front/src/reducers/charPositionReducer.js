@@ -15,13 +15,6 @@ let initial_state = {
 
 export default (state = initial_state, action) => {
     console.log(action);
-    let _x = state.x;
-    let _y = state.y;
-    const checkForBlocked = () =>{
-        if (_x === 4 && _y === 4){
-           return
-        }
-    }
     switch (action.type) {
         case MOVE_CHAR:{
             return {
@@ -30,31 +23,24 @@ export default (state = initial_state, action) => {
             }
         }
         case MOVE_CHAR_UP:{
-            checkForBlocked();
             return  Object.assign({}, state, {
                 y: state.y+1,
                 model: back
             })
         }
         case MOVE_CHAR_DOWN:{
-            checkForBlocked();
-
             return  Object.assign({}, state, {
                 y: state.y-1,
                 model: front
             })
         }
         case MOVE_CHAR_RIGHT:{
-            checkForBlocked();
-
             return  Object.assign({}, state, {
                 x: state.x+1,
                 model: right
             })
         }
         case MOVE_CHAR_LEFT:{
-            checkForBlocked();
-
             return  Object.assign({}, state, {
                 x: state.x-1,
                 model: left
