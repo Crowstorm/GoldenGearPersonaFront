@@ -29,6 +29,12 @@ const GRID = [
 [{ x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 1 }, { x: 4, y: 1 }, { x: 5, y: 1 }, { x: 6, y: 1 }, { x: 7, y: 1 }, { x: 8, y: 1 }, { x: 9, y: 1 }, { x: 10, y: 1 }, { x: 11, y: 1 }, { x: 12, y: 1 }, { x: 13, y: 1 }, { x: 14, y: 1 }, { x: 15, y: 1 } ],
 
 ]
+
+const BLOCKED = [
+    {x:3, y: 9}, {x:4, y: 9}, 
+]
+
+//sprawdz po id elementu
 class Game extends React.Component {
     renderPosition = (cell) =>{
         if(this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y){
@@ -39,7 +45,7 @@ class Game extends React.Component {
     renderGrid() {
         return _.map(GRID, row => {
             return <div key={`row${row[0].y}`} className="row" style={{margin: 0}}> {_.map(row, cell => {
-                return <div key={cell.x + '.' + cell.y} style={{ height: 50, width: 50, border: '1px solid red' }}> {/*x: {cell.x}, y: {cell.y}*/} {this.renderPosition(cell)} </div>
+                return <div key={cell.x + '.' + cell.y} style={{ height: 50, width: 50, border: '1px solid red' }}> {/*x: {cell.x}, y: {cell.y} */} {this.renderPosition(cell)} </div>
             })
             } </div>
         })
@@ -49,7 +55,19 @@ class Game extends React.Component {
         console.log(e);
         switch (e.key) {
             case "ArrowUp": {
-                this.props.moveCharUp();
+                let err = [];
+                console.log('err',err)
+                _.forEach(BLOCKED, cell =>{
+                    if(this.props.charPosition.y+1 === cell.y && this.props.charPosition.x === cell.x){
+                        console.log('blocked')
+                        err.push('blocked');
+                    }
+                })
+                
+                //if check false
+                if(err.length === 0){
+                    this.props.moveCharUp();
+                }
                 break;
             }
             case "ArrowDown": {
