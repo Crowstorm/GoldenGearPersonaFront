@@ -1,7 +1,12 @@
 .game{
     border: 1px solid red;
+    box-sizing: border-box;
     height:800px;
-    width:799px;
+    width:800px;
     float: right;
-    background-image: url('../assets/test.jpg');
+    background-image: url('../assets/test3.jpg');
+}
+
+#d12_21{
+    background-image: url('../assets/princess.png')
 }

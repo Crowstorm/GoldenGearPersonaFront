@@ -52,7 +52,6 @@ class CharacterCreationForm extends React.Component {
     }
 
     render() {
-        console.log('props', this.props)
         return (
             <div className="container">
                 <form onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>

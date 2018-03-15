@@ -39,7 +39,7 @@ class CharacterCreationReview extends React.Component {
                     Go back
                 </button>
 
-                <button onClick={() => this.handleCreateCharacter(this.props.formValues, this.props.user)} className="green btn-flat right"> Create Character </button>
+                <button onClick={() => {this.handleCreateCharacter(this.props.formValues, this.props.user)}} className="green btn-flat right"> Create Character </button>
             </div>
         )
     }

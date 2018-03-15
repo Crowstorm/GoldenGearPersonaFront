@@ -2,20 +2,21 @@ import React from 'react';
 import { reduxForm} from 'redux-form';
 
 import CharacterCreationForm from './characterCreationForm';
-import CharacterCreationReview from './CharacterCreationReview'
+import CharacterCreationReview from './CharacterCreationReview';
+import CharacterCreated from './characterCreated';
 
 
 
 class CharacterCreation extends React.Component {
-    state = { showReview: false }
+    state = { showReview: false}
 
     renderContent() {
-        if (this.state.showReview === false) {
+     if (this.state.showReview === false) {
             return <CharacterCreationForm
                 onFormSubmit={() => this.setState({ showReview: true })}
             />
         } else {
-            return <CharacterCreationReview onCancel={() => this.setState({showReview: false})}/>
+            return <CharacterCreationReview onCancel={() => this.setState({showReview: false})} />
         }
     }
 
