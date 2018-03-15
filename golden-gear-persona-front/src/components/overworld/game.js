@@ -23,7 +23,7 @@ class Game extends React.Component {
     renderGrid() {
         return _.map(GRID25, row => {
             return <div key={`row${row[0].y}`} className="row" style={{margin: 0}}> {_.map(row, cell => {
-                return <div key={cell.x + '.' + cell.y} id={'d'+cell.x + '_' + cell.y} style={{ height: 32, width: 32, border: '1px solid red',boxSizing: 'border-box' }}> {/*x: {cell.x}, y: {cell.y} */} {this.renderPosition(cell)} </div>
+                return <div key={cell.x + '.' + cell.y} id={'d'+cell.x + '_' + cell.y} style={{ height: 32, width: 32,boxSizing: 'border-box' }}> {/*x: {cell.x}, y: {cell.y} */} {this.renderPosition(cell)} </div>
             })
             } </div>
         })
@@ -105,10 +105,10 @@ class Game extends React.Component {
                 <div onKeyDown={this.handleKeyDown} style={{width: 800}}>
                     {this.renderGrid()}
                 </div>
-                <div>
+                {/* <div>
                     <p style={{color: 'black'}}>Obecna pozycja: {this.props.charPosition.x}, {this.props.charPosition.y} </p>
                 </div>
-                <img src={princess} />
+                <img src={princess} /> */}
             </div>
         )
     }

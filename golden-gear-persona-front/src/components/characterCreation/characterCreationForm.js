@@ -13,8 +13,12 @@ const FIELDS = [
 ]
 
 const PORTRAITS = [
-    { img: "https://pm1.narvii.com/6484/d5484227c0f1f349eb66b6479107e379097e2d18_128.jpg", id: "por1" },
-    { img: "https://orig00.deviantart.net/2497/f/2009/195/4/9/big_boss_avatar_by_near_8.png", id: "por2" }
+    { img: "https://vignette.wikia.nocookie.net/megamitensei/images/3/3d/Ryuji_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221544", id: "por1" },
+    { img: "https://vignette.wikia.nocookie.net/megamitensei/images/6/6b/Haru_All_Out.png/revision/latest?cb=20170202222551", id: "por2" },
+    { img: "https://vignette.wikia.nocookie.net/megamitensei/images/5/5a/Yusuke_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202222135", id: "por3" },
+    { img: "http://i.imgur.com/cZayoNI.png", id: "por4" },
+    { img: "https://vignette.wikia.nocookie.net/megamitensei/images/e/ec/Akechi_All_Out.png/revision/latest/scale-to-width-down/481?cb=20160917054538", id: "por5" },
+    { img: "https://vignette.wikia.nocookie.net/megamitensei/images/2/25/Ann_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221932", id: "por6" },
 ]
 
 const CLASSES = [
@@ -41,7 +45,7 @@ class CharacterCreationForm extends React.Component {
 
     renderPortraits() {
         return _.map(PORTRAITS, port => {
-            return <div className="custom-radio custom-control"><label key={port.id}> <Field className="custom-control-input" component="input" type="radio" name="portrait" value={port.img} /> <img style={{'paddingLeft': 10}} src={port.img} /> </label>  </div>
+            return <div className="custom-radio custom-control"><label key={port.id}> <Field className="custom-control-input" component="input" type="radio" name="portrait" value={port.img} /> <img style={{'paddingLeft': 10, height: 125}} src={port.img} /> </label>  </div>
         })
     }
 

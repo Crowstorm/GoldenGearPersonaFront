@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './assets/mgp.png'
 
 class Header extends React.Component {
     renderContent() {
@@ -20,7 +21,7 @@ class Header extends React.Component {
             <nav style={{minWidth: 1000 + 'px'}}>
                 <div className="navbar">
                     <a href="/" className="left navbar-brand">
-                        GGP
+                        <img src={logo} />
                      </a>
                     <ul className="right">
                         <li> <a href='/character_creation'>CharC </a> </li>

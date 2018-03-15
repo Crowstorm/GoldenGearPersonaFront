@@ -8,7 +8,7 @@ import right from '../assets/right.gif'
 let initial_state = {
     x: 12,
     y: 2,
-    model: front
+    model: back
 }
 
 

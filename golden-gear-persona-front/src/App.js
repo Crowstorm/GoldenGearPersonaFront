@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import * as actions from './actions';
-import logo from './mgp.png';
+//import logo from './mgp.png';
 
 import GameContainer from './containers/gameContainer';
 import HeaderContainer from './containers/headerContainer';
