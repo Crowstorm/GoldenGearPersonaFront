@@ -2,7 +2,7 @@ import axios from 'axios';
 import Api from '../services/api';
 
 
-import { FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT, CREATE_CHARACTER } from './types'
+import { FETCH_USER, MOVE_CHAR, MOVE_CHAR_UP, MOVE_CHAR_DOWN, MOVE_CHAR_RIGHT, MOVE_CHAR_LEFT, CREATE_CHARACTER, FETCH_CHARACTER } from './types'
 
 export const createCharacter = (payload) => {
     return function (dispatch) {
@@ -12,6 +12,14 @@ export const createCharacter = (payload) => {
         console.log('params', params)
         axios.post('/api/createCharacter', params).then(result => {
             console.log(result);
+        })
+    }
+}
+
+export const fetchCharacter = () =>{
+    return function (dispatch) {
+        axios.get('/api/current_user').then(res => {
+            dispatch({ type: FETCH_CHARACTER, payload: res.data.character })
         })
     }
 }
@@ -67,11 +75,3 @@ export const moveCharLeft = () => {
         })
     }
 }
-
-// export const createCharacter = (formValues) =>{
-//     return function(dispatch){
-//         dispatch({
-//             type: CREATE_CHARACTER
-//         })
-//     }
-// }

@@ -26,6 +26,7 @@ class Header extends React.Component {
                     <ul className="right">
                         <li> <a href='/character_creation'>CharC </a> </li>
                         <li> <a href='/game'>Game </a> </li>
+                        <li> <a href='/combat'>Combat </a> </li>
                         <li> {this.renderContent()} </li>
                     </ul>
                 </div>

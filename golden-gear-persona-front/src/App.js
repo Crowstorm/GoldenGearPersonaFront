@@ -7,11 +7,11 @@ import * as actions from './actions';
 
 import GameContainer from './containers/gameContainer';
 import HeaderContainer from './containers/headerContainer';
-import TitleScreenContainer from './containers/titleScreenContainer';
 import CharacterCreationContainer from './containers/characterCreationContainer';
+import CombatContainer from './containers/combatContainer'
 
 const Landing = () => <h2>Landing </h2>
-const Footer = () => <h2>Footer </h2>
+
 
 class App extends Component {
   componentDidMount(){
@@ -30,6 +30,7 @@ class App extends Component {
               <Route exact={true} path="/" component={Landing} />
               <Route path="/character_creation" component={CharacterCreationContainer} />
               <Route path="/game" component={GameContainer} />
+              <Route path='/combat' component={CombatContainer} />
               {/* <Footer /> */}
             </div>
           </BrowserRouter>
