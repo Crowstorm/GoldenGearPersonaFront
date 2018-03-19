@@ -13,7 +13,7 @@ class CharacterCreationReview extends React.Component {
             name: values.name,
             title: values.title,
             classGame: values.classGame,
-            portrait: 1
+            portrait: values.portrait
         }
         this.props.createCharacter(payload);
     }

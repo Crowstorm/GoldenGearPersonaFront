@@ -10,6 +10,7 @@ import InfoPanel from '../components/combat/infoPanel'
 import {fetchCharacter} from '../actions';
 
 class CombatContainer extends React.Component {
+
     render() {
         return (
             <div className="d-flex justify-content-between ">
@@ -23,7 +24,9 @@ class CombatContainer extends React.Component {
 }
 
 function mapStateToProps(store) {
-    mainChar: store.mainChar
+    return {
+        mainChar: store.mainCharacter
+    }
 }
 
 function mapDispatchToProps(dispatch) {
