@@ -6,11 +6,15 @@ class AllyInterface extends React.Component {
         this.props.fetchCharacter();
     }
 
+    handleOpenCharCard = () =>{
+        this.props.setCharCardState(true)
+    }
+
     getMainCharInfo = () => {
         const {name, portrait, stats } = this.props.mainChar;
         const {hp, mp} = stats;
         return (
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column" onClick={()=>this.handleOpenCharCard()}>
                 <p className="d-flex justify-content-center" style={{marginTop: 15}}>{name}</p>
                 <img src={portrait} style={{height: 100, border: '3px solid green'}}/>
                 <p className="d-flex justify-content-center" style={{marginTop: 15}}> Hp: {hp} Mp: {mp} </p>

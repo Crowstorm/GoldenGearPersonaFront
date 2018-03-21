@@ -1,0 +1,172 @@
+.charCard{
+    border: 3px solid turquoise;
+    background: #fff;
+    position: absolute;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1111;
+}
+
+
+.charCardContainer
+{
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+    width: 800px;
+    height: 650px;
+}
+
+.portrait
+{
+    border: 1px solid red;
+    margin-top: 25px;
+    margin-left: 75px;
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+}
+
+.eqContainer
+{
+    border: 1px solid red;
+    margin-top: 25px;
+    margin-left: 250px;
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+}
+
+.equippedItem{
+    border: 1px solid blue;
+    height: 40px;
+    width: 40px;
+}
+
+#item1
+{
+    border: 1px solid blue;
+    margin-top: 20px;
+    margin-left: 71px;
+    height: 30px;
+    width: 30px;
+
+}
+
+#item2
+{
+    border: 1px solid blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    height: 30px;
+    width: 30px;
+    float: left;
+
+}
+
+#item3
+{
+    border: 1px solid blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    float: left;
+
+}
+#item4
+{
+    border: 1px solid blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    float: left;
+
+}
+#item5
+{
+    border: 1px solid blue;
+    margin-top: 10px;
+    margin-left: 71px;
+    height: 30px;
+    width: 30px;
+    clear: both;
+
+}
+#dane
+{
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 250px;
+    height: 150px;
+    border: 1px solid green;
+}
+#eq
+{
+    border: 1px solid yellow;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 400px;
+    height: 345px;
+    float: left;
+}
+#armor
+{
+    border: 1px solid orange;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 180px;
+    height: 155px;
+    float: left;
+}
+#weapon
+{
+    border: 1px solid orange;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 180px;
+    height: 155px;
+    float: left;
+}
+#questitems
+{
+    border: 1px solid orange;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 180px;
+    height: 155px;
+   float: left;
+}
+#consumables
+{
+    border: 1px solid orange;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 180px;
+    height: 155px;
+    float: left;
+}
+#statystyki
+{
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 250px;
+    height: 150px;
+    border: 1px solid purple;
+
+}
+
