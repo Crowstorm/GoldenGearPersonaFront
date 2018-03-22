@@ -3,7 +3,7 @@ const modalDefaultState = {
     content: null,
 
     //charCard
-    charCardVisibility: true,
+    charCardVisibility: false,
 }
 
 const modalReducer = (state = modalDefaultState, action) => {

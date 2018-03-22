@@ -7,7 +7,7 @@ class CombatScreen extends React.Component{
     render(){
         return(
             <div style={{border: '1px solid blue', height: 600, width: 600}}> 
-                <button onClick={() => this.handleClick()}> Attack </button>
+                {/* <button onClick={() => this.handleClick()}> Attack </button> */}
             </div>
         )
     }
