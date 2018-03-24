@@ -7,20 +7,23 @@ import EnemyInterface from '../components/combat/enemyInterface'
 import InfoPanel from '../components/combat/infoPanel'
 import CharCard from '../components/combat/subPanels/charCard'
 
-
 import {fetchCharacter} from '../actions';
-import {setCharCardState} from '../actions/modals'
+import {setCharCardState} from '../actions/modals';
+import {loseHP} from '../actions/enemyActions';
+import {allyLoseHP} from '../actions/allyActions';
+import {attackReady} from '../actions/mechanicsActions';
 
 class CombatContainer extends React.Component {
 
     render() {
+        console.log('zycie', this.props.mainChar.stats.hp);
         let renderCharCard = this.props.charCard.charCardVisibility ? <CharCard {...this.props}/> : null;
         return (
             <div className="d-flex justify-content-between ">
                 <AllyInterface {...this.props}/>
-                <CombatScreen />
-                <InfoPanel />
-                <EnemyInterface />
+                <CombatScreen {...this.props}/>
+                <InfoPanel {...this.props}/>
+                <EnemyInterface {...this.props}/>
                 {/* conditional components */}
                 {renderCharCard}
             </div>
@@ -31,7 +34,9 @@ class CombatContainer extends React.Component {
 function mapStateToProps(store) {
     return {
         mainChar: store.mainCharacter,
-        charCard: store.modals
+        enemies: store.enemy,
+        charCard: store.modals,
+        mechanics: store.mechanics
     }
 }
 
@@ -42,6 +47,15 @@ function mapDispatchToProps(dispatch) {
         },
         setCharCardState: (visibility) =>{
             dispatch(setCharCardState(visibility))
+        },
+        loseHP: (amount) =>{
+            dispatch(loseHP(amount))
+        },
+        allyLoseHP: (amount) =>{
+            dispatch(allyLoseHP(amount))
+        },
+        attackReady: (isReady) =>{
+            dispatch(attackReady(isReady))
         }
     }
 }

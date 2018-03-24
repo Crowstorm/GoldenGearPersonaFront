@@ -25,7 +25,7 @@ let initial_state = {
 };
 
 export default (state = initial_state, action) => {
-
+    const {hp} = state.stats;
     switch (action.type) {
         case FETCH_CHARACTER: {
             const{name, title,classGame, portrait, statistics } = action.payload;
@@ -46,7 +46,15 @@ export default (state = initial_state, action) => {
                     luck,                }
             })
         }
-
+        case 'ALLY_LOSE_HP':{
+            return{
+                ...state,
+                stats: {
+                    ...state.stats,
+                    hp: hp - action.amount
+                }
+            }
+        }
         default: {
             return state;
         }
