@@ -7,6 +7,7 @@ class EnemyInterface extends React.Component {
         if(this.props.mechanics.attackReady){
             this.props.loseHP(5);
             this.props.attackReady(false);
+            this.props.switchTurn('enemy')
         }
     }
 

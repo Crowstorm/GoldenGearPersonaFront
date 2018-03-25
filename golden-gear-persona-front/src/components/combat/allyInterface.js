@@ -24,7 +24,6 @@ class AllyInterface extends React.Component {
 
 
     render() {
-        console.log('propsy', this.props)
 
         let renderMainCharInfo = this.props.mainChar ? this.getMainCharInfo() : 'lol'
         return (

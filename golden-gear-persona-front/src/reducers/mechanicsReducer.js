@@ -1,5 +1,6 @@
 let initial_state = {
-    attackReady: false
+    attackReady: false,
+    turn: 'ally',
 };
 
 export default (state = initial_state, action) => {
@@ -8,6 +9,12 @@ export default (state = initial_state, action) => {
             return{
                 ...state,
                 attackReady: action.isReady
+            }
+        }
+        case 'SWITCH_TURN':{
+            return{
+                ...state,
+                turn: action.whoseTurn
             }
         }
         default: {

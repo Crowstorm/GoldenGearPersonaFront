@@ -11,7 +11,7 @@ import {fetchCharacter} from '../actions';
 import {setCharCardState} from '../actions/modals';
 import {loseHP} from '../actions/enemyActions';
 import {allyLoseHP} from '../actions/allyActions';
-import {attackReady} from '../actions/mechanicsActions';
+import {attackReady, switchTurn} from '../actions/mechanicsActions';
 
 class CombatContainer extends React.Component {
 
@@ -56,6 +56,9 @@ function mapDispatchToProps(dispatch) {
         },
         attackReady: (isReady) =>{
             dispatch(attackReady(isReady))
+        },
+        switchTurn: (whoseTurn) =>{
+            dispatch(switchTurn(whoseTurn))
         }
     }
 }

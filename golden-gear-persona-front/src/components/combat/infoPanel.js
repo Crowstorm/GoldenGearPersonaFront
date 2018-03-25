@@ -12,7 +12,7 @@ class InfoPanel extends React.Component{
         let gowno = this.handleBattleWon();
         return(
             <div className="align-self-end"style={{border: '1px solid blue', height: 200, width: 600, position: 'absolute', marginLeft: 200}}> 
-                Info
+                <p> Tura: {this.props.mechanics.turn} </p>
                 {gowno}
             </div>
         )
