@@ -10,23 +10,17 @@ class CombatScreen extends React.Component {
         }
     }
     handleAllyAttack =() => {
-        //deal dmg
         let dmg = 5
-        //this.props.loseHP(dmg);
-
         this.props.attackReady(true);
     }
     handleEnemyAttack() {
         //deal dmg
         console.log('nakurwiam')
         let dmg = 3; 
-        this.props.allyLoseHP(dmg);
         this.props.switchTurn('ally')
+        this.props.allyLoseHP(dmg);
     }
     render() {
-        
-        console.log('propsy kombatu', this.props)
-
         return (
             <div className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600 }}>
                 <div className="d-flex ">
