@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import _ from 'lodash';
+
 
 import CombatScreen from '../components/combat/combatScreen'
 import AllyInterface from '../components/combat/allyInterface'
@@ -11,13 +13,17 @@ import {fetchCharacter} from '../actions';
 import {setCharCardState} from '../actions/modals';
 import {loseHP} from '../actions/enemyActions';
 import {allyLoseHP} from '../actions/allyActions';
-import {attackReady, switchTurn} from '../actions/mechanicsActions';
+import {attackReady, switchTurn,incrementEnemiesAttacked, combatStart} from '../actions/mechanicsActions';
 
 class CombatContainer extends React.Component {
+   componentDidMount(){
+       this.props.combatStart();
+   }
 
     render() {
-        console.log('zycie', this.props.mainChar.stats.hp);
         let renderCharCard = this.props.charCard.charCardVisibility ? <CharCard {...this.props}/> : null;
+
+        //this.createTurnOrder();
         return (
             <div className="d-flex justify-content-between ">
                 <AllyInterface {...this.props}/>
@@ -48,8 +54,8 @@ function mapDispatchToProps(dispatch) {
         setCharCardState: (visibility) =>{
             dispatch(setCharCardState(visibility))
         },
-        loseHP: (amount) =>{
-            dispatch(loseHP(amount))
+        loseHP: (amount, index) =>{
+            dispatch(loseHP(amount, index))
         },
         allyLoseHP: (amount) =>{
             dispatch(allyLoseHP(amount))
@@ -59,6 +65,12 @@ function mapDispatchToProps(dispatch) {
         },
         switchTurn: (whoseTurn) =>{
             dispatch(switchTurn(whoseTurn))
+        },
+        incrementEnemiesAttacked: () =>{
+            dispatch(incrementEnemiesAttacked())
+        },
+        combatStart: () =>{
+            dispatch(combatStart())
         }
     }
 }

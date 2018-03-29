@@ -13,7 +13,8 @@ let initial_state = {
         magic: null,
         magicResist: null,
         agility: null,
-        luck: null
+        luck: null,
+        speed: null,
     },
     eq:{
         head: 'https://i.pinimg.com/originals/2e/a8/51/2ea851e26242a29461b14ec21004dfe2.png',
@@ -29,7 +30,7 @@ export default (state = initial_state, action) => {
     switch (action.type) {
         case FETCH_CHARACTER: {
             const{name, title,classGame, portrait, statistics } = action.payload;
-            const {hp, mp, strength, defence, magic, magicResist, agility, luck} = statistics;
+            const {hp, mp, strength, defence, magic, magicResist, agility, luck, speed} = statistics;
             return Object.assign({}, state, {
                 name: name,
                 title,
@@ -43,7 +44,8 @@ export default (state = initial_state, action) => {
                     magic,
                     magicResist,
                     agility,
-                    luck,                }
+                    luck,       
+                    speed         }
             })
         }
         case 'ALLY_LOSE_HP':{

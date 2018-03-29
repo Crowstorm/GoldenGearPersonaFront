@@ -20,7 +20,7 @@ class CharCard extends React.Component {
 
     render() {
         console.log(this.props)
-        const { hp, mp, strength, defence, magic, magicResist, agility, luck } = this.props.mainChar.stats
+        const { hp, mp, strength, defence, magic, magicResist, agility, luck, speed } = this.props.mainChar.stats
         const { name, title, classGame } = this.props.mainChar
 
         return (
@@ -54,7 +54,7 @@ class CharCard extends React.Component {
                         <div className="statsCard d-flex flex-column justify-content-around align-items-center">
                             <p> Hp: {hp}, Mp: {mp} </p>
                             <p> Strength: {strength}, Defence: {defence}, Agility: {agility} </p>
-                            <p> Magic: {magic}, Magic Resist: {magicResist}, Luck: {luck} </p>
+                            <p> Magic: {magic}, Magic Resist: {magicResist}, Luck: {luck}, Speed: {speed} </p>
                         </div>
 
                         <div className="nameCard d-flex flex-column justify-content-around align-items-center">

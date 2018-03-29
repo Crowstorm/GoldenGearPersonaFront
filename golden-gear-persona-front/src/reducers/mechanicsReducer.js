@@ -1,6 +1,7 @@
 let initial_state = {
     attackReady: false,
     turn: 'ally',
+    noOfEnemiesAttacked: 0,
 };
 
 export default (state = initial_state, action) => {
@@ -15,6 +16,12 @@ export default (state = initial_state, action) => {
             return{
                 ...state,
                 turn: action.whoseTurn
+            }
+        }
+        case 'INCREMENT_ENEMIES_ATTACKED':{
+            return{
+                ...state,
+                noOfEnemiesAttacked: state.noOfEnemiesAttacked + 1
             }
         }
         default: {
