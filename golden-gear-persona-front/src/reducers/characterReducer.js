@@ -6,7 +6,7 @@ let initial_state = {
     classGame: null,
     portrait: null,
     stats: {
-        hp: null,
+        hp: 25,
         mp: null,
         strength: null,
         defence: null,

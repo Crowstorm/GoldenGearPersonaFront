@@ -1,6 +1,6 @@
 let initial_state = {
     attackReady: false,
-    turn: 'ally',
+    turn: 'enemy',
     noOfEnemiesAttacked: 0,
 };
 
@@ -22,6 +22,12 @@ export default (state = initial_state, action) => {
             return{
                 ...state,
                 noOfEnemiesAttacked: state.noOfEnemiesAttacked + 1
+            }
+        }
+        case 'RESET_ENEMIES_ATTACKED':{
+            return{
+                ...state,
+                noOfEnemiesAttacked: 0
             }
         }
         default: {
