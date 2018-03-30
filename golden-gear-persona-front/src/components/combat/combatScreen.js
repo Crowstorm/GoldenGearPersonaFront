@@ -4,28 +4,6 @@ import _ from 'lodash';
 
 class CombatScreen extends React.Component {
 
-    // componentWillUpdate(nextProps, nextState) {
-    //     // if (nextProps.mechanics.turn === 'enemy') {
-    //     //         let i = 0;
-    //     //         _.forEach(this.props.enemies, (enemy, index) =>{
-    //     //             setTimeout(this.handleEnemyAttack, 3000 * index)
-    //     //         }) 
-    //     // }
-    //     _.forEach(this.props.enemies, (enemy, index) => {
-    //         if(nextProps.mechanics.turn === enemy.name){
-    //             // setTimeout(this.handleEnemyAttack, 3000)
-    //             this.handleEnemyAttack()
-    //         }
-    //     });
-    // }
-    componentWillMount(){
-        _.forEach(this.props.enemies, (enemy, index) => {
-            if(this.props.mechanics.turn === enemy.name){
-                // setTimeout(this.handleEnemyAttack, 3000)
-                this.handleEnemyAttack(enemy, index)
-            }
-        });
-    }
     handleAllyAttack = () => {
         let dmg = 5
         this.props.attackReady(true);

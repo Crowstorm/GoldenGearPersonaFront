@@ -1,30 +1,51 @@
+import _ from 'lodash'
+
+import { allyLoseHP } from './allyActions'
+
 const ATTACK_READY = "ATTACK_READY";
 const SWITCH_TURN = 'SWITCH_TURN'
 
+
+
 export const combatStart = () => {
     return function (dispatch, getState) {
-        function gowno(){
-            let setTimeoutPromise = new Promise(resolve => {
-                let success = true;
-                setTimeout(function () { resolve(success) }, 2000);
+        function enemyTurn() {
+            //posortowanie wzgledem szybkosci
+            let fighters = [];
+            let index = getState().mechanics.noOfEnemiesAttacked;
+            const enemies = getState().enemy;
+            _.forEach(enemies, (enemy, index) => {
+                fighters.push(enemy);
             })
-    
-            setTimeoutPromise.then((resp) => {
-                if (resp) {
+            fighters.sort(function (a, b) {
+                return b.stats.speed - a.stats.speed
+            })
+            //wykonanie ataku
+            let enemyDealDamagePromise = new Promise(resolve => {
+                let success = true;
+                let amount = fighters[index].stats.speed;
+                setTimeout(function () {
                     dispatch({
-                        type: 'INCREMENT_ENEMIES_ATTACKED'
+                        type: 'ALLY_LOSE_HP',
+                        amount
                     })
-                }
-                if (getState().mechanics.noOfEnemiesAttacked < 5) {
+                    resolve(success);
+                }, 2000);
+            })
+
+            enemyDealDamagePromise.then((resp) => {
+                dispatch({
+                    type: 'INCREMENT_ENEMIES_ATTACKED'
+                })
+                //czy koniec walki?
+                if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
                     console.log(getState().mechanics.noOfEnemiesAttacked)
-                    combatStart();
-                    gowno();
+                    enemyTurn();
                 }
             })
         }
-        
-        gowno();
 
+        enemyTurn();
     }
 }
 
