@@ -1,6 +1,6 @@
 let initial_state = {
     attackReady: false,
-    turn: 'enemy',
+    turn: 'ally',
     noOfEnemiesAttacked: 0,
 };
 

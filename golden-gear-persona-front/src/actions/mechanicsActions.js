@@ -12,6 +12,48 @@ export const combatStart2 = () => {
             if (getState().mechanics.turn === "ally") {
                 //ally turn
                 console.log('tura ally')
+                const allyTurn = () => {
+                    console.log('dzialam');
+                    let allyPickTargetPromise = new Promise(resolve => {
+                        let handleKeyDown = (e) => {
+                            console.log(e);
+                            if(getState().mechanics.turn === "enemy"){
+                                let i = 'O KURWA'
+                                resolve(i)
+                            }
+                            // switch (e.key) {
+                            //     case "ArrowUp": {
+                            //         console.log('szczalka w gore');
+                            //         resolve(e.key);
+                            //         break;
+                            //     }
+
+                            //     default: { return }
+                            // }
+                        }
+                        document.addEventListener("mousedown", handleKeyDown);
+                       
+
+                    })
+                    // let amount = 4;
+                    // let index = 1;
+                    // dispatch({
+                    //     type: 'LOSE_HP',
+                    //     amount,
+                    //     index
+                    // })
+                    allyPickTargetPromise.then((resp) => {
+                        let whoseTurn = 'enemy'
+                        console.log('resp', resp)
+                        dispatch({
+                            type: SWITCH_TURN,
+                            whoseTurn
+                        })
+                        combatLoop();
+                    })
+
+                }
+                allyTurn();
             } else if (getState().mechanics.turn === 'enemy') {
                 //enemy turn
                 function enemyTurn() {
@@ -51,17 +93,22 @@ export const combatStart2 = () => {
                             type: 'INCREMENT_ENEMIES_ATTACKED'
                         })
 
-                        if (getState().mechanics.noOfEnemiesAttacked === 3) {
-                            dispatch({
-                                type: 'RESET_ENEMIES_ATTACKED'
-                            })
-                        }
 
                         //czy koniec walki?
                         if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
                             console.log(getState().mechanics.noOfEnemiesAttacked)
 
                             enemyTurn();
+                        } else {
+                            let whoseTurn = 'ally'
+                            dispatch({
+                                type: SWITCH_TURN,
+                                whoseTurn
+                            })
+                            dispatch({
+                                type: 'RESET_ENEMIES_ATTACKED'
+                            })
+                            combatLoop();
                         }
                     })
 
