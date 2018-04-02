@@ -11,7 +11,7 @@ class AllyInterface extends React.Component {
     }
 
     getMainCharInfo = () => {
-        const {name, portrait, stats } = this.props.mainChar;
+        const {name, portrait, stats } = this.props.mainChar[0];
         const {hp, mp} = stats;
         return (
             <div className="d-flex flex-column" onClick={()=>this.handleOpenCharCard()}>

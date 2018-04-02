@@ -30,11 +30,11 @@ class CombatScreen extends React.Component {
             <div className="container" style={{marginTop: 100}}>
                 <div className="row">
                     <div> <button onClick={() => this.handleAllyAttack()}> Basic Attack </button> </div>
-                    <div> <button > Magic </button> </div>
+                    <div> <button > Skills </button> </div>
                 </div>
                 <div className="row">
-                    <div> <button> Inventory </button> </div>
-                    <div> <button> Pass Turn </button> </div>
+                    <div> <button> Magic </button> </div>
+                    <div> <button> Consumables </button> </div>
                 </div>
             </div>
         )

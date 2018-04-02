@@ -49,14 +49,18 @@ export const combatStart2 = () => {
                         return b.stats.speed - a.stats.speed
                     })
                     let index = getState().mechanics.noOfEnemiesAttacked;
+                    console.log('index2', index)
                     //dispatch attacks per enemy
                     let enemyDealDamagePromise = new Promise(resolve => {
                         let success = true;
+                        console.log('index', index)
+                        console.log(fighters[index].stats.attack, 'lll')
                         let amount = fighters[index].stats.attack;
+                        let allyIndex = 0;
                         setTimeout(function () {
                             dispatch({
                                 type: 'ALLY_LOSE_HP',
-                                amount
+                                amount, allyIndex
                             })
                             resolve(success);
                         }, 1000);
@@ -64,7 +68,7 @@ export const combatStart2 = () => {
                     //check if player alive
 
                     enemyDealDamagePromise.then((resp) => {
-                        if (getState().mainCharacter.stats.hp <= 0) {
+                        if (getState().mainCharacter[0].stats.hp <= 0) {
                             console.log('umarles');
                             alert('u ded nigga lol')
                             return 0
