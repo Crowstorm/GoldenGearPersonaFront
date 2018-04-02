@@ -30,7 +30,7 @@ class EnemyInterface extends React.Component {
         let enemiesRenderer = this.renderEnemies();
         return (
             <div style={{ float: 'right', border: '1px solid red', width: 200, height: 800 }}>
-                <div className="container d-flex flex-column justify-content-center">
+                <div id="gowno" className="container d-flex flex-column justify-content-center">
                     {enemiesRenderer}
                 </div>
             </div>

@@ -18,30 +18,12 @@ export const combatStart2 = () => {
                         let handleKeyDown = (e) => {
                             console.log(e);
                             if(getState().mechanics.turn === "enemy"){
-                                let i = 'O KURWA'
+                                let i = 'O KURWA DZIALA'
                                 resolve(i)
                             }
-                            // switch (e.key) {
-                            //     case "ArrowUp": {
-                            //         console.log('szczalka w gore');
-                            //         resolve(e.key);
-                            //         break;
-                            //     }
-
-                            //     default: { return }
-                            // }
                         }
                         document.addEventListener("mousedown", handleKeyDown);
-                       
-
                     })
-                    // let amount = 4;
-                    // let index = 1;
-                    // dispatch({
-                    //     type: 'LOSE_HP',
-                    //     amount,
-                    //     index
-                    // })
                     allyPickTargetPromise.then((resp) => {
                         let whoseTurn = 'enemy'
                         console.log('resp', resp)
@@ -51,7 +33,6 @@ export const combatStart2 = () => {
                         })
                         combatLoop();
                     })
-
                 }
                 allyTurn();
             } else if (getState().mechanics.turn === 'enemy') {
@@ -78,7 +59,7 @@ export const combatStart2 = () => {
                                 amount
                             })
                             resolve(success);
-                        }, 2000);
+                        }, 1000);
                     })
                     //check if player alive
 
@@ -111,9 +92,6 @@ export const combatStart2 = () => {
                             combatLoop();
                         }
                     })
-
-                    //switch turn to ally
-                    //end turn check if next turn needed, if yes, combatLoop()
                 }
                 enemyTurn();
             }
