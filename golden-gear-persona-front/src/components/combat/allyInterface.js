@@ -23,8 +23,11 @@ class AllyInterface extends React.Component {
     }
 
 
-    render() {
 
+
+
+
+    render() {
         let renderMainCharInfo = this.props.mainChar ? this.getMainCharInfo() : 'lol'
         return (
             <div style={{ float: 'left', border: "1px solid green", width: 200, height: 800 }}>

@@ -60,7 +60,12 @@ export const BLOCKED = [
     //throne and table
 
     //counter
-    
+    {x:12, y:16},
+    {x:2, y:10},     {x:3, y:10},     {x:4, y:10}, 
+
+
+
+
 
 
 ]
