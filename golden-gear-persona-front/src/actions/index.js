@@ -19,6 +19,7 @@ export const createCharacter = (payload) => {
 export const fetchCharacter = () =>{
     return function (dispatch) {
         axios.get('/api/current_user').then(res => {
+            
             dispatch({ type: FETCH_CHARACTER, payload: res.data.character })
         })
     }
@@ -27,6 +28,7 @@ export const fetchCharacter = () =>{
 export const fetchUser = () => {
     return function (dispatch) {
         axios.get('/api/current_user').then(res => {
+            console.log('resik', res);
             dispatch({ type: FETCH_USER, payload: res.data })
         })
     }

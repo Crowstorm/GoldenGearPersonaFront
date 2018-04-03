@@ -1,13 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
+import AttackInterface from './subPanels/attackInterface';
 
 
 class CombatScreen extends React.Component {
-
-    handleAllyAttack = () => {
-        let dmg = 5
-        this.props.attackReady(true);
-    }
 
     handleEnemyAttack = (enemy, index) => {
         //deal dmg
@@ -27,16 +23,7 @@ class CombatScreen extends React.Component {
 
     getAllyTurnInterface = () => {
         return (
-            <div className="container" style={{marginTop: 100}}>
-                <div className="row">
-                    <div> <button onClick={() => this.handleAllyAttack()}> Basic Attack </button> </div>
-                    <div> <button > Skills </button> </div>
-                </div>
-                <div className="row">
-                    <div> <button> Magic </button> </div>
-                    <div> <button> Consumables </button> </div>
-                </div>
-            </div>
+            <AttackInterface {...this.props}/>
         )
     }
 
