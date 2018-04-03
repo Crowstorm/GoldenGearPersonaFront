@@ -57,12 +57,13 @@ export const combatStart2 = () => {
                         console.log(fighters[index].stats.attack, 'lll')
                         let amount = fighters[index].stats.attack;
                         let allyIndex = 0;
+                        let data = {name: fighters[index].name, dmg: amount, allyIndex: allyIndex}
                         setTimeout(function () {
                             dispatch({
                                 type: 'ALLY_LOSE_HP',
                                 amount, allyIndex
                             })
-                            resolve(success);
+                            resolve(data);
                         }, 1000);
                     })
                     //check if player alive
@@ -77,7 +78,13 @@ export const combatStart2 = () => {
                         dispatch({
                             type: 'INCREMENT_ENEMIES_ATTACKED'
                         })
-
+                        
+                        let info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainCharacter[resp.allyIndex].name}`;
+                        console.log(info, 'info')
+                        dispatch({
+                            type: 'ADD_INFO_TO_ARRAY',
+                            info
+                        })
 
                         //czy koniec walki?
                         if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
@@ -105,53 +112,59 @@ export const combatStart2 = () => {
 }
 
 
-export const combatStart = () => {
-    return function (dispatch, getState) {
-        function enemyTurn() {
-            //posortowanie wzgledem szybkosci
-            let fighters = [];
-            let index = getState().mechanics.noOfEnemiesAttacked;
-            const enemies = getState().enemy;
-            _.forEach(enemies, (enemy, index) => {
-                fighters.push(enemy);
-            })
-            fighters.sort(function (a, b) {
-                return b.stats.speed - a.stats.speed
-            })
-            //wykonanie ataku
-            let enemyDealDamagePromise = new Promise(resolve => {
-                let success = true;
-                let amount = fighters[index].stats.attack;
-                setTimeout(function () {
-                    dispatch({
-                        type: 'ALLY_LOSE_HP',
-                        amount
-                    })
-                    resolve(success);
-                }, 2000);
-            })
+// export const combatStart = () => {
+//     return function (dispatch, getState) {
+//         function enemyTurn() {
+//             //posortowanie wzgledem szybkosci
+//             let fighters = [];
+//             let index = getState().mechanics.noOfEnemiesAttacked;
+//             const enemies = getState().enemy;
+//             _.forEach(enemies, (enemy, index) => {
+//                 fighters.push(enemy);
+//             })
+//             fighters.sort(function (a, b) {
+//                 return b.stats.speed - a.stats.speed
+//             })
+//             //wykonanie ataku
+//             let enemyDealDamagePromise = new Promise(resolve => {
+//                 let amount = fighters[index].stats.attack;
+//                 let data = {name: fighters[index].name, dmg: amount}
+//                 setTimeout(function () {
+//                     dispatch({
+//                         type: 'ALLY_LOSE_HP',
+//                         amount
+//                     })
+//                     resolve(data);
+//                 }, 2000);
+//             })
 
-            enemyDealDamagePromise.then((resp) => {
-                dispatch({
-                    type: 'INCREMENT_ENEMIES_ATTACKED'
-                })
-                //czy koniec walki?
-                if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
-                    console.log(getState().mechanics.noOfEnemiesAttacked)
-                    enemyTurn();
-                } else {
-                    let whoseTurn = 'ally'
-                    dispatch({
-                        type: SWITCH_TURN,
-                        whoseTurn
-                    })
-                }
-            })
-        }
+//             enemyDealDamagePromise.then((resp) => {
+//                 dispatch({
+//                     type: 'INCREMENT_ENEMIES_ATTACKED'
+//                 })
+//                 let info = `${resp.name} dealt ${resp.dmg} damage`;
+//                 console.log(info, 'info')
+//                 dispatch({
+//                     type: 'ADD_INFO_TO_ARRAY',
+//                     info
+//                 })
+//                 //czy koniec walki?
+//                 if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
+//                     console.log(getState().mechanics.noOfEnemiesAttacked)
+//                     enemyTurn();
+//                 } else {
+//                     let whoseTurn = 'ally'
+//                     dispatch({
+//                         type: SWITCH_TURN,
+//                         whoseTurn
+//                     })
+//                 }
+//             })
+//         }
 
-        enemyTurn();
-    }
-}
+//         enemyTurn();
+//     }
+// }
 
 export const attackReady = (isReady) => {
     return function (dispatch) {
