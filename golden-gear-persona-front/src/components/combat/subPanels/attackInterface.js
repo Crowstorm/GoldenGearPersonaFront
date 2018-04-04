@@ -8,17 +8,19 @@ class AttackInterface extends React.Component{
     
     render(){
         const buttonStyle = {
-            width: '200px',
+            width: '180px',
             height: '50px',
             border: "1px solid red"
         } 
+        let i = this.props.mechanics.attackingAllyIndex;
         return(
-            <div className="container" style={{marginTop: 450}}>
-                <div className="row" style={{marginBottom: 0}}>
+            <div className=" d-flex align-items-center justify-content-center" style={{marginTop: 450, position: 'relative'}}>
+                <div className="d-flex flex-column" style={{marginBottom: 0}}>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle} onClick={()=> this.handleAllyAttack()}> Basic Attack </div>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Skills </div>
                 </div>
-                <div className="row" style={{marginBottom: 0}}>
+                <img src={this.props.mainChar[i].portrait} style={{height: 50, zIndex: 5, position: 'absolute', borderRadius: 100, }}/>
+                <div className="d-flex flex-column" style={{marginBottom: 0}}>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Magic </div>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Consumables </div>
                 </div>

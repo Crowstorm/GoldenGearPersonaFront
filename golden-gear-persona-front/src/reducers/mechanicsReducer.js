@@ -3,7 +3,8 @@ let initial_state = {
     turn: 'ally',
     noOfEnemiesAttacked: 0,
     infoArray: [],
-    characterIndex: null
+    characterIndex: null,
+    attackingAllyIndex: 0
 };
 
 export default (state = initial_state, action) => {
@@ -42,6 +43,12 @@ export default (state = initial_state, action) => {
             return {
                 ...state,
                 characterIndex: action.index
+            }
+        }
+        case 'SET_ATTACKING_ALLY_INDEX':{
+            return {
+                ...state,
+                attackingAllyIndex: action.index
             }
         }
         default: {

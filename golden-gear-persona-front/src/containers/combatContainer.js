@@ -13,7 +13,7 @@ import {fetchCharacter} from '../actions';
 import {setCharCardState} from '../actions/modals';
 import {loseHP} from '../actions/enemyActions';
 import {allyLoseHP} from '../actions/allyActions';
-import {attackReady, switchTurn,incrementEnemiesAttacked, combatStart2, setCharacterIndex} from '../actions/mechanicsActions';
+import {attackReady, switchTurn,incrementEnemiesAttacked, combatStart2, setCharacterIndex, setAttackingAllyIndex} from '../actions/mechanicsActions';
 
 class CombatContainer extends React.Component {
    componentDidMount(){
@@ -74,6 +74,9 @@ function mapDispatchToProps(dispatch) {
         },
         setCharacterIndex: (index) =>{
             dispatch(setCharacterIndex(index))
+        },
+        setAttackingAllyIndex: (index) =>{
+            dispatch(setAttackingAllyIndex(index))
         }
     }
 }

@@ -56,7 +56,7 @@ export const combatStart2 = () => {
                         console.log('index', index)
                         console.log(fighters[index].stats.attack, 'lll')
                         let amount = fighters[index].stats.attack;
-                        let allyIndex = 0;
+                        let allyIndex = Math.floor((Math.random() * 3));
                         let data = {name: fighters[index].name, dmg: amount, allyIndex: allyIndex}
                         setTimeout(function () {
                             dispatch({
@@ -115,6 +115,15 @@ export const setCharacterIndex = (index) =>{
     return function(dispatch){
         dispatch({
             type: 'SET_CHARACTER_INDEX',
+            index
+        })
+    }
+}
+
+export const setAttackingAllyIndex = (index) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'SET_ATTACKING_ALLY_INDEX',
             index
         })
     }

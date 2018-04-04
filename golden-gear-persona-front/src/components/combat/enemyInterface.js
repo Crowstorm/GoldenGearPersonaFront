@@ -3,17 +3,29 @@ import React from 'react'
 import _ from 'lodash';
 
 class EnemyInterface extends React.Component {
-    handleTakeDamage = (index) =>{
-        if(this.props.mechanics.attackReady){
+    handleTakeDamage = (index) => {
+        let charIndex = this.props.mechanics.attackingAllyIndex;
+        if (this.props.mechanics.attackReady) {
             this.props.loseHP(5, index);
             this.props.attackReady(false);
-            this.props.switchTurn('enemy')
+            this.props.setAttackingAllyIndex(charIndex + 1)
+            if (charIndex < 3) {
+                this.props.setAttackingAllyIndex(charIndex + 1)
+            } else if (charIndex === 3) {
+                this.props.setAttackingAllyIndex(0)
+                this.props.switchTurn('enemy')
+
+            } else {
+                this.props.setAttackingAllyIndex(0)
+                this.props.switchTurn('enemy')
+            }
+
         }
     }
 
     renderEnemies = () => {
         const { enemies } = this.props;
-        return _.map(enemies, (enemy, index )=> {
+        return _.map(enemies, (enemy, index) => {
             //console.log('index', index)
             return (
                 <div key={index} onClick={() => this.handleTakeDamage(index)}>
