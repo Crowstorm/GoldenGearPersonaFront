@@ -24,7 +24,79 @@ let initial_state = [
             rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
         }
-    }
+    },
+    {
+        name: 'Do bicia',
+        title: 'Brak',
+        classGame: 'warrior',
+        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/3/3d/Ryuji_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221544',
+        stats: {
+            hp: 30,
+            mp: 10,
+            strength: 7,
+            defence: 6,
+            magic: 2,
+            magicResist: 2,
+            agility: 4,
+            luck: 2,
+            speed: 4,
+        },
+        eq: {
+            head: 'https://i.pinimg.com/originals/2e/a8/51/2ea851e26242a29461b14ec21004dfe2.png',
+            chest: 'http://piq.codeus.net/static/media/userpics/piq_65251_400x400.png',
+            leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
+            rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
+            legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
+        }
+    },
+    {
+        name: 'Do bicia',
+        title: 'Brak',
+        classGame: 'warrior',
+        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/3/3d/Ryuji_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221544',
+        stats: {
+            hp: 30,
+            mp: 10,
+            strength: 7,
+            defence: 6,
+            magic: 2,
+            magicResist: 2,
+            agility: 4,
+            luck: 2,
+            speed: 4,
+        },
+        eq: {
+            head: 'https://i.pinimg.com/originals/2e/a8/51/2ea851e26242a29461b14ec21004dfe2.png',
+            chest: 'http://piq.codeus.net/static/media/userpics/piq_65251_400x400.png',
+            leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
+            rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
+            legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
+        }
+    },
+    {
+        name: 'Do bicia',
+        title: 'Brak',
+        classGame: 'warrior',
+        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/3/3d/Ryuji_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221544',
+        stats: {
+            hp: 30,
+            mp: 10,
+            strength: 7,
+            defence: 6,
+            magic: 2,
+            magicResist: 2,
+            agility: 4,
+            luck: 2,
+            speed: 4,
+        },
+        eq: {
+            head: 'https://i.pinimg.com/originals/2e/a8/51/2ea851e26242a29461b14ec21004dfe2.png',
+            chest: 'http://piq.codeus.net/static/media/userpics/piq_65251_400x400.png',
+            leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
+            rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
+            legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
+        }
+    },
 ];
 
 export default (state = initial_state, action) => {
@@ -35,6 +107,7 @@ export default (state = initial_state, action) => {
             return [
                 ...state.slice(0, 0),
                 {
+                    ...state[0],
                     name: name,
                     title,
                     classGame,

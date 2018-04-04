@@ -3,6 +3,7 @@ let initial_state = {
     turn: 'ally',
     noOfEnemiesAttacked: 0,
     infoArray: [],
+    characterIndex: null
 };
 
 export default (state = initial_state, action) => {
@@ -35,6 +36,12 @@ export default (state = initial_state, action) => {
             return {
                 ...state,
                 infoArray: [...state.infoArray, action.info]
+            }
+        }
+        case 'SET_CHARACTER_INDEX':{
+            return {
+                ...state,
+                characterIndex: action.index
             }
         }
         default: {
