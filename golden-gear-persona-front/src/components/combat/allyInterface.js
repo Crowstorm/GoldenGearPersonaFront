@@ -12,18 +12,6 @@ class AllyInterface extends React.Component {
         this.props.setCharCardState(true)
     }
 
-    // getMainCharInfo = () => {
-    //     const { name, portrait, stats } = this.props.mainChar[0];
-    //     const { hp, mp } = stats;
-    //     return (
-    //         <div className="d-flex flex-column" onClick={() => this.handleOpenCharCard()}>
-    //             <p className="d-flex justify-content-center" style={{ marginTop: 15 }}>{name}</p>
-    //             <img src={portrait} style={{ height: 100, border: '3px solid green' }} />
-    //             <p className="d-flex justify-content-center" style={{ marginTop: 15 }}> Hp: {hp} Mp: {mp} </p>
-    //         </div>
-    //     )
-    // }
-
     getCharactersForCombat = () => {
         const { mainChar } = this.props;
         return _.map(mainChar, (character, index) => {

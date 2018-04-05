@@ -11,17 +11,14 @@ export const combatStart2 = () => {
             //check whose turn
             if (getState().mechanics.turn === "ally") {
                 //ally turn
-                console.log('tura ally')
                 const allyTurn = () => {
-                    console.log('dzialam');
                     let allyPickTargetPromise = new Promise(resolve => {
                         let handleKeyDown = (e) => {
-                            console.log(e);
-                            if(getState().mechanics.turn === "enemy"){
-                                let i = 'O KURWA DZIALA'
+                            if (getState().mechanics.turn === "enemy") {
+                                let i = 'dziala'
                                 resolve(i)
                             }
-                            if(getState().enemy.length === 0){
+                            if (getState().enemy.length === 0) {
                                 alert('wygrales');
                                 return 0;
                             }
@@ -30,7 +27,6 @@ export const combatStart2 = () => {
                     })
                     allyPickTargetPromise.then((resp) => {
                         let whoseTurn = 'enemy'
-                        console.log('resp', resp)
                         dispatch({
                             type: SWITCH_TURN,
                             whoseTurn
@@ -42,7 +38,6 @@ export const combatStart2 = () => {
             } else if (getState().mechanics.turn === 'enemy') {
                 //enemy turn
                 function enemyTurn() {
-                    console.log('tura enemy')
                     //sort enemies
                     let fighters = [];
                     const enemies = getState().enemy;
@@ -53,15 +48,12 @@ export const combatStart2 = () => {
                         return b.stats.speed - a.stats.speed
                     })
                     let index = getState().mechanics.noOfEnemiesAttacked;
-                    console.log('index2', index)
                     //dispatch attacks per enemy
                     let enemyDealDamagePromise = new Promise(resolve => {
                         let success = true;
-                        console.log('index', index)
-                        console.log(fighters[index].stats.attack, 'lll')
                         let amount = fighters[index].stats.attack;
                         let allyIndex = Math.floor((Math.random() * 3));
-                        let data = {name: fighters[index].name, dmg: amount, allyIndex: allyIndex}
+                        let data = { name: fighters[index].name, dmg: amount, allyIndex: allyIndex }
                         setTimeout(function () {
                             dispatch({
                                 type: 'ALLY_LOSE_HP',
@@ -75,14 +67,14 @@ export const combatStart2 = () => {
                     enemyDealDamagePromise.then((resp) => {
                         if (getState().mainCharacter[0].stats.hp <= 0) {
                             console.log('umarles');
-                            alert('u ded nigga lol')
+                            alert('Przegrales')
                             return 0
                         }
 
                         dispatch({
                             type: 'INCREMENT_ENEMIES_ATTACKED'
                         })
-                        
+
                         let info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainCharacter[resp.allyIndex].name}`;
                         console.log(info, 'info')
                         dispatch({
@@ -92,8 +84,6 @@ export const combatStart2 = () => {
 
                         //czy koniec walki?
                         if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
-                            console.log(getState().mechanics.noOfEnemiesAttacked)
-
                             enemyTurn();
                         } else {
                             let whoseTurn = 'ally'
@@ -115,8 +105,8 @@ export const combatStart2 = () => {
     }
 }
 
-export const setCharacterIndex = (index) =>{
-    return function(dispatch){
+export const setCharacterIndex = (index) => {
+    return function (dispatch) {
         dispatch({
             type: 'SET_CHARACTER_INDEX',
             index
@@ -124,8 +114,8 @@ export const setCharacterIndex = (index) =>{
     }
 }
 
-export const setAttackingAllyIndex = (index) =>{
-    return function(dispatch){
+export const setAttackingAllyIndex = (index) => {
+    return function (dispatch) {
         dispatch({
             type: 'SET_ATTACKING_ALLY_INDEX',
             index
