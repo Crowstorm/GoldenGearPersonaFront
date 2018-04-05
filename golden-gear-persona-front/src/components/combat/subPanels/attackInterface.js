@@ -10,7 +10,8 @@ class AttackInterface extends React.Component{
         const buttonStyle = {
             width: '180px',
             height: '50px',
-            border: "1px solid red"
+            border: "1px solid red",
+            webkitAppearance:'button',
         } 
         let i = this.props.mechanics.attackingAllyIndex;
         return(
@@ -19,7 +20,7 @@ class AttackInterface extends React.Component{
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle} onClick={()=> this.handleAllyAttack()}> Basic Attack </div>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Skills </div>
                 </div>
-                <img src={this.props.mainChar[i].portrait} style={{height: 50, zIndex: 5, position: 'absolute', borderRadius: 100, }}/>
+                <img src={this.props.mainChar[i].portrait} style={{height: 50, zIndex: 5, position: 'absolute', borderRadius: 100, border: '1px solid black'}}/>
                 <div className="d-flex flex-column" style={{marginBottom: 0}}>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Magic </div>
                     <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle}> Consumables </div>

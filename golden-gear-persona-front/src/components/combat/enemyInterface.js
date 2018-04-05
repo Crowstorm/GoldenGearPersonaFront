@@ -30,7 +30,7 @@ class EnemyInterface extends React.Component {
             return (
                 <div key={index} onClick={() => this.handleTakeDamage(index)}>
                     <div style={{ marginTop: 15 }}> {enemy.name} </div>
-                    <img src="https://pre00.deviantart.net/8ae3/th/pre/i/2016/347/d/3/avatar_orc_guerrier___warrior_homme___man_jdr_by_sarnia7-darhfx8.jpg" style={{ height: 100, marginTop: 15 }} />
+                    <img src={enemy.portrait} style={{ height: 100, marginTop: 15 }} />
                     <div style={{ marginTop: 15 }}> Hp: {enemy.stats.hp}, Mp: {enemy.stats.mp} </div>
                 </div>
             )

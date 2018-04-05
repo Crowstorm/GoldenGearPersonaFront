@@ -21,6 +21,10 @@ export const combatStart2 = () => {
                                 let i = 'O KURWA DZIALA'
                                 resolve(i)
                             }
+                            if(getState().enemy.length === 0){
+                                alert('wygrales');
+                                return 0;
+                            }
                         }
                         document.addEventListener("mousedown", handleKeyDown);
                     })
