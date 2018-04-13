@@ -29,6 +29,9 @@ let initial_state = [
         ],
         magic:[
 
+        ],
+        consumables:[
+            'healing potion'
         ]
     },
     {
