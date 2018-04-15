@@ -19,7 +19,6 @@ export const createCharacter = (payload) => {
 export const fetchCharacter = () =>{
     return function (dispatch) {
         axios.get('/api/current_user').then(res => {
-            
             dispatch({ type: FETCH_CHARACTER, payload: res.data.character })
         })
     }

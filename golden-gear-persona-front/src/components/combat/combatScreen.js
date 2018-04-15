@@ -12,7 +12,6 @@ class CombatScreen extends React.Component {
         )
     }
 
-
     render() {
         //    let renderAllyAttackOptions = (this.props.mechanics.turn === "ally") ? 'ally' : "enemy";
         let i = this.props.mechanics.attackingAllyIndex
