@@ -18,6 +18,8 @@ class EnemyInterface extends React.Component {
             let totalHitChance = playerHitChance - enemyEvasion;
             if(totalHitChance > randomHitChance){
                 this.props.loseHP(totalDmg, index);
+                let info = `${this.props.mainChar[i].name} dealt ${totalDmg} to ${this.props.enemies[index].name}`
+                this.props.addInfoToArray(info);
             } else {
                 let info = `${this.props.mainChar[i].name} missed!`
                 this.props.addInfoToArray(info);

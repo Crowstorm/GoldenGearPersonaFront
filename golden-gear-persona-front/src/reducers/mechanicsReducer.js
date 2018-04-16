@@ -43,7 +43,8 @@ export default (state = initial_state, action) => {
         case 'ADD_INFO_TO_ARRAY': {
             return {
                 ...state,
-                infoArray: [...state.infoArray, action.info]
+                infoArray: [action.info, ...state.infoArray ]
+               
             }
         }
         case 'SET_CHARACTER_INDEX':{
