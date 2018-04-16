@@ -22,7 +22,7 @@ class InfoPanel extends React.Component{
     render(){
         let renderDmgInfo = this.handleDmgInfo();
         return(
-            <div className="align-self-end d-flex justify-content-center align-items-center flex-column"style={{border: '1px solid blue', height: 200, width: 600, position: 'absolute', marginLeft: 200}}> 
+            <div className="align-self-end d-flex justify-content-center align-items-center flex-column"style={{border: '1px solid blue', height: 200, width: 600, position: 'absolute', marginLeft: 200, overflowY:'auto'}}> 
                 <p> Tura: {this.props.mechanics.turn} </p>
                 {/* <p> {this.props.mechanics.infoArray} </p> */}
                 {renderDmgInfo}

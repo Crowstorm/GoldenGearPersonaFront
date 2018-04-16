@@ -9,9 +9,13 @@ class EnemyInterface extends React.Component {
         if (this.props.mechanics.attackReady) {
             let allyDmg = this.props.mechanics.dmgPayload;
             let totalDmg = allyDmg - Math.floor(this.props.enemies[index].stats.defence/2);
-            console.log(this.props.enemies[index].defence)
-            console.log(totalDmg);
-            this.props.loseHP(totalDmg, index);
+            //hit chance
+            let randomHitChance = Math.floor((Math.random() * 100) + 1);
+            if(randomHitChance > 20){
+                this.props.loseHP(totalDmg, index);
+            } else {
+                alert('pudlo')
+            }
             this.props.attackReady(false);
             this.props.setAttackingAllyIndex(charIndex + 1)
             if (charIndex < 3) {
