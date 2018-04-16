@@ -21,9 +21,10 @@ class AttackInterface extends React.Component {
         let i = this.props.mechanics.attackingAllyIndex;
         let browse = this.props.mainChar[i][menu];
         return _.map(browse, (item) => {
+            console.log(item);
             return (
                 <div className="d-flex flex-column"> 
-                    <div className="d-flex justify-content-center flex-wrap align-items-center" >{item}  </div>
+                   <div className="d-flex justify-content-center flex-wrap align-items-center" ><img src={item.icon} style={{height: 50}} /> {item.description} </div>
                 </div>
             )
         })
@@ -43,7 +44,7 @@ class AttackInterface extends React.Component {
         console.log('propsy ataku', this.props)
         return (
             <div>
-                <div >
+                <div className='d-flex flex-column align-items-center justify-content-center' style={{position: 'absolute', border: '1px solid red', width: 360, height: 450}}>
                     {renderAdditionalMenus}
                 </div>
 

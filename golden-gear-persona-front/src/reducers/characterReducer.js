@@ -1,4 +1,5 @@
 import { FETCH_CHARACTER } from "../actions/types";
+import * as items from './items';
 
 let initial_state = [
     {
@@ -31,8 +32,9 @@ let initial_state = [
 
         ],
         consumables:[
-            'healing potion',
-            'mana potion'
+            items.healingPotion,
+            items.manaPotion
+           
         ]
     },
     {
