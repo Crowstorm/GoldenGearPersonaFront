@@ -6,16 +6,23 @@ import _ from 'lodash';
 class EnemyInterface extends React.Component {
     handleTakeDamage = (index) => {
         let charIndex = this.props.mechanics.attackingAllyIndex;
+        let i = this.props.mechanics.attackingAllyIndex;
         if (this.props.mechanics.attackReady) {
+            //calculate dmg received
             let allyDmg = this.props.mechanics.dmgPayload;
             let totalDmg = allyDmg - Math.floor(this.props.enemies[index].stats.defence/2);
             //hit chance
             let randomHitChance = Math.floor((Math.random() * 100) + 1);
-            if(randomHitChance > 20){
+            let playerHitChance = 70 + this.props.mainChar[i].stats.agility * 1.5
+            let enemyEvasion = this.props.enemies[index].stats.agility;
+            let totalHitChance = playerHitChance - enemyEvasion;
+            if(totalHitChance > randomHitChance){
                 this.props.loseHP(totalDmg, index);
             } else {
-                alert('pudlo')
+                let info = `${this.props.mainChar[i].name} missed!`
+                this.props.addInfoToArray(info);
             }
+            
             this.props.attackReady(false);
             this.props.setAttackingAllyIndex(charIndex + 1)
             if (charIndex < 3) {

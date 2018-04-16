@@ -157,3 +157,12 @@ export const calculateDmg = (dmg) =>{
         })
     }
 }
+
+export const addInfoToArray = (info) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'ADD_INFO_TO_ARRAY',
+            info
+        })
+    }
+}

@@ -6,11 +6,15 @@ class AttackInterface extends React.Component {
         super(props);
         this.state = {
             consumables: false,
-            skills: false
+            skills: false,
+            magic: false
         };
     }
 
     handleAllyAttack = (attackType) => {
+        this.setState({ consumables: false });
+        this.setState({ magic: false });
+        this.setState({ skills: false });
         let i = this.props.mechanics.attackingAllyIndex;
         if(attackType == 'basic'){
             let dmg = this.props.mainChar[i].stats.strength;
@@ -22,11 +26,18 @@ class AttackInterface extends React.Component {
 
     handleOpenConsumables = () => {
         this.setState({ skills: false });
+        this.setState({ magic: false });
         (this.state.consumables) ? this.setState({ consumables: false }) : this.setState({ consumables: true })
     }
     handleOpenSkills = () => {
         this.setState({ consumables: false });
+        this.setState({ magic: false });
         (this.state.skills) ? this.setState({ skills: false }) : this.setState({ skills: true })
+    }
+    handleOpenMagic = () => {
+        this.setState({ consumables: false });
+        this.setState({ skills: false });
+        (this.state.magic) ? this.setState({ magic: false }) : this.setState({ magic: true })
     }
 
     handleRenderConsumables = () => {
@@ -69,13 +80,23 @@ class AttackInterface extends React.Component {
         )
     }
 
+    handleRenderMagic = () =>{
+        let i = this.props.mechanics.attackingAllyIndex;
+        let browse = this.props.mainChar[i].magic;
+        if(browse.length == 0){
+            return <div> Looks like {this.props.mainChar[i].name} haven't learnt any spells yet </div>
+        }
+    }
+
     handleRenderMenus = () => {
         if (this.state.consumables) {
             return this.handleRenderConsumables();
         } else if (this.state.skills) {
             return this.handleRenderSkills();
+        } else if (this.state.magic){
+            return this.handleRenderMagic();
         } else {
-            return
+            return null
         }
     }
 
@@ -88,12 +109,7 @@ class AttackInterface extends React.Component {
         }
         let i = this.props.mechanics.attackingAllyIndex;
 
-        if (this.state.consumables) {
-            this.handleRenderConsumables();
-        } else {
 
-        }
-        // let renderAdditionalMenus = (this.state.menu) ? this.handleRenderMenus(this.state.menu) : 'elo';
         let renderAdditionalMenus = this.handleRenderMenus();
         console.log('propsy ataku', this.props)
         return (
@@ -109,7 +125,7 @@ class AttackInterface extends React.Component {
                     </div>
                     <img src={this.props.mainChar[i].portrait} style={{ height: 50, zIndex: 5, position: 'absolute', borderRadius: 100, border: '1px solid black' }} />
                     <div className="d-flex flex-column" style={{ marginBottom: 0 }}>
-                        <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle} onClick={() => this.handleOpenMenus('magic')}> Magic </div>
+                        <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle} onClick={() => this.handleOpenMagic()}> Magic </div>
                         <div className="d-flex justify-content-center flex-wrap align-items-center" style={buttonStyle} onClick={() => this.handleOpenConsumables()}> Consumables </div>
                     </div>
                 </div>
