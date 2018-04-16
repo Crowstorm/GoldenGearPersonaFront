@@ -65,7 +65,7 @@ export const combatStart2 = () => {
                     //check if player alive
 
                     enemyDealDamagePromise.then((resp) => {
-                        if (getState().mainCharacter[0].stats.hp <= 0) {
+                        if (getState().mainChar[0].stats.hp <= 0) {
                             console.log('umarles');
                             alert('Przegrales')
                             return 0
@@ -75,7 +75,7 @@ export const combatStart2 = () => {
                             type: 'INCREMENT_ENEMIES_ATTACKED'
                         })
 
-                        let info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainCharacter[resp.allyIndex].name}`;
+                        let info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainChar[resp.allyIndex].name}`;
                         console.log(info, 'info')
                         dispatch({
                             type: 'ADD_INFO_TO_ARRAY',
@@ -145,6 +145,15 @@ export const incrementEnemiesAttacked = () => {
     return function (dispatch) {
         dispatch({
             type: 'INCREMENT_ENEMIES_ATTACKED'
+        })
+    }
+}
+
+export const calculateDmg = (dmg) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'CALCULATE_DAMAGE',
+            dmg
         })
     }
 }

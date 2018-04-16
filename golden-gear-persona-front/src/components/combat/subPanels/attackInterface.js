@@ -15,6 +15,7 @@ class AttackInterface extends React.Component {
         if(attackType == 'basic'){
             let dmg = this.props.mainChar[i].stats.strength;
             console.log('dmg', dmg)
+            this.props.calculateDmg(dmg);
             this.props.attackReady(true);
         }
     }

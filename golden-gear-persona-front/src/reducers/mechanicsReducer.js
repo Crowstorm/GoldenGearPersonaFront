@@ -4,11 +4,18 @@ let initial_state = {
     noOfEnemiesAttacked: 0,
     infoArray: [],
     characterIndex: null,
-    attackingAllyIndex: 0
+    attackingAllyIndex: 0,
+    dmgPayload: null
 };
 
 export default (state = initial_state, action) => {
     switch (action.type) {
+        case 'CALCULATE_DAMAGE':{
+            return {
+                ...state,
+                dmgPayload: action.dmg
+            }
+        }
         case 'ATTACK_READY': {
             return {
                 ...state,

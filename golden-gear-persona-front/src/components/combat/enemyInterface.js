@@ -7,7 +7,11 @@ class EnemyInterface extends React.Component {
     handleTakeDamage = (index) => {
         let charIndex = this.props.mechanics.attackingAllyIndex;
         if (this.props.mechanics.attackReady) {
-            this.props.loseHP(5, index);
+            let allyDmg = this.props.mechanics.dmgPayload;
+            let totalDmg = allyDmg - Math.floor(this.props.enemies[index].stats.defence/2);
+            console.log(this.props.enemies[index].defence)
+            console.log(totalDmg);
+            this.props.loseHP(totalDmg, index);
             this.props.attackReady(false);
             this.props.setAttackingAllyIndex(charIndex + 1)
             if (charIndex < 3) {

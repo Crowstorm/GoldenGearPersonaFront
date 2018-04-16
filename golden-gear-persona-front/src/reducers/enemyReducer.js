@@ -5,6 +5,7 @@ const enemyDefaultState = [
         stats: {
             hp: 20,
             mp: 0,
+            defence: 5,
             speed: 12,
             attack: 5
         }
@@ -15,6 +16,7 @@ const enemyDefaultState = [
         stats: {
             hp: 20,
             mp: 0,
+            defence: 3,
             speed: 3,
             attack: 2
         }
@@ -26,6 +28,7 @@ const enemyDefaultState = [
         stats: {
             hp: 20,
             mp: 0,
+            defence: 4,
             speed: 6,
             attack: 3
         }
