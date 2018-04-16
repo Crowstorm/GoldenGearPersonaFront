@@ -11,10 +11,10 @@ import mechanicsReducer from '../reducers/mechanicsReducer';
 
 export default combineReducers({
     form: reduxForm,
-    mainCharacter: characterReducer,
+    mainChar: characterReducer,
     auth: authReducer,
     charPosition: charPositionReducer,
     modals: modalsReducer,
-    enemy: enemyReducer,
+    enemies: enemyReducer,
     mechanics: mechanicsReducer
 })

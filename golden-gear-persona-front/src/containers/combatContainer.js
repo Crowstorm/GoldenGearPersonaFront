@@ -39,8 +39,8 @@ class CombatContainer extends React.Component {
 
 function mapStateToProps(store) {
     return {
-        mainChar: store.mainCharacter,
-        enemies: store.enemy,
+        mainChar: store.mainChar,
+        enemies: store.enemies,
         charCard: store.modals,
         mechanics: store.mechanics
     }

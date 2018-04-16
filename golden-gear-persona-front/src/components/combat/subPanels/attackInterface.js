@@ -23,12 +23,30 @@ class AttackInterface extends React.Component {
         return _.map(browse, (item) => {
             console.log(item);
             return (
-                <div className="d-flex flex-column"> 
-                   <div className="d-flex justify-content-center flex-wrap align-items-center" ><img src={item.icon} style={{height: 50}} /> {item.description} </div>
+                <div className="d-flex flex-column">
+                    <div className="d-flex justify-content-center flex-wrap align-items-center" ><img src={item.icon} style={{ height: 50 }} /> {item.description} </div>
                 </div>
             )
         })
+    }
 
+    handleRenderConsumables = () => {
+        let i = this.props.mechanics.attackingAllyIndex;
+        let browse = this.props.mainChar[i].consumables
+        let mapper = _.map(browse, (item) => {
+            console.log(item);
+            return (
+                <div className="d-flex flex-column">
+                    <div className="d-flex justify-content-center flex-wrap align-items-center" ><img src={item.icon} style={{ height: 50 }} /> {item.description} </div>
+                </div>
+            )
+        })
+        return(
+            <div> 
+                <div> x </div>
+                {mapper}
+            </div>
+        )
     }
 
     render() {
@@ -44,7 +62,7 @@ class AttackInterface extends React.Component {
         console.log('propsy ataku', this.props)
         return (
             <div>
-                <div className='d-flex flex-column align-items-center justify-content-center' style={{position: 'absolute', border: '1px solid red', width: 360, height: 450}}>
+                <div className='d-flex flex-column align-items-center justify-content-center' style={{ position: 'absolute', border: '1px solid red', width: 360, height: 450 }}>
                     {renderAdditionalMenus}
                 </div>
 

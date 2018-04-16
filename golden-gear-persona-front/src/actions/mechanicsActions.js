@@ -18,7 +18,7 @@ export const combatStart2 = () => {
                                 let i = 'dziala'
                                 resolve(i)
                             }
-                            if (getState().enemy.length === 0) {
+                            if (getState().enemies.length === 0) {
                                 alert('wygrales');
                                 return 0;
                             }
@@ -40,7 +40,7 @@ export const combatStart2 = () => {
                 function enemyTurn() {
                     //sort enemies
                     let fighters = [];
-                    const enemies = getState().enemy;
+                    const enemies = getState().enemies;
                     _.forEach(enemies, (enemy, index) => {
                         fighters.push(enemy);
                     })
