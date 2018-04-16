@@ -1,4 +1,5 @@
 import React from 'react'
+import {useBackstab} from './skillMechanics' 
 
 import _ from 'lodash';
 
@@ -19,7 +20,6 @@ class EnemyInterface extends React.Component {
                 this.props.setAttackingAllyIndex(0)
                 this.props.switchTurn('enemy')
             }
-
         }
     }
 
