@@ -8,3 +8,12 @@ export const allyLoseHP = (amount) => {
         })
     }
 }
+
+export const allyRestoreHP = (amount, whoToHealIndex) => {
+    return function (dispatch) {
+        dispatch({
+            type: ALLY_LOSE_HP,
+            amount, whoToHealIndex
+        })
+    }
+}

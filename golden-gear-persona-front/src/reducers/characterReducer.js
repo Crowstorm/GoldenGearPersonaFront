@@ -26,16 +26,16 @@ let initial_state = [
             rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
         },
-        skills:[
+        skills: [
             skills.backstab
         ],
-        magic:[
+        magic: [
 
         ],
-        consumables:[
+        consumables: [
             items.healingPotion,
             items.manaPotion
-           
+
         ]
     },
     {
@@ -159,6 +159,20 @@ export default (state = initial_state, action) => {
                     }
                 },
                 ...state.slice(i + 1)
+            ]
+        }
+        case 'ALLY_RESTORE_HP': {
+            const whoToHeal = action.whoToHealIndex;
+            return [
+                ...state.slice(0, whoToHeal),
+                {
+                    ...state[whoToHeal],
+                    stats: {
+                        ...state[whoToHeal].stats,
+                        hp: state[whoToHeal].stats.hp + action.amount
+                    }
+                },
+                ...state.slice(whoToHeal +1)
             ]
         }
         default: {

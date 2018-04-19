@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import * as skillList from '../skillMechanics'
 
 class AttackInterface extends React.Component {
     constructor(props) {
@@ -68,6 +69,7 @@ class AttackInterface extends React.Component {
                         <img src={skill.icon} style={{ height: 50 }} /> 
                         <p> {skill.description}</p>
                         <p> Cost: {skill.cost} {skill.costType} </p>
+                        <button onClick={() => skillList.useBackstab(this.props)}> Use </button>
                     </div>
                 </div>
             )
