@@ -16,23 +16,35 @@ class EnemyInterface extends React.Component {
             let playerHitChance = 70 + this.props.mainChar[i].stats.agility * 1.5
             let enemyEvasion = this.props.enemies[index].stats.agility;
             let totalHitChance = playerHitChance - enemyEvasion;
+            //critical chance
+            let wasCritical = false;
+            let randomCritChance = Math.floor((Math.random() * 100) + 1);
+            let playerCritChance = this.props.mainChar[i].stats.agility;
+            if(playerCritChance >= randomCritChance){wasCritical = true};
+            //assign dmg
             if(totalHitChance > randomHitChance){
-                this.props.loseHP(totalDmg, index);
-                let info = `${this.props.mainChar[i].name} dealt ${totalDmg} to ${this.props.enemies[index].name}`
-                this.props.addInfoToArray(info);
+                if(wasCritical){
+                    this.props.loseHP(totalDmg *2, index);
+                    let info = `CRITICAL HIT! ${this.props.mainChar[i].name} dealt ${totalDmg} to ${this.props.enemies[index].name}`
+                    this.props.addInfoToArray(info);
+                } else {
+                    this.props.loseHP(totalDmg, index);
+                    let info = `${this.props.mainChar[i].name} dealt ${totalDmg} to ${this.props.enemies[index].name}`
+                    this.props.addInfoToArray(info);
+                }
             } else {
                 let info = `${this.props.mainChar[i].name} missed!`
                 this.props.addInfoToArray(info);
             }
-            
+            //next attacker
             this.props.attackReady(false);
             this.props.setAttackingAllyIndex(charIndex + 1)
+            //do zmiany w glownym buildzie
             if (charIndex < 3) {
                 this.props.setAttackingAllyIndex(charIndex + 1)
             } else if (charIndex === 3) {
                 this.props.setAttackingAllyIndex(0)
                 this.props.switchTurn('enemy')
-
             } else {
                 this.props.setAttackingAllyIndex(0)
                 this.props.switchTurn('enemy')
