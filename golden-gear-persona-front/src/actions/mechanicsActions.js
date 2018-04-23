@@ -51,16 +51,32 @@ export const combatStart2 = () => {
                     //dispatch attacks per enemy
                     let enemyDealDamagePromise = new Promise(resolve => {
                         let success = true;
-                        let amount = fighters[index].stats.attack;
+                        //hit chance
                         let allyIndex = Math.floor((Math.random() * 3));
+                        let randomHitChance = Math.floor((Math.random() * 100) + 1);
+                        let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
+                        let playerEvasion = getState().mainChar[allyIndex].stats.agility;
+                        let totalHitChance = enemyHitChance - playerEvasion;
+                        //critical chance
+                        let amount = fighters[index].stats.strength;
                         let data = { name: fighters[index].name, dmg: amount, allyIndex: allyIndex }
-                        setTimeout(function () {
+                        //resolving dmg
+                        if(totalHitChance > randomHitChance){
+                            setTimeout(function () {
+                                dispatch({
+                                    type: 'ALLY_LOSE_HP',
+                                    amount, allyIndex
+                                })
+                                resolve(data);
+                            }, 1000);
+                        } else {
+                            let info = 'ciota spudlowala'
                             dispatch({
-                                type: 'ALLY_LOSE_HP',
-                                amount, allyIndex
+                                type: 'ADD_INFO_TO_ARRAY',
+                                info
                             })
-                            resolve(data);
-                        }, 1000);
+                        }
+                        
                     })
                     //check if player alive
 
@@ -149,8 +165,8 @@ export const incrementEnemiesAttacked = () => {
     }
 }
 
-export const calculateDmg = (dmg) =>{
-    return function(dispatch){
+export const calculateDmg = (dmg) => {
+    return function (dispatch) {
         dispatch({
             type: 'CALCULATE_DAMAGE',
             dmg
@@ -158,8 +174,8 @@ export const calculateDmg = (dmg) =>{
     }
 }
 
-export const addInfoToArray = (info) =>{
-    return function(dispatch){
+export const addInfoToArray = (info) => {
+    return function (dispatch) {
         dispatch({
             type: 'ADD_INFO_TO_ARRAY',
             info
