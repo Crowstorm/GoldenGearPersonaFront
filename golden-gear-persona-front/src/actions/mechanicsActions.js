@@ -57,9 +57,12 @@ export const combatStart2 = () => {
                         let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
                         let playerEvasion = getState().mainChar[allyIndex].stats.agility;
                         let totalHitChance = enemyHitChance - playerEvasion;
+                        //dmg
+                        let dmg = fighters[index].stats.strength;
+                        let totalDmg = dmg - Math.floor(getState().mainChar[allyIndex].stats.defence/2);
                         //critical chance
                         let amount = fighters[index].stats.strength;
-                        let data = { name: fighters[index].name, dmg: amount, allyIndex: allyIndex }
+                        let data = { name: fighters[index].name, dmg: totalDmg, allyIndex: allyIndex }
                         //resolving dmg
                         if(totalHitChance > randomHitChance){
                             setTimeout(function () {
@@ -70,11 +73,16 @@ export const combatStart2 = () => {
                                 resolve(data);
                             }, 1000);
                         } else {
-                            let info = 'ciota spudlowala'
-                            dispatch({
-                                type: 'ADD_INFO_TO_ARRAY',
-                                info
-                            })
+                            setTimeout(function () {
+                                // let info = `${fighters[index].name} missed!`;
+                                // dispatch({
+                                //     type: 'ADD_INFO_TO_ARRAY',
+                                //     info
+                                // })
+                                data = {name: fighters[index].name, missed: true};
+                                resolve(data);
+                            }, 1000);
+                            
                         }
                         
                     })
@@ -90,9 +98,13 @@ export const combatStart2 = () => {
                         dispatch({
                             type: 'INCREMENT_ENEMIES_ATTACKED'
                         })
-
-                        let info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainChar[resp.allyIndex].name}`;
-                        console.log(info, 'info')
+                        let info;
+                        if(resp.missed === true){
+                            info = `${resp.name} missed!`;
+                        } else {
+                            info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainChar[resp.allyIndex].name}`;
+                        }
+                        
                         dispatch({
                             type: 'ADD_INFO_TO_ARRAY',
                             info
