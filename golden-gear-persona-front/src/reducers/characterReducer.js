@@ -175,6 +175,9 @@ export default (state = initial_state, action) => {
                 ...state.slice(whoToHeal +1)
             ]
         }
+        case 'CONSUMABLE_USED':{
+            
+        }
         default: {
             return state;
         }
