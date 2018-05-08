@@ -95,12 +95,6 @@ class Game extends React.Component {
                 }
                 break;
             }
-            case 'Enter': {
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 15){
-                    alert('ELO')
-                }
-                break;
-            }
             default: { return }
         }
     }
@@ -114,8 +108,11 @@ class Game extends React.Component {
     }
 
     render() {
-       
+        if(this.props.charPosition.x == 5){
+            alert('ELO')
+        }
         console.log(this.props);
+        console.log('elo', this.props.modals.dialogueVisibility)
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue /> : '';
         return (
             <div className="game" style={{position: 'relative'}}>

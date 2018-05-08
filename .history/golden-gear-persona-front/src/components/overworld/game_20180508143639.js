@@ -14,7 +14,6 @@ import Dialogue from '../extraInterfaces/dialogue';
 
 class Game extends React.Component {
     
-    
     //Funckja ktora zwraca img z ludzikiem
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -95,12 +94,6 @@ class Game extends React.Component {
                 }
                 break;
             }
-            case 'Enter': {
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 15){
-                    alert('ELO')
-                }
-                break;
-            }
             default: { return }
         }
     }
@@ -110,12 +103,14 @@ class Game extends React.Component {
         document.addEventListener("keydown", this.handleKeyDown);
 
         document.getElementById('d12_16').innerHTML = `<img src=${princess} />`
-        
+        if(this.props.charPosition.x == 5){
+            alert('ELO')
+        }
     }
 
     render() {
-       
         console.log(this.props);
+        console.log('elo', this.props.modals.dialogueVisibility)
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue /> : '';
         return (
             <div className="game" style={{position: 'relative'}}>

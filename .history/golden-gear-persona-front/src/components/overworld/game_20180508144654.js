@@ -95,10 +95,8 @@ class Game extends React.Component {
                 }
                 break;
             }
-            case 'Enter': {
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 15){
-                    alert('ELO')
-                }
+            case '13': {
+                alert('elooo');
                 break;
             }
             default: { return }
@@ -114,7 +112,10 @@ class Game extends React.Component {
     }
 
     render() {
-       
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 15){
+            //alert('ELO')
+            document.addEventListener("keydown", this.handleKeyDown);
+        }
         console.log(this.props);
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue /> : '';
         return (
