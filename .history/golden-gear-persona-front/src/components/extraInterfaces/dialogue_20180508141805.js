@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {setDialogueState} from '../../actions/modals';
+import {setDialogueState} from '../../actions/modals/setDialogueState'
 
 class Dialogue extends React.Component {
     constructor(props) {
@@ -15,7 +15,6 @@ class Dialogue extends React.Component {
         const increment = () => {
             if (this.state.i === array.length - 1) {
                 alert('koniec');
-                this.props.setDialogueState(false);
                 this.setState({ i: 0 });
             } else {
                 this.setState({ i: this.state.i + 1 });
@@ -39,7 +38,7 @@ class Dialogue extends React.Component {
             border: "1px solid green",
             backgroundColor: 'white'
         }
-        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? this.dialogueReceiver(array) : '';
+
         return (
             <div className=" d-flex align-items-center justify-content-center" style={dialogueStyle}>
                 {this.dialogueReceiver(array)}

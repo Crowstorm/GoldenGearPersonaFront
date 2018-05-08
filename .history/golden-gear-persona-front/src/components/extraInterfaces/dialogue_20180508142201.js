@@ -15,7 +15,7 @@ class Dialogue extends React.Component {
         const increment = () => {
             if (this.state.i === array.length - 1) {
                 alert('koniec');
-                this.props.setDialogueState(false);
+                setDialogueState(false);
                 this.setState({ i: 0 });
             } else {
                 this.setState({ i: this.state.i + 1 });
