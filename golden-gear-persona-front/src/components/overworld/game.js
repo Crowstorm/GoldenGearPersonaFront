@@ -97,7 +97,7 @@ class Game extends React.Component {
             }
             case 'Enter': {
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 15){
-                    alert('ELO')
+                    this.props.setDialogueState(true);
                 }
                 break;
             }

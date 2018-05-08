@@ -32,7 +32,7 @@ class Dialogue extends React.Component {
     }
     render() {
         let i = 0;
-        const array = [{ text: 'jestem testowym dialogiem' }, { text: "drugi dialog" }]
+        const array = [{ text: 'Chcesz się ruchać?' }, { text: "Rodziców nie ma w domu" }]
         let dialogueStyle = {
             position: 'absolute',
             border: "1px solid green",
