@@ -4,6 +4,7 @@ const modalDefaultState = {
 
     //charCard
     charCardVisibility: false,
+    dialogueVisibility: true
 }
 
 const modalReducer = (state = modalDefaultState, action) => {
@@ -12,6 +13,11 @@ const modalReducer = (state = modalDefaultState, action) => {
             return{
                 ...state,
                 charCardVisibility: action.visibility
+            }
+            case 'SET_DIALOGUE_STATE':
+            return{
+                ...state,
+                dialogueVisibility: action.visibility
             }
         default:
             return state;

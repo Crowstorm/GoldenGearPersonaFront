@@ -13,6 +13,7 @@ import Dialogue from '../extraInterfaces/dialogue';
 // ]
 
 class Game extends React.Component {
+    
     //Funckja ktora zwraca img z ludzikiem
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -105,17 +106,20 @@ class Game extends React.Component {
     }
 
     render() {
+        console.log(this.props);
+        console.log('elo', this.props.modals.dialogueVisibility)
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue /> : '';
         return (
-            <div className="game">
+            <div className="game" style={{position: 'relative'}}>
+             {dialogueRenderer}
                 <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
                 {/* <div>
                     <p style={{color: 'black'}}>Obecna pozycja: {this.props.charPosition.x}, {this.props.charPosition.y} </p>
                 </div>
-                <img src={princess} /> */}
-                <Dialogue />
-
+                 */}
+               
             </div>
         )
     }
