@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 //import './game.css';
 import princess from '../../assets/princess2.png'
+import king from '../../assets/king.png';
+import queen from '../../assets/queen.png';
 
 import Dialogue from '../../extraInterfaces/dialogue';
 
@@ -91,7 +93,7 @@ class ThroneRoom extends React.Component {
                 break;
             }
             case 'Enter': {
-                if (this.props.charPosition.x == 12 && this.props.charPosition.y == 15) {
+                if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
                     this.props.setDialogueState(true);
                 }
                 break;
@@ -103,15 +105,27 @@ class ThroneRoom extends React.Component {
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-
-        document.getElementById('d12_16').innerHTML = `<img src=${princess} />`
+        const img = { height: '35px' }
+        // document.getElementById('d12_16').innerHTML = `<img src=${princess} />`
+        document.getElementById('d11_17').innerHTML = `<img src=${princess} />`
+        document.getElementById('d12_17').innerHTML = `<img src=${princess} />`
 
     }
 
 
     render() {
+        const dialogue = [
+            { text: "Thank you for coming. As you already heard, the princess had been kidnapped." },
+            { text: "And in this time of need we know that we can count on you." },
+            { text: "We've already sent our best men, but the truth is anyone could be involved in her disappearance." },
+            { text: "It is to our understanding that you care deeply for our daughter. If you save her you shall be offered her hand." },
+            { text: "Essentialy making you the Prince of the Realm." },
+            { text: "She was last seen on the streets near the Inn. That's not the first time something bad happened there. During the night bandits are patrolling this area." },
+            { text: "Now go, my friend, and save the Princess. Time might be running short." }
+        ]
+
         console.log(this.props);
-        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue /> : '';
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
         return (
             <div>
                 {dialogueRenderer}

@@ -175,6 +175,13 @@ export default (state = initial_state, action) => {
                 ...state.slice(whoToHeal +1)
             ]
         }
+        case 'ALLY_DIED':{
+            let j  = action.i;
+            return [
+                ...state.slice(0, j),
+                ...state.slice(j + 1)
+            ]
+        }
         case 'CONSUMABLE_USED':{
             
         }

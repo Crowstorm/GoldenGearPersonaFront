@@ -40,9 +40,9 @@ class EnemyInterface extends React.Component {
             this.props.attackReady(false);
             this.props.setAttackingAllyIndex(charIndex + 1)
             //do zmiany w glownym buildzie
-            if (charIndex < 3) {
+            if (charIndex < this.props.mainChar.length-1) {
                 this.props.setAttackingAllyIndex(charIndex + 1)
-            } else if (charIndex === 3) {
+            } else if (charIndex === this.props.mainChar.length-1) {
                 this.props.setAttackingAllyIndex(0)
                 this.props.switchTurn('enemy')
             } else {

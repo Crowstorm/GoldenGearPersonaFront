@@ -60,9 +60,11 @@ export const BLOCKED_ThroneRoom = [
     //throne and table
 
     //counter
-    {x:12, y:16},
+    
     {x:2, y:10},     {x:3, y:10},     {x:4, y:10}, 
 
+    //queen and king
+    {x:11, y:17}, {x:12, y:17},
 
 
 

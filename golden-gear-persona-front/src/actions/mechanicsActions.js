@@ -52,7 +52,7 @@ export const combatStart2 = () => {
                     let enemyDealDamagePromise = new Promise(resolve => {
                         let success = true;
                         //hit chance
-                        let allyIndex = Math.floor((Math.random() * 3));
+                        let allyIndex = Math.floor((Math.random() * getState().mainChar.length));
                         let randomHitChance = Math.floor((Math.random() * 100) + 1);
                         let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
                         let playerEvasion = getState().mainChar[allyIndex].stats.agility;
@@ -69,8 +69,9 @@ export const combatStart2 = () => {
                                 dispatch({
                                     type: 'ALLY_LOSE_HP',
                                     amount, allyIndex
-                                })
+                                });
                                 resolve(data);
+                                
                             }, 1000);
                         } else {
                             setTimeout(function () {
@@ -79,7 +80,7 @@ export const combatStart2 = () => {
                                 //     type: 'ADD_INFO_TO_ARRAY',
                                 //     info
                                 // })
-                                data = {name: fighters[index].name, missed: true};
+                                data = {name: fighters[index].name, missed: true, allyIndex: allyIndex};
                                 resolve(data);
                             }, 1000);
                             
@@ -89,11 +90,8 @@ export const combatStart2 = () => {
                     //check if player alive
 
                     enemyDealDamagePromise.then((resp) => {
-                        if (getState().mainChar[0].stats.hp <= 0) {
-                            console.log('umarles');
-                            alert('Przegrales')
-                            return 0
-                        }
+                        console.log('indeksik', resp);
+                        
 
                         dispatch({
                             type: 'INCREMENT_ENEMIES_ATTACKED'
@@ -104,11 +102,26 @@ export const combatStart2 = () => {
                         } else {
                             info = `${resp.name} dealt ${resp.dmg} damage to ${getState().mainChar[resp.allyIndex].name}`;
                         }
-                        
+
                         dispatch({
                             type: 'ADD_INFO_TO_ARRAY',
                             info
                         })
+                        
+                        let i = resp.allyIndex;
+                        if(getState().mainChar[i].stats.hp <= 0){
+                            dispatch({
+                                type: 'ALLY_DIED',
+                                i
+                            })
+                        }
+                        if (getState().mainChar.length <= 0) {
+                            console.log('umarles');
+                            alert('Przegrales')
+                            return 0
+                        }
+                        
+                      
 
                         //czy koniec walki?
                         if (getState().mechanics.noOfEnemiesAttacked < fighters.length) {
