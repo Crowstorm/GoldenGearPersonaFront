@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {setDialogueState} from '../../actions/modals';
+import { setDialogueState } from '../../actions/modals';
+import thrill from './thrill.mp3'
 
 class Dialogue extends React.Component {
     constructor(props) {
@@ -9,10 +10,15 @@ class Dialogue extends React.Component {
         this.state = { i: 0 }
     }
 
+    playSound(soundName) {
+        this.refs[soundName].play();
+    }
 
     dialogueReceiver = (array) => {
 
         const increment = () => {
+            
+            this.playSound('thrill');
             if (this.state.i === array.length - 1) {
                 this.props.setDialogueState(false);
                 this.setState({ i: 0 });
@@ -22,8 +28,10 @@ class Dialogue extends React.Component {
         }
 
         return (
+            
             <div className="d-flex flex-row align-items-center" style={{ width: '600px', height: '150px' }}>
-                <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678110-sign-info-128.png" style={{ height: "150px" }} />
+            <audio ref="thrill" src={thrill} type="audio/mpeg"></audio>
+                <img src="https://vignette.wikia.nocookie.net/megamitensei/images/6/6b/Haru_All_Out.png/revision/latest?cb=20170202222551" style={{ height: "150px" }} />
                 <div style={{ width: '430px', border: '1px solid blue' }}> {array[this.state.i].text} </div>
                 {/* dopoki jest length to next, nie ma to konczy dialog przekaz dlugosc tablicy do finckji onclick*/}
                 <div onClick={() => increment()}> NEXT </div>
@@ -32,7 +40,7 @@ class Dialogue extends React.Component {
     }
     render() {
         let i = 0;
-        const array = [{ text: 'Chcesz się ruchać?' }, { text: "Rodziców nie ma w domu" }]
+        const array = [{ text: "Cutting down the enemy as they approach..." }, { text: "Ah, what a thrill!" }]
         let dialogueStyle = {
             position: 'absolute',
             border: "1px solid green",
@@ -46,18 +54,18 @@ class Dialogue extends React.Component {
         )
     }
 }
-function mapStateToProps(store){
-    return{
+function mapStateToProps(store) {
+    return {
         modals: store.modals
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    setDialogueState: (visibility)=>{
-        dispatch(setDialogueState(visibility));
-    }
-  };
+    return {
+        setDialogueState: (visibility) => {
+            dispatch(setDialogueState(visibility));
+        }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dialogue);
