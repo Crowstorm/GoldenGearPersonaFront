@@ -2,8 +2,13 @@ import React from 'react';
 import _ from 'lodash';
 //import './game.css';
 import princess from '../../assets/princess2.png'
-import king from '../../assets/king.png';
-import queen from '../../assets/queen.png';
+import king from '../../assets/king_small.png';
+import queen from '../../assets/queen_small2.png';
+
+import king_portrait from '../../assets/king.png';
+import queen_portrait from '../../assets/queen.png';
+
+
 
 import Dialogue from '../../extraInterfaces/dialogue';
 
@@ -107,15 +112,15 @@ class ThroneRoom extends React.Component {
         document.addEventListener("keydown", this.handleKeyDown);
         const img = { height: '35px' }
         // document.getElementById('d12_16').innerHTML = `<img src=${princess} />`
-        document.getElementById('d11_17').innerHTML = `<img src=${princess} />`
-        document.getElementById('d12_17').innerHTML = `<img src=${princess} />`
+        document.getElementById('d11_17').innerHTML = `<img src=${queen} />`
+        document.getElementById('d12_17').innerHTML = `<img src=${king} />`
 
     }
 
 
     render() {
         const dialogue = [
-            { text: "Thank you for coming. As you already heard, the princess had been kidnapped." },
+            { text: "Thank you for coming. As you already heard, the princess had been kidnapped.", portrait: "king" },
             { text: "And in this time of need we know that we can count on you." },
             { text: "We've already sent our best men, but the truth is anyone could be involved in her disappearance." },
             { text: "It is to our understanding that you care deeply for our daughter. If you save her you shall be offered her hand." },

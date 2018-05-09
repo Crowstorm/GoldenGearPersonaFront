@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { setDialogueState } from '../../actions/modals';
 import thrill from './thrill.mp3'
 
+import king from '../assets/king.png'
+
 class Dialogue extends React.Component {
     constructor(props) {
         super(props);
@@ -31,7 +33,7 @@ class Dialogue extends React.Component {
             
             <div className="d-flex flex-row align-items-center" style={{ width: '600px', height: '150px' }}>
             {/* <audio ref="thrill" src={thrill} type="audio/mpeg"></audio> */}
-                <img src="https://vignette.wikia.nocookie.net/megamitensei/images/6/6b/Haru_All_Out.png/revision/latest?cb=20170202222551" style={{ height: "150px" }} />
+                <img src={king} style={{ height: "150px" }} />
                 <div className="d-flex align-items-center"  style={{ width: '430px', justifyContent: 'center', textAlign: 'center' }}> {array[this.state.i].text} </div>
                 {/* dopoki jest length to next, nie ma to konczy dialog przekaz dlugosc tablicy do finckji onclick*/}
                 <div onClick={() => increment()}> NEXT </div>
