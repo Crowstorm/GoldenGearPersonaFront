@@ -105,7 +105,6 @@ class ThroneRoom extends React.Component {
                     this.props.setDialogueState(true);
                 }
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2){
-                    document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Inn');
                 }
                 break;
@@ -116,7 +115,7 @@ class ThroneRoom extends React.Component {
 
     componentDidMount() {
 
-        document.addEventListener("keydown", this.handleKeyDown);
+       // document.addEventListener("keydown", this.handleKeyDown);
         const img = { height: '35px' }
         // document.getElementById('d12_16').innerHTML = `<img src=${princess} />`
         document.getElementById('d11_17').innerHTML = `<img src=${queen} />`

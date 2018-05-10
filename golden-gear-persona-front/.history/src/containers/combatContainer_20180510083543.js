@@ -20,7 +20,7 @@ import battleTheme from '../assets/battleThemeALPHA.wav';
 class CombatContainer extends React.Component {
     componentDidMount() {
         this.props.combatStart2();
-        this.playSound('battleTheme');
+        //this.playSound('battleTheme');
     }
     playSound(soundName) {
         this.refs[soundName].play();

@@ -25,7 +25,7 @@ class Game extends React.Component {
                     return (
                         <ThroneRoom {...this.props} />
                     )
-                    break;
+                    
                 }    
                 break;  
                 
@@ -42,10 +42,8 @@ class Game extends React.Component {
                     )
                     break;
                 }     
-                break; 
-                default: { return }     
+                break;      
             }
-            
         }
 
         return (

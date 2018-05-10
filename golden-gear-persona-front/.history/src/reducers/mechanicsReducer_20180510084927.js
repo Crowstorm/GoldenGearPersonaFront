@@ -60,12 +60,6 @@ export default (state = initial_state, action) => {
                 attackingAllyIndex: action.index
             }
         }
-        case 'SET_LEVEL':{
-            return{
-                ...state,
-                currentLevel: action.newLevel
-            }
-        }
         default: {
             return state;
         }

@@ -8,8 +8,6 @@ import { GRID25, BLOCKED } from './grids'
 
 //levels
 import ThroneRoom from './levels/throneRoom'
-import CastleRoad from './levels/castleRoad';
-import Inn from './levels/inn'
 
 //lista zablokowanych pol
 // const BLOCKED = [
@@ -17,37 +15,20 @@ import Inn from './levels/inn'
 // ]
 
 class Game extends React.Component {
+
     render() {
         console.log(this.props.mechanics.currentLevel, 'propsy');
         let levelRenderer = () => {
             switch (this.props.mechanics.currentLevel) {
                 case "ThroneRoom":{
+                    console.log('elo')
                     return (
                         <ThroneRoom {...this.props} />
                     )
-                    break;
-                }    
-                break;  
-                
-                case "CastleRoad":{
-                    return(
-                        <CastleRoad {...this.props} />
-                    )
-                    break;
-                }  
-                break;
-                case "Inn":{
-                    return(
-                        <Inn {...this.props} />
-                    )
-                    break;
-                }     
-                break; 
-                default: { return }     
+                }
+                    
             }
-            
         }
-
         return (
             <div className="game" style={{ position: 'relative' }}>
 
@@ -56,7 +37,7 @@ class Game extends React.Component {
                 </div>
                  */}
                 {/* <ThroneRoom {...this.props} /> */}
-                {levelRenderer()}
+                {levelRenderer}
 
             </div>
         )

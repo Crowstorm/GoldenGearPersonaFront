@@ -26,8 +26,7 @@ class Game extends React.Component {
                         <ThroneRoom {...this.props} />
                     )
                     break;
-                }    
-                break;  
+                }      
                 
                 case "CastleRoad":{
                     return(
@@ -35,17 +34,13 @@ class Game extends React.Component {
                     )
                     break;
                 }  
-                break;
                 case "Inn":{
                     return(
                         <Inn {...this.props} />
                     )
                     break;
-                }     
-                break; 
-                default: { return }     
+                }           
             }
-            
         }
 
         return (

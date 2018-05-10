@@ -9,7 +9,7 @@ import { GRID25, BLOCKED } from './grids'
 //levels
 import ThroneRoom from './levels/throneRoom'
 import CastleRoad from './levels/castleRoad';
-import Inn from './levels/inn'
+import Inn from './level/inn'
 
 //lista zablokowanych pol
 // const BLOCKED = [
@@ -25,27 +25,13 @@ class Game extends React.Component {
                     return (
                         <ThroneRoom {...this.props} />
                     )
-                    break;
-                }    
-                break;  
-                
+                }      
                 case "CastleRoad":{
                     return(
                         <CastleRoad {...this.props} />
                     )
-                    break;
-                }  
-                break;
-                case "Inn":{
-                    return(
-                        <Inn {...this.props} />
-                    )
-                    break;
-                }     
-                break; 
-                default: { return }     
+                }             
             }
-            
         }
 
         return (

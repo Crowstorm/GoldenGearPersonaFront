@@ -25,27 +25,18 @@ class Game extends React.Component {
                     return (
                         <ThroneRoom {...this.props} />
                     )
-                    break;
-                }    
-                break;  
-                
+                }      
                 case "CastleRoad":{
                     return(
                         <CastleRoad {...this.props} />
                     )
-                    break;
                 }  
-                break;
                 case "Inn":{
                     return(
                         <Inn {...this.props} />
                     )
-                    break;
-                }     
-                break; 
-                default: { return }     
+                }           
             }
-            
         }
 
         return (

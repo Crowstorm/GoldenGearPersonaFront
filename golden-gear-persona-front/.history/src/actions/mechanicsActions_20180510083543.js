@@ -207,12 +207,3 @@ export const addInfoToArray = (info) => {
         })
     }
 }
-
-export const changeLevel = (newLevel) =>{
-    return function(dispatch){
-        dispatch({
-            type:'SET_LEVEL',
-            newLevel
-        })
-    }
-}

@@ -42,9 +42,6 @@ function mapDispatchToProps(dispatch){
         },
         setDialogueState: (visibility)=>{
             dispatch(setDialogueState(visibility));
-        },
-        changeLevel: (newLevel)=>{
-            dispatch(changeLevel(newLevel));
         }
     }
 }

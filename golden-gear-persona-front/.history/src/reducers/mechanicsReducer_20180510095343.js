@@ -6,7 +6,7 @@ let initial_state = {
     characterIndex: null,
     attackingAllyIndex: 0,
     dmgPayload: null,
-    currentLevel: 'ThroneRoom',
+    currentLevel: 'Inn',
 };
 
 export default (state = initial_state, action) => {

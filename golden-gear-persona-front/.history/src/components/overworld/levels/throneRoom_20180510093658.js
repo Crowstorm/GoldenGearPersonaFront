@@ -104,10 +104,6 @@ class ThroneRoom extends React.Component {
                 if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
                     this.props.setDialogueState(true);
                 }
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2){
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn');
-                }
                 break;
             }
             default: { return }

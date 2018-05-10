@@ -1,6 +1,5 @@
 import React from 'react';
 import _ from 'lodash';
-import './styles.css'
 //import './game.css';
 import princess from '../../assets/princess2.png'
 import king from '../../assets/king_small.png';
@@ -9,7 +8,7 @@ import queen from '../../assets/queen_small2.png';
 import king_portrait from '../../assets/king.png';
 import queen_portrait from '../../assets/queen.png';
 
-
+import background from '../../assets/test3.jpg'
 
 
 
@@ -103,10 +102,6 @@ class ThroneRoom extends React.Component {
             case 'Enter': {
                 if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
                     this.props.setDialogueState(true);
-                }
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2){
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn');
                 }
                 break;
             }
