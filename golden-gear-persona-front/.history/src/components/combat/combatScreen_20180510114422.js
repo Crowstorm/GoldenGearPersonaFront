@@ -31,11 +31,11 @@ class CombatScreen extends React.Component {
             style={{height: "100px", position: 'absolute', left: '11px', top: '420px'}} />
 
             <img src={beholder}
-            style={{height: "100px", position: 'absolute', left: '520px', top: '30px'}} />
+            style={{height: "100px", position: 'absolute', left: '600px', top: '30px'}} />
             <img src={beholder}
-            style={{height: "100px", position: 'absolute', left: '520px', top: '160px'}} />
+            style={{height: "100px", position: 'absolute', left: '600px', top: '160px'}} />
             <img src={beholder}
-            style={{height: "100px", position: 'absolute', left: '520px', top: '290px'}} />
+            style={{height: "100px", position: 'absolute', left: '600px', top: '290px'}} />
                 <div className="d-flex ">
                     {/* <button onClick={() => this.handleEnemyAttack()}> Enemy Attack </button> */}
                 </div>

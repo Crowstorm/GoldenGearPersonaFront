@@ -110,8 +110,8 @@ class Inn extends React.Component{
     render(){
         if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
             window.location.href = "combat"
+            alert('elo')
         }
-        
         return(
             <div id="inn"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

@@ -48,7 +48,6 @@ class Dialogue extends React.Component {
             border: "1px solid green",
             backgroundColor: 'white',
             marginTop: 450,
-            marginLeft: 100
         }
        // let dialogueRenderer = (this.props.modals.dialogueVisibility) ? this.dialogueReceiver(this.array) : '';
         return (
