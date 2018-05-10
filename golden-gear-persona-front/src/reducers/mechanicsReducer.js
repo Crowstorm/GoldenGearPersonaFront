@@ -5,7 +5,8 @@ let initial_state = {
     infoArray: [],
     characterIndex: null,
     attackingAllyIndex: 0,
-    dmgPayload: null
+    dmgPayload: null,
+    currentLevel: 'ThroneRoom',
 };
 
 export default (state = initial_state, action) => {
@@ -57,6 +58,12 @@ export default (state = initial_state, action) => {
             return {
                 ...state,
                 attackingAllyIndex: action.index
+            }
+        }
+        case 'SET_LEVEL':{
+            return{
+                ...state,
+                currentLevel: action.newLevel
             }
         }
         default: {

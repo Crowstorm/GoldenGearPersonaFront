@@ -7,3 +7,7 @@ export const useBackstab = (props) =>{
     props.calculateDmg(totalDmg);
     props.attackReady(true);
 }
+
+export const useHeal = (props) =>{
+    
+}

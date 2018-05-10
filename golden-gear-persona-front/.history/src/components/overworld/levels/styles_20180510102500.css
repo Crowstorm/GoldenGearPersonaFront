@@ -1,0 +1,15 @@
+#ThroneRoom{
+    background-image: url('../../assets/test3.jpg');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#inn{
+    /* background-image: url('../../assets/inn.png'); */
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

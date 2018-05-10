@@ -1,39 +1,39 @@
 const enemyDefaultState = [
     {
         name: 'Stupid Boy',
-        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/3/3d/Ryuji_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221544',
+        portrait: 'https://d1u5p3l4wpay3k.cloudfront.net/crafttheworld_gamepedia/b/b8/Beholder.png',
         stats: {
             hp: 20,
             mp: 0,
             defence: 5,
             agility: 7,
             speed: 12,
-            attack: 5
+            strength: 55
         }
     },
     {
         name: 'Wicked Boy',
-        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/e/ec/Akechi_All_Out.png/revision/latest/scale-to-width-down/481?cb=20160917054538',
+        portrait: 'https://vignette.wikia.nocookie.net/eberron/images/4/4a/Beholder.jpg/revision/latest?cb=20111004002157',
         stats: {
             hp: 20,
             mp: 0,
             defence: 3,
             agility: 7,
             speed: 3,
-            attack: 2
+            strength: 25
         }
 
     },
     {
         name: 'European Boy',
-        portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/5/5a/Yusuke_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202222135',
+        portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
         stats: {
             hp: 20,
             mp: 0,
             defence: 4,
             agility: 7,
             speed: 6,
-            attack: 3
+            strength: 35
         }
 
     }
