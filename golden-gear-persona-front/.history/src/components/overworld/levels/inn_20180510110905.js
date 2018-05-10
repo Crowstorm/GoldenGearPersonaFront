@@ -104,13 +104,9 @@ class Inn extends React.Component{
 
         document.addEventListener("keydown", this.handleKeyDown);
         document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
-        
     }
 
     render(){
-        if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
-            alert('elo')
-        }
         return(
             <div id="inn"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
