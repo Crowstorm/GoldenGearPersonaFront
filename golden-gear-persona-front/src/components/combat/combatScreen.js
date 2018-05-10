@@ -17,7 +17,7 @@ class CombatScreen extends React.Component {
         let i = this.props.mechanics.attackingAllyIndex
         let renderAllyTurnInterface = (this.props.mechanics.turn === 'ally') ? this.getAllyTurnInterface() : null
         return (
-            <div className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600 }}>
+            <div className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600}}>
                 <div className="d-flex ">
                     {/* <button onClick={() => this.handleEnemyAttack()}> Enemy Attack </button> */}
                 </div>
