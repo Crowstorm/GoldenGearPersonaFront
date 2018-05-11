@@ -8,11 +8,11 @@ class OverworldInterface extends React.Component {
                 {/* Current level */}
                 <div className="d-flex flex-row"> <b>{this.props.mechanics.currentLevel} </b></div>
                 {/* Character info */}
-                <div className="d-flex flex-column align-items-center">
+                <div className="d-flex flex-row">
                     <div>
                         {this.props.mainChar[1].name}
                     </div>
-                    <div> <img src={this.props.mainChar[1].portrait} style={{height: 100}} /> </div>
+                    <div> {this.props.mainChar[1].portrait} </div>
                 </div>
             </div>
         )

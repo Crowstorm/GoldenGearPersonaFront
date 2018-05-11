@@ -27,11 +27,10 @@ let initial_state = [
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
         },
         skills: [
-            skills.backstab,
-            skills.heal
+            skills.backstab
         ],
         magic: [
-            skills.heal
+
         ],
         consumables: [
             items.healingPotion,
@@ -61,13 +60,7 @@ let initial_state = [
             leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
             rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
-        },
-        skills: [
-            skills.backstab,
-        ],
-        magic: [
-            skills.heal
-        ]
+        }
     },
     {
         name: 'Healing Cat',
@@ -91,13 +84,7 @@ let initial_state = [
             leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
             rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
-        },
-        skills: [
-            skills.backstab
-        ],
-        magic: [
-
-        ]
+        }
     },
     {
         name: 'Fire Grill',
@@ -121,13 +108,7 @@ let initial_state = [
             leftHand: 'https://vignette.wikia.nocookie.net/teoria/images/3/39/Piq_68684_400x400.png/revision/latest?cb=20160723153739&path-prefix=pl',
             rightHand: 'https://i.pinimg.com/originals/8b/99/48/8b9948f230b107327413d56e3d83b744.png',
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
-        },
-        skills: [
-            skills.backstab
-        ],
-        magic: [
-
-        ]
+        }
     },
 ];
 
