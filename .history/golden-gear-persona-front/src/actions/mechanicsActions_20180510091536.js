@@ -173,15 +173,6 @@ export const attackReady = (isReady) => {
     }
 }
 
-export const healReady = (isReady) =>{
-    return function(dispatch){
-        dispatch({
-            type: 'HEAL_READY',
-            isReady
-        })
-    }
-}
-
 export const switchTurn = (whoseTurn) => {
     return function (dispatch) {
         dispatch({
@@ -204,15 +195,6 @@ export const calculateDmg = (dmg) => {
         dispatch({
             type: 'CALCULATE_DAMAGE',
             dmg
-        })
-    }
-}
-
-export const calculateHeal = (amount) =>{
-    return function(dispatch){
-        dispatch({
-            type: 'CALCULATE_HEAL',
-            amount
         })
     }
 }

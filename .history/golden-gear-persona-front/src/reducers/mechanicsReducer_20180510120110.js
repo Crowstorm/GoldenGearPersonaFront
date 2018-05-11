@@ -17,12 +17,6 @@ export default (state = initial_state, action) => {
                 dmgPayload: action.dmg
             }
         }
-        case 'CALCULATE_HEAL':{
-            return{
-                ...state,
-                healPayload: action.amount
-            }
-        }
         case 'ATTACK_READY': {
             return {
                 ...state,

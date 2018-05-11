@@ -12,17 +12,11 @@ class AllyInterface extends React.Component {
         this.props.setCharCardState(true)
     }
 
-    characterInteraction = (index) =>{
-        if(!this.props.mechanics.healReady){
-            this.handleOpenCharCard(index);
-        }
-    }
-
     getCharactersForCombat = () => {
         const { mainChar } = this.props;
         return _.map(mainChar, (character, index) => {
             return (
-                <div className="d-flex flex-column flex-row" onClick={() => this.characterInteraction(index)}>
+                <div className="d-flex flex-column flex-row" onClick={() => this.handleOpenCharCard(index)}>
                     <p className="d-flex justify-content-center align-items-center" style={{ marginTop: 15 }}>{character.name}</p>
                     <img src={character.portrait} style={{ height: 100, width: 100, border: '3px solid green' }} />
                     <p className="d-flex justify-content-center" style={{ marginTop: 10 }}> Hp: {character.stats.hp} Mp: {character.stats.mp} </p>
