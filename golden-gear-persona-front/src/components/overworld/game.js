@@ -3,9 +3,8 @@ import _ from 'lodash';
 import './game.css';
 import princess from '../assets/princess2.png'
 
-import { GRID25, BLOCKED } from './grids'
-
-
+//grid generator
+import GridGenerator from '../extraInterfaces/gridGenerator';
 //levels
 import ThroneRoom from './levels/throneRoom'
 import CastleRoad from './levels/castleRoad';
@@ -83,6 +82,7 @@ class Game extends React.Component {
                  */}
                 {/* <ThroneRoom {...this.props} /> */}
                 {levelRenderer()}
+                <GridGenerator />
 
             </div>
         )
