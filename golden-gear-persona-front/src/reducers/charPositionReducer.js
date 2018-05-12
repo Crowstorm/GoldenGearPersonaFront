@@ -45,6 +45,13 @@ export default (state = initial_state, action) => {
                 model: left
             })
         }
+        case 'SET_CHARACTER_POSITION':{
+            return{
+                ...state,
+                x: action.x,
+                y: action.y       
+            }
+        }
         default: {
             return state;
         }

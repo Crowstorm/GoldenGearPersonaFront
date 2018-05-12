@@ -234,3 +234,12 @@ export const changeLevel = (newLevel) =>{
         })
     }
 }
+
+export const setCharacterPosition = (x, y) =>{
+    return function(dispatch){
+        dispatch({
+            type:'SET_CHARACTER_POSITION',
+            x, y
+        })
+    }
+}

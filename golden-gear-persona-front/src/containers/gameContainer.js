@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft} from '../actions/index'
-import {changeLevel} from '../actions/mechanicsActions'
+import {changeLevel, setCharacterPosition} from '../actions/mechanicsActions'
 import {setDialogueState} from '../actions/modals'
 import Game from '../components/overworld/game';
 import OverworldInterface from '../components/overworld/overworldInterface'
@@ -46,6 +46,9 @@ function mapDispatchToProps(dispatch){
         },
         changeLevel: (newLevel)=>{
             dispatch(changeLevel(newLevel));
+        },
+        setCharacterPosition: (x, y)=>{
+            dispatch(setCharacterPosition(x, y));
         }
     }
 }
