@@ -6,7 +6,6 @@ let initial_state = {
     characterIndex: null,
     attackingAllyIndex: 0,
     dmgPayload: null,
-    combat: false,
     currentLevel: 'ThroneRoom',
 };
 
@@ -16,12 +15,6 @@ export default (state = initial_state, action) => {
             return {
                 ...state,
                 dmgPayload: action.dmg
-            }
-        }
-        case 'CALCULATE_HEAL':{
-            return{
-                ...state,
-                healPayload: action.amount
             }
         }
         case 'ATTACK_READY': {

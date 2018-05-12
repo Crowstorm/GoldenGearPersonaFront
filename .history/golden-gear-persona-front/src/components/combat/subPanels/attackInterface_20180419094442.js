@@ -62,9 +62,7 @@ class AttackInterface extends React.Component {
     handleRenderSkills = () => {
         let i = this.props.mechanics.attackingAllyIndex;
         let browse = this.props.mainChar[i].skills
-        console.log(browse)
         let mapper = _.map(browse, (skill) => {
-            console.log('gowno')
             return (
                 <div className="d-flex flex-column">
                     <div className="d-flex justify-content-center flex-wrap align-items-center" >

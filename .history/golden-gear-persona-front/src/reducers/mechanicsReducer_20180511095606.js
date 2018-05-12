@@ -6,7 +6,6 @@ let initial_state = {
     characterIndex: null,
     attackingAllyIndex: 0,
     dmgPayload: null,
-    combat: false,
     currentLevel: 'ThroneRoom',
 };
 

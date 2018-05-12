@@ -27,8 +27,7 @@ let initial_state = [
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
         },
         skills: [
-            skills.backstab,
-            skills.heal
+            skills.backstab
         ],
         magic: [
             skills.heal
@@ -63,7 +62,7 @@ let initial_state = [
             legs: 'https://orig00.deviantart.net/ba0b/f/2015/019/7/8/minecraft_leather_pants_by_dragonshadow3-d8ekmni.png'
         },
         skills: [
-            skills.backstab,
+            skills.backstab
         ],
         magic: [
             skills.heal

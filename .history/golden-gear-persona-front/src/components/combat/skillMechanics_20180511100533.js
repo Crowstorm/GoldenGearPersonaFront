@@ -12,6 +12,5 @@ export const useHeal = (props) =>{
     let i = props.mechanics.attackingAllyIndex;
     let amount = props.mainChar[i].stats.magic;
     props.calculateHeal(amount);
-    props.healReady(true);
     //props.allyRestoreHP(amount, whoToHealIndex);
 }

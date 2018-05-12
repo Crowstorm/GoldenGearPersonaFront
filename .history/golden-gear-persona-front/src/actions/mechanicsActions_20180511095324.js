@@ -173,15 +173,6 @@ export const attackReady = (isReady) => {
     }
 }
 
-export const healReady = (isReady) =>{
-    return function(dispatch){
-        dispatch({
-            type: 'HEAL_READY',
-            isReady
-        })
-    }
-}
-
 export const switchTurn = (whoseTurn) => {
     return function (dispatch) {
         dispatch({

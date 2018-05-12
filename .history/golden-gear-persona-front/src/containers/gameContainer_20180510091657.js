@@ -11,7 +11,7 @@ class GameContainer extends React.Component {
     render() {
         return (
             <div>
-                <OverworldInterface {...this.props}/>
+                <OverworldInterface />
                 <Game {...this.props}/>
             </div>
         )
@@ -22,8 +22,7 @@ function mapStateToProps(store){
     return{
         charPosition: store.charPosition,
         modals: store.modals,
-        mechanics: store.mechanics,
-        mainChar: store.mainChar
+        mechanics: store.mechanics
     }
 }
 
