@@ -13,3 +13,43 @@
     width:800px;
     float: right;
 }
+
+#castleroad{
+    background-image: url('../../assets/droga.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#tofarm{
+    background-image: url('../../assets/roadtofarm.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#village{
+    background-image: url('../../assets/village.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#corridor{
+    background-image: url('../../assets/corridor.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#outsidecastle{
+    background-image: url('../../assets/outsidecastle.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

@@ -10,7 +10,10 @@ import { GRID25, BLOCKED } from './grids'
 import ThroneRoom from './levels/throneRoom'
 import CastleRoad from './levels/castleRoad';
 import Inn from './levels/inn'
-
+import ToFarm from './levels/toFarm'
+import Village from './levels/village'
+import Corridor from './levels/corridor'
+import OutsideCastle from './levels/outsideCastle'
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -42,7 +45,30 @@ class Game extends React.Component {
                     )
                     break;
                 }     
-                break; 
+                case "ToFarm":{
+                    return(
+                        <ToFarm {...this.props} />
+                    )
+                    break;
+                }
+                case "Village":{
+                    return(
+                        <Village {...this.props} />
+                    )
+                    break;
+                }
+                case "Corridor":{
+                    return(
+                        <Corridor {...this.props} />
+                    )
+                    break;
+                }
+                case "OutsideCastle":{
+                    return(
+                        <OutsideCastle {...this.props} />
+                    )
+                    break;
+                }
                 default: { return }     
             }
             
