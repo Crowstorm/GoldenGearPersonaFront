@@ -13,7 +13,6 @@ class OverworldInterface extends React.Component {
                         {this.props.mainChar[1].name}
                     </div>
                     <div> <img src={this.props.mainChar[1].portrait} style={{height: 100}} /> </div>
-                    <div> Current quest: {this.props.mainChar[0].quest} </div>
                 </div>
             </div>
         )
