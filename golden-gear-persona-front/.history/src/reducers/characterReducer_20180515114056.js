@@ -211,11 +211,11 @@ export default (state = initial_state, action) => {
                 {
                     ...state[0],
                     consumables:[
-                        ...state[0].consumables,
+                        ...state,
                         action.item
                     ]
                 },
-                ...state.slice(1)
+                ...state.slice(0 + 1)
             ]
         }
         default: {

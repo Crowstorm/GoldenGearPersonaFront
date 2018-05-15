@@ -202,20 +202,12 @@ export default (state = initial_state, action) => {
             ]
         }
         case 'CONSUMABLE_USED':{
-            return
+            
         }
         case 'ITEM_PICK_UP':{
-            console.log(action)
             return [
                 ...state.slice(0, 0),
-                {
-                    ...state[0],
-                    consumables:[
-                        ...state[0].consumables,
-                        action.item
-                    ]
-                },
-                ...state.slice(1)
+                
             ]
         }
         default: {

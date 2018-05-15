@@ -211,7 +211,7 @@ export default (state = initial_state, action) => {
                 {
                     ...state[0],
                     consumables:[
-                        ...state[0].consumables,
+                        ...state,
                         action.item
                     ]
                 },

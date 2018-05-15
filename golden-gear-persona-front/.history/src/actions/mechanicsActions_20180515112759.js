@@ -245,11 +245,8 @@ export const setCharacterPosition = (x, y) =>{
 }
 
 export const pickUpItem = (item) =>{
-    console.log(item)
     return function(dispatch){
-        dispatch({
-            type: 'ITEM_PICK_UP',
-            item
-        })
+        type: 'ITEM_PICK_UP',
+        item
     }
 }
