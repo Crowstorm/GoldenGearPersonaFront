@@ -54,7 +54,7 @@ function mapDispatchToProps(dispatch){
             dispatch(pickUpItem(item));
         },
         setQuest: (quest)=>{
-            dispatch(setQuest(quest));
+            dispatch(setQuest(quest);
         },
     }
 }

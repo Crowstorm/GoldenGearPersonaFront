@@ -219,16 +219,6 @@ export default (state = initial_state, action) => {
                 ...state.slice(1)
             ]
         }
-        case 'SET_QUEST':{
-            return[
-                ...state.slice(0,0),
-                {
-                    ...state[0],
-                    quest: action.quest
-                },
-                ...state.slice(1)
-            ]
-        }
         default: {
             return state;
         }

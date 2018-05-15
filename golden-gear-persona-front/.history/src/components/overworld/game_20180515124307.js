@@ -80,6 +80,7 @@ class Game extends React.Component {
                     <p style={{color: 'black'}}>Obecna pozycja: {this.props.charPosition.x}, {this.props.charPosition.y} </p>
                 </div>
                  */}
+                {/* <ThroneRoom {...this.props} /> */}
                 {levelRenderer()}
                 {/* <GridGenerator /> */}
 
