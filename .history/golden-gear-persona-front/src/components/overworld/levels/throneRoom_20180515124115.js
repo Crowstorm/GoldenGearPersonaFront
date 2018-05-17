@@ -111,7 +111,7 @@ class ThroneRoom extends React.Component {
                     this.props.changeLevel('Corridor');
                 }
                 if (this.props.charPosition.x == 12 && this.props.charPosition.y == 3) {
-                    this.props.pickUpItem('healingPotion');
+                    this.props.pickUpItem('gowno');
                 }
                 break;
             }
