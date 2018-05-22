@@ -102,10 +102,26 @@ class ThroneRoom extends React.Component {
             }
             case 'Enter': {
                 if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
-                    this.props.setDialogueState(true);
+                    const ziomek = {
+                        name: 'Stupid Boy',
+                        portrait: 'https://d1u5p3l4wpay3k.cloudfront.net/crafttheworld_gamepedia/b/b8/Beholder.png',
+                        stats: {
+                            hp: 2,
+                            mp: 0,
+                            defence: 5,
+                            agility: 7,
+                            speed: 12,
+                            strength: 5
+                        }
+                    }
+                    //this.props.setDialogueState(true);
+                    this.props.addEnemy(ziomek);
+                    this.props.addEnemy(ziomek);
+                    this.props.startCombat();
                     this.props.setQuest('Save the Princess');
+                    document.removeEventListener("keydown", this.handleKeyDown);
                 }
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2){
+                if (this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2) {
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.setCharacterPosition(5, 5);
                     this.props.changeLevel('Corridor');
@@ -140,6 +156,8 @@ class ThroneRoom extends React.Component {
             { text: "She was last seen on the streets near the Inn. That's not the first time something bad happened there. During the night bandits are patrolling this area." },
             { text: "Now go, my friend, and save the Princess. Time might be running short." }
         ]
+
+       
 
         console.log(this.props);
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';

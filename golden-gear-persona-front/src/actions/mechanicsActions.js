@@ -18,8 +18,10 @@ export const combatStart2 = () => {
                                 let i = 'dziala'
                                 resolve(i)
                             }
+                            //Logika prawdopodobnie przeniesiona
                             if (getState().enemies.length === 0) {
-                                alert('wygrales');
+                                // this.stopCombat();
+                                // alert('wygrales');
                                 return 0;
                             }
                         }
@@ -259,6 +261,23 @@ export const setQuest = (quest) =>{
         dispatch({
             type: 'SET_QUEST',
             quest
+        })
+    }
+}
+
+export const startCombat = ()=>{
+    return function(dispatch){
+        dispatch({
+            type: 'START_COMBAT',
+        })
+    }
+}
+
+export const stopCombat = ()=>{
+    console.log('1');
+    return function(dispatch){
+        dispatch({
+            type: 'STOP_COMBAT',
         })
     }
 }

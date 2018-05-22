@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   render() {
+    let screenRenderer = (this.props)
     return (
       <div className="container App">
         <div className="gameContainer">

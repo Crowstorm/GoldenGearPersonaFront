@@ -4,7 +4,13 @@ export const loseHP = (amount, index) => {
     return function (dispatch, getState) {
 
         if(getState().enemies.length === 1 && getState().enemies[index].stats.hp - amount <=0){
-            alert('wygrales');
+            dispatch({
+                type: 'CLEAR_ENEMIES'
+            })
+            dispatch({
+                type: 'STOP_COMBAT'
+            })
+            // alert('wygrales');
             return 0;
         } else if(getState().enemies[index].stats.hp - amount <=0){
             console.log('gowno umarlem')
@@ -19,5 +25,14 @@ export const loseHP = (amount, index) => {
                 index
             })
         }  
+    }
+}
+
+export const addEnemy = (enemy) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'ADD_ENEMY',
+            enemy
+        })
     }
 }

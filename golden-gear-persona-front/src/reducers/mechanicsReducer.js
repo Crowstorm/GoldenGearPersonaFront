@@ -12,6 +12,19 @@ let initial_state = {
 
 export default (state = initial_state, action) => {
     switch (action.type) {
+        case 'START_COMBAT':{
+            return {
+                ...state,
+                combat: true
+            }
+        }
+        case 'STOP_COMBAT':{
+            console.log('2');
+            return {
+                ...state,
+                combat: false
+            }
+        }
         case 'CALCULATE_DAMAGE':{
             return {
                 ...state,
