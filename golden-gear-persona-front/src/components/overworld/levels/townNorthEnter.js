@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_CastleRoad } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_NorthEnter } from '../grids'
 
-class CastleRoad extends React.Component{
+class TownNorthEnter extends React.Component{
 
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -29,7 +29,7 @@ class CastleRoad extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_CastleRoad, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class CastleRoad extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_CastleRoad, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class CastleRoad extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_CastleRoad, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class CastleRoad extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_CastleRoad, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -84,30 +84,37 @@ class CastleRoad extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 23 || this.props.charPosition.x == 13 && this.props.charPosition.y == 23 || this.props.charPosition.x == 14 && this.props.charPosition.y == 23){
-                    this.props.setCharacterPosition(14, 2);
+                if(this.props.charPosition.x == 11 && this.props.charPosition.y == 24 || this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 24 || this.props.charPosition.x == 15 && this.props.charPosition.y == 24){
+                    this.props.setCharacterPosition(12, 2);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('OutsideCastle');
+                    this.props.changeLevel('CastleRoad');
                     break;
                 }
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 11){
-                    this.props.setCharacterPosition(24, 12);
+                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 19 || this.props.charPosition.x == 24 && this.props.charPosition.y == 20 || this.props.charPosition.x == 24 && this.props.charPosition.y == 21 || this.props.charPosition.x == 24 && this.props.charPosition.y == 22 || this.props.charPosition.x == 24 && this.props.charPosition.y == 23 || this.props.charPosition.x == 24 && this.props.charPosition.y == 24){
+                    this.props.setCharacterPosition(2, 21);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('ToFarm');
+                    this.props.changeLevel('Road To Beach');
+                
+                }
+                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 3 || this.props.charPosition.x == 24 && this.props.charPosition.y == 4 || this.props.charPosition.x == 24 && this.props.charPosition.y == 5 || this.props.charPosition.x == 24 && this.props.charPosition.y == 6 || this.props.charPosition.x == 24 && this.props.charPosition.y == 7 || this.props.charPosition.x == 24 && this.props.charPosition.y == 8 || this.props.charPosition.x == 24 && this.props.charPosition.y == 9 || this.props.charPosition.x == 24 && this.props.charPosition.y == 10){
+                    this.props.setCharacterPosition(2, 5);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('Road To Beach');
                     break;
                 }
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 11){
-                    this.props.setCharacterPosition(2, 12);
+                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 22 || this.props.charPosition.x == 2 && this.props.charPosition.y == 23 || this.props.charPosition.x == 2 && this.props.charPosition.y == 24){
+                    this.props.setCharacterPosition(24, 22);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Forest Near Beach');
+                    this.props.changeLevel('Campfire');
                     break;
                 }
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 24);
+                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 3 || this.props.charPosition.x == 2 && this.props.charPosition.y == 4 || this.props.charPosition.x == 2 && this.props.charPosition.y == 5 || this.props.charPosition.x == 2 && this.props.charPosition.y == 6 || this.props.charPosition.x == 2 && this.props.charPosition.y == 7 || this.props.charPosition.x == 2 && this.props.charPosition.y == 8 || this.props.charPosition.x == 2 && this.props.charPosition.y == 9 || this.props.charPosition.x == 2 && this.props.charPosition.y == 10){
+                    this.props.setCharacterPosition(24, 5);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Town North Enter');
+                    this.props.changeLevel('Campfire');
                     break;
                 }
+
                 break;
                 
             }
@@ -125,7 +132,7 @@ class CastleRoad extends React.Component{
        
         
         return(
-            <div id="castleroad"> 
+            <div id="townnorthenter"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -134,4 +141,4 @@ class CastleRoad extends React.Component{
     }
 }
 
-export default CastleRoad;
+export default TownNorthEnter;

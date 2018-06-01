@@ -13,6 +13,12 @@ import ToFarm from './levels/toFarm'
 import Village from './levels/village'
 import Corridor from './levels/corridor'
 import OutsideCastle from './levels/outsideCastle'
+import TownNorthEnter from './levels/townNorthEnter'
+import ForestNearBeach from './levels/forestNearBeach'
+import UpperBeach from './levels/upperBeach'
+import LowerBeach from './levels/lowerBeach'
+import RoadToBeach from './levels/roadToBeach'
+import Campfire from './levels/campfire'
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -68,6 +74,49 @@ class Game extends React.Component {
                     )
                     break;
                 }
+                case "Town North Enter":{
+                    return(
+                        <TownNorthEnter {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Forest Near Beach":{
+                    return(
+                        <ForestNearBeach {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Upper Beach":{
+                    return(
+                        <UpperBeach {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Lower Beach":{
+                    return(
+                        <LowerBeach {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Road To Beach":{
+                    return(
+                        <RoadToBeach {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Campfire":{
+                    return(
+                        <Campfire {...this.props} />
+                    )
+                    break;
+                }
+
+
                 default: { return }     
             }
             

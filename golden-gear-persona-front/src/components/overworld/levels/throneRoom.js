@@ -123,7 +123,7 @@ class ThroneRoom extends React.Component {
                 }
                 if (this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2) {
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.setCharacterPosition(5, 5);
+                    this.props.setCharacterPosition(12, 24);
                     this.props.changeLevel('Corridor');
                 }
                 if (this.props.charPosition.x == 12 && this.props.charPosition.y == 3) {
