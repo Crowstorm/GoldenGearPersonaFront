@@ -81,7 +81,7 @@ class Game extends React.Component {
                 </div>
                  */}
                 {levelRenderer()}
-                {/* <GridGenerator /> */}
+                 <GridGenerator /> 
 
             </div>
         )
