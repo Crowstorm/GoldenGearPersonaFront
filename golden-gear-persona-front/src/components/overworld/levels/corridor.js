@@ -85,12 +85,16 @@ class Corridor extends React.Component{
             case 'Enter': {
                
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24){
+                    this.props.setCharacterPosition(12, 2);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('ThroneRoom');
+                    break;
                 }
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2){
+                    this.props.setCharacterPosition(14, 24);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('OutsideCastle');
+                    break;
                 }
                 break;
                 

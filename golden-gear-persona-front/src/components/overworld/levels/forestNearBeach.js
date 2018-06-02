@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_OutsideCastle } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_NorthEnter } from '../grids'
 
-class OutsideCastle extends React.Component{
+class ForestNearBeach extends React.Component{
 
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -29,7 +29,7 @@ class OutsideCastle extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_OutsideCastle, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class OutsideCastle extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_OutsideCastle, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class OutsideCastle extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_OutsideCastle, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class OutsideCastle extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_OutsideCastle, cell => {
+                _.forEach(BLOCKED_NorthEnter, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -84,19 +84,23 @@ class OutsideCastle extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 14 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(12,2);
+                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 14 || this.props.charPosition.x == 24 && this.props.charPosition.y == 15){
+                    this.props.setCharacterPosition(2, 13);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Corridor');
+                    this.props.changeLevel('Upper Beach');
+                    break;
+                
                 }
-
-                if(this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2)
-                {
-                    this.props.setCharacterPosition(13, 23);
+                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+                    this.props.setCharacterPosition(24, 12);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('CastleRoad');
+                    break;
+                    
                 }
+                
                 break;
+                
             }
             default: { return }
         }
@@ -112,7 +116,7 @@ class OutsideCastle extends React.Component{
        
         
         return(
-            <div id="outsidecastle"> 
+            <div id="forestnearbeach"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -121,4 +125,4 @@ class OutsideCastle extends React.Component{
     }
 }
 
-export default OutsideCastle;
+export default ForestNearBeach;
