@@ -27,7 +27,7 @@ class GridGenerator extends React.Component {
                     style={{ height: 31.91, width: 31.91, boxSizing: 'border-box', border: '1px solid red' }}
                     onClick={()=> this.blocker(cell.x, cell.y)}
                     >
-                    {/*x: {cell.x}, y: {cell.y} */}
+                    {/* x: {cell.x}, y: {cell.y} */}
                 </div>
             })
             } </div>

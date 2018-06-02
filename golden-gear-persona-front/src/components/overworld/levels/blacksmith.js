@@ -2,20 +2,16 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_Inn } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_Blacksmith } from '../grids'
 
-import monster from '../../assets/beholder.png'
+class Blacksmith extends React.Component{
 
-class Inn extends React.Component{
-      //Funckja ktora zwraca img z ludzikiem
-      renderPosition = (cell) => {
+    renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
             return <img src={this.props.charPosition.model} style={{ height: 40, transform: 'translateY(-10px)' }} />;
         }
     }
 
-    //Funkcja, ktora leci po kazdym rzadku i po kazdej komorce rzadku. Nadaje im odpowiednie atrybuty i ma w sobie funkcje powyzej, ktora uaktywnia sie kiedy pozycja w stanie aplikacji
-    //zgadza sie z x i y komorki
     renderGrid() {
         return _.map(GRID_ThroneRoom, row => {
             return <div key={`row${row[0].y}`} className="row" style={{ margin: 0 }}> {_.map(row, cell => {
@@ -25,7 +21,6 @@ class Inn extends React.Component{
         })
     }
 
-    //Funkcja "nasluchujaca" klikniesz klawiszem. Gora dol, lewo prawo
     handleKeyDown = (e) => {
         //console.log(e);
         var d = new Date();
@@ -34,7 +29,7 @@ class Inn extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_Inn, cell => {
+                _.forEach(BLOCKED_Blacksmith, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -48,7 +43,7 @@ class Inn extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_Inn, cell => {
+                _.forEach(BLOCKED_Blacksmith, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -62,7 +57,7 @@ class Inn extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_Inn, cell => {
+                _.forEach(BLOCKED_Blacksmith, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -76,7 +71,7 @@ class Inn extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_Inn, cell => {
+                _.forEach(BLOCKED_Blacksmith, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -88,35 +83,46 @@ class Inn extends React.Component{
                 break;
             }
             case 'Enter': {
-                if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
-                    this.props.setDialogueState(true);
-                }
-                if(this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 14);
+               
+                
+                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 14){
+                    this.props.setCharacterPosition(13, 2);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn Outside');
+                    this.props.changeLevel('North Gate');
+                    break;
+                }
+                
+                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+                    this.props.setCharacterPosition(24, 13);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('West Gate');
+                    break;
+                }
+
+                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+                    this.props.setCharacterPosition(2, 13);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('Town Hall');
+                    break;
                 }
                 break;
+                
             }
             default: { return }
         }
     }
 
+
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
-        
     }
 
     render(){
-        if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
-            this.props.startCombat()
-            // window.location.href = "combat"
-        }
+       
         
         return(
-            <div id="inn"> 
+            <div id="blacksmith"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -125,4 +131,4 @@ class Inn extends React.Component{
     }
 }
 
-export default Inn;
+export default Blacksmith;

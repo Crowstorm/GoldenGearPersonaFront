@@ -114,6 +114,12 @@ class TownNorthEnter extends React.Component{
                     this.props.changeLevel('Campfire');
                     break;
                 }
+                if(this.props.charPosition.x == 11 && this.props.charPosition.y == 4 || this.props.charPosition.x == 12 && this.props.charPosition.y == 4 || this.props.charPosition.x == 13 && this.props.charPosition.y == 4 || this.props.charPosition.x == 14 && this.props.charPosition.y == 4 || this.props.charPosition.x == 15 && this.props.charPosition.y == 4){
+                    this.props.setCharacterPosition(13, 24);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('North Gate');
+                    break;
+                }
 
                 break;
                 

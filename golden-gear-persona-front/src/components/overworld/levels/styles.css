@@ -101,3 +101,59 @@
     width:800px;
     float: right;
 }
+
+#northgate{
+    background-image: url('../../assets/NorthGate.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#peasantshouse{
+    background-image: url('../../assets/PeasantsHouse.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#westgate{
+    background-image: url('../../assets/WestGate.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#guildoutside{
+    background-image: url('../../assets/GuildOutside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#blacksmith{
+    background-image: url('../../assets/Blacksmith.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#townhall{
+    background-image: url('../../assets/TownHall.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#innoutside{
+    background-image: url('../../assets/InnOutside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

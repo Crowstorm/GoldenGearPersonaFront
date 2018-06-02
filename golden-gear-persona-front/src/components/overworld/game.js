@@ -19,6 +19,13 @@ import UpperBeach from './levels/upperBeach'
 import LowerBeach from './levels/lowerBeach'
 import RoadToBeach from './levels/roadToBeach'
 import Campfire from './levels/campfire'
+import NorthGate from './levels/northGate'
+import PeasantsHouse from './levels/peasantsHouse'
+import WestGate from './levels/westGate'
+import GuildOutside from './levels/guildOutside'
+import Blacksmith from './levels/blacksmith'
+import TownHall from './levels/townHall'
+import InnOutside from './levels/innOutside'
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -112,6 +119,55 @@ class Game extends React.Component {
                 case "Campfire":{
                     return(
                         <Campfire {...this.props} />
+                    )
+                    break;
+                }
+
+                case "North Gate":{
+                    return(
+                        <NorthGate {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Peasants House":{
+                    return(
+                        <PeasantsHouse {...this.props} />
+                    )
+                    break;
+                }
+
+                case "West Gate":{
+                    return(
+                        <WestGate {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Guild Outside":{
+                    return(
+                        <GuildOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Blacksmith":{
+                    return(
+                        <Blacksmith {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Town Hall":{
+                    return(
+                        <TownHall {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Inn Outside":{
+                    return(
+                        <InnOutside {...this.props} />
                     )
                     break;
                 }
