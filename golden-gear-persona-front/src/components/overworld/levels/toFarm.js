@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import monster from '../../assets/beholder.png'
 
 
 import { GRID_ThroneRoom, BLOCKED_toFarm } from '../grids'
@@ -106,13 +107,19 @@ class ToFarm extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
+
     }
 
     render(){
-       
+        if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
+            this.props.startCombat()
+            // window.location.href = "combat"
+        }
         
         return(
             <div id="tofarm"> 
+            
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>

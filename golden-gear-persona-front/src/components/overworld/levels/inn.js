@@ -110,7 +110,8 @@ class Inn extends React.Component{
 
     render(){
         if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
-            window.location.href = "combat"
+            this.props.startCombat()
+            // window.location.href = "combat"
         }
         
         return(

@@ -1,42 +1,42 @@
 const enemyDefaultState = [
-    // {
-    //     name: 'Stupid Boy',
-    //     portrait: 'https://d1u5p3l4wpay3k.cloudfront.net/crafttheworld_gamepedia/b/b8/Beholder.png',
-    //     stats: {
-    //         hp: 2,
-    //         mp: 0,
-    //         defence: 5,
-    //         agility: 7,
-    //         speed: 12,
-    //         strength: 5
-    //     }
-    // },
-    // {
-    //     name: 'Wicked Boy',
-    //     portrait: 'https://vignette.wikia.nocookie.net/eberron/images/4/4a/Beholder.jpg/revision/latest?cb=20111004002157',
-    //     stats: {
-    //         hp: 2,
-    //         mp: 0,
-    //         defence: 3,
-    //         agility: 7,
-    //         speed: 3,
-    //         strength: 2
-    //     }
+    {
+        name: 'Stupid Boy',
+        portrait: 'https://d1u5p3l4wpay3k.cloudfront.net/crafttheworld_gamepedia/b/b8/Beholder.png',
+        stats: {
+            hp: 20,
+            mp: 0,
+            defence: 5,
+            agility: 7,
+            speed: 12,
+            strength: 5
+        }
+    },
+    {
+        name: 'Wicked Boy',
+        portrait: 'https://vignette.wikia.nocookie.net/eberron/images/4/4a/Beholder.jpg/revision/latest?cb=20111004002157',
+        stats: {
+            hp: 20,
+            mp: 0,
+            defence: 3,
+            agility: 7,
+            speed: 3,
+            strength: 2
+        }
 
-    // },
-    // {
-    //     name: 'European Boy',
-    //     portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
-    //     stats: {
-    //         hp: 2,
-    //         mp: 0,
-    //         defence: 4,
-    //         agility: 7,
-    //         speed: 6,
-    //         strength: 3
-    //     }
+    },
+    {
+        name: 'European Boy',
+        portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
+        stats: {
+            hp: 20,
+            mp: 0,
+            defence: 4,
+            agility: 7,
+            speed: 6,
+            strength: 3
+        }
 
-    // }
+    }
 
 ]
 

@@ -114,12 +114,12 @@ class ThroneRoom extends React.Component {
                             strength: 5
                         }
                     }
-                    //this.props.setDialogueState(true);
-                    this.props.addEnemy(ziomek);
-                    this.props.addEnemy(ziomek);
-                    this.props.startCombat();
+                    this.props.setDialogueState(true);
+                    // this.props.addEnemy(ziomek);
+                    // this.props.addEnemy(ziomek);
+                    // this.props.startCombat();
                     this.props.setQuest('Save the Princess');
-                    document.removeEventListener("keydown", this.handleKeyDown);
+                    // document.removeEventListener("keydown", this.handleKeyDown);
                 }
                 if (this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2) {
                     document.removeEventListener("keydown", this.handleKeyDown);
