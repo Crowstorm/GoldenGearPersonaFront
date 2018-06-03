@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft } from '../actions/index'
 import { changeLevel, setCharacterPosition, pickUpItem, setQuest, startCombat, stopCombat } from '../actions/mechanicsActions'
 import { addEnemy} from '../actions/enemyActions'
-import { setDialogueState } from '../actions/modals'
+import { setDialogueState, setInfoState, setInfoText } from '../actions/modals'
 
 
 import Game from '../components/overworld/game';
@@ -20,11 +20,13 @@ class GameContainer extends React.Component {
     }
 
     overworld() {
+        let infoRenderer = (this.props.modals.infoVisibility) ? <Info {...this.props} /> : ''
         return (
             <div>
                 <OverworldInterface {...this.props} />
                 <Game {...this.props} />
-                <Info {...this.props} />
+                {/* <Info {...this.props} /> */}
+                {infoRenderer}
             </div>
         )
     }
@@ -87,6 +89,12 @@ function mapDispatchToProps(dispatch) {
         },
         addEnemy: (enemy)=>{
             dispatch(addEnemy(enemy));
+        },
+        setInfoState: (visibility) => {
+            dispatch(setInfoState(visibility));
+        },
+        setInfoText: (text) =>{
+            dispatch(setInfoText(text));
         }
     }
 }

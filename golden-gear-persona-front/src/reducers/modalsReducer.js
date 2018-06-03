@@ -5,10 +5,10 @@ const modalDefaultState = {
     //charCard
     charCardVisibility: false,
     dialogueVisibility: false,
-    infoVisibility: true,
+    infoVisibility: false,
 
     //info text
-    infoText: 'xD'
+    infoText: ''
 }
 
 const modalReducer = (state = modalDefaultState, action) => {
@@ -26,7 +26,7 @@ const modalReducer = (state = modalDefaultState, action) => {
             case 'SET_INFO_STATE':
             return{
                 ...state,
-                dialogueVisibility: action.visibility
+                infoVisibility: action.visibility
             }
             case 'SET_INFO_TEXT':
             return{
