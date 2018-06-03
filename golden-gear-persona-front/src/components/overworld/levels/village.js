@@ -99,7 +99,7 @@ class Village extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 9 && this.props.charPosition.y == 2 || this.props.charPosition.x == 10 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
+        if((this.props.charPosition.x == 9 && this.props.charPosition.y == 2) || this.props.charPosition.x == 10 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
             this.props.setCharacterPosition(12, 23);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('ToFarm');

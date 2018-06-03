@@ -5,10 +5,12 @@ import { moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft } from 
 import { changeLevel, setCharacterPosition, pickUpItem, setQuest, startCombat, stopCombat } from '../actions/mechanicsActions'
 import { addEnemy} from '../actions/enemyActions'
 import { setDialogueState } from '../actions/modals'
+
+
 import Game from '../components/overworld/game';
 import OverworldInterface from '../components/overworld/overworldInterface';
-
 import CombatContainer from './combatContainer';
+import Info from '../components/extraInterfaces/info'
 
 class GameContainer extends React.Component {
     combat() {
@@ -22,6 +24,7 @@ class GameContainer extends React.Component {
             <div>
                 <OverworldInterface {...this.props} />
                 <Game {...this.props} />
+                <Info {...this.props} />
             </div>
         )
     }

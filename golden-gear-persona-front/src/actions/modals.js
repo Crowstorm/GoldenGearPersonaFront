@@ -9,3 +9,13 @@ export const setDialogueState = (visibility) => ({
     type: 'SET_DIALOGUE_STATE',
     visibility
 })
+
+export const setInfoState = (visibility) => ({
+    type: 'SET_INFO_STATE',
+    visibility
+})
+
+export const setInfoText = (text) => ({
+    type: 'SET_INFO_TEXT',
+    text
+})
