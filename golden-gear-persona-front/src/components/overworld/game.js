@@ -26,6 +26,9 @@ import GuildOutside from './levels/guildOutside'
 import Blacksmith from './levels/blacksmith'
 import TownHall from './levels/townHall'
 import InnOutside from './levels/innOutside'
+import PeasantsInside from './levels/peasantsInside'
+import GroceryStore from './levels/groceryStore'
+import Carnival from './levels/carnival'
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -130,9 +133,24 @@ class Game extends React.Component {
                     break;
                 }
 
+                case "Grocery Store":{
+                    return(
+                        <GroceryStore {...this.props} />
+                    )
+                    break;
+                }
+
+
                 case "Peasants House":{
                     return(
                         <PeasantsHouse {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Peasants Inside":{
+                    return(
+                        <PeasantsInside {...this.props} />
                     )
                     break;
                 }
@@ -147,6 +165,13 @@ class Game extends React.Component {
                 case "Guild Outside":{
                     return(
                         <GuildOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Carnival":{
+                    return(
+                        <Carnival {...this.props} />
                     )
                     break;
                 }

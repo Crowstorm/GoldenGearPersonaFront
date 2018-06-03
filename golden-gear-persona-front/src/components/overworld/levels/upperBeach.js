@@ -84,24 +84,7 @@ class UpperBeach extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(12, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('CastleRoad');
                 
-                }
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('CastleRoad');
-                    
-                }
-                if(this.props.charPosition.x == 4 && this.props.charPosition.y == 2 || this.props.charPosition.x == 5 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(5, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Lower Beach');
-                    
-                }
                 break;
                 
             }
@@ -116,7 +99,19 @@ class UpperBeach extends React.Component{
     }
 
     render(){
-       
+        
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(23, 14);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Forest Near Beach');
+            
+        }
+        if(this.props.charPosition.x == 4 && this.props.charPosition.y == 2 || this.props.charPosition.x == 5 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(5, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Lower Beach');
+            
+        }
         
         return(
             <div id="upperbeach"> 

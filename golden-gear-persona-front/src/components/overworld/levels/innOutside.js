@@ -84,27 +84,13 @@ class InnOutside extends React.Component{
             }
             case 'Enter': {
                
-                
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Town Hall');
-                    break;
-                }
-                
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(24, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('North Gate');
-                    break;
-                }
-
                 if(this.props.charPosition.x == 13 && this.props.charPosition.y == 15 || this.props.charPosition.x == 14 && this.props.charPosition.y == 15){
-                    this.props.setCharacterPosition(13, 2);
+                    this.props.setCharacterPosition(13, 3);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Inn');
-                    break;
+                   
                 }
+                
                 break;
                 
             }
@@ -120,6 +106,20 @@ class InnOutside extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(13, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Town Hall');
+            
+        }
+        
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(23, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('North Gate');
+           
+        }
+
         
         return(
             <div id="innoutside"> 

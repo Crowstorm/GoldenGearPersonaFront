@@ -112,11 +112,20 @@ class ToFarm extends React.Component{
     }
 
     render(){
-        if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
-            this.props.startCombat()
-            // window.location.href = "combat"
-        }
         
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 11 || this.props.charPosition.x == 24 && this.props.charPosition.y == 10){
+            this.props.setCharacterPosition(3, 12);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('CastleRoad');
+        }
+
+        if(this.props.charPosition.x == 11 && this.props.charPosition.y == 24 || this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 ||  this.props.charPosition.x == 14 && this.props.charPosition.y == 24)
+        {
+            this.props.setCharacterPosition(11, 3);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Village');
+        }
+
         return(
             <div id="tofarm"> 
             

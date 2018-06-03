@@ -91,11 +91,7 @@ class Inn extends React.Component{
                 if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
                     this.props.setDialogueState(true);
                 }
-                if(this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 14);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn Outside');
-                }
+                
                 break;
             }
             default: { return }
@@ -115,6 +111,12 @@ class Inn extends React.Component{
             // window.location.href = "combat"
         }
         
+        if(this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(13, 14);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Inn Outside');
+        }
+
         return(
             <div id="inn"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

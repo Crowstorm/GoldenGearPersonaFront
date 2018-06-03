@@ -85,26 +85,6 @@ class Blacksmith extends React.Component{
             case 'Enter': {
                
                 
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(13, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('North Gate');
-                    break;
-                }
-                
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(24, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('West Gate');
-                    break;
-                }
-
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(2, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Town Hall');
-                    break;
-                }
                 break;
                 
             }
@@ -120,7 +100,12 @@ class Blacksmith extends React.Component{
 
     render(){
        
-        
+        if(this.props.charPosition.x == 15 && this.props.charPosition.y == 4 || this.props.charPosition.x == 15 && this.props.charPosition.y == 5 || this.props.charPosition.x == 15 && this.props.charPosition.y == 6){
+            this.props.setCharacterPosition(14, 5);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Carnival');
+            
+        }
         return(
             <div id="blacksmith"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

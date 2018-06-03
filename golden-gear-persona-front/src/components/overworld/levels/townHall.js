@@ -85,19 +85,7 @@ class TownHall extends React.Component{
             case 'Enter': {
                
                 
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(13, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn Outside');
-                    break;
-                }
                 
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(24, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Blacksmith');
-                    break;
-                }
 
 
                 break;
@@ -115,7 +103,19 @@ class TownHall extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 24){
+            this.props.setCharacterPosition(13, 3);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Inn Outside');
+            
+        }
         
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(23, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Carnival');
+            
+        }
         return(
             <div id="townhall"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

@@ -84,20 +84,7 @@ class ForestNearBeach extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 14 || this.props.charPosition.x == 24 && this.props.charPosition.y == 15){
-                    this.props.setCharacterPosition(2, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Upper Beach');
-                    break;
                 
-                }
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(24, 12);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('CastleRoad');
-                    break;
-                    
-                }
                 
                 break;
                 
@@ -114,7 +101,20 @@ class ForestNearBeach extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 14 || this.props.charPosition.x == 24 && this.props.charPosition.y == 15){
+            this.props.setCharacterPosition(3, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Upper Beach');
+            
         
+        }
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(23, 12);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('CastleRoad');
+            
+            
+        }
         return(
             <div id="forestnearbeach"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

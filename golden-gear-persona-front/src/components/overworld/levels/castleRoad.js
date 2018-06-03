@@ -123,6 +123,30 @@ class CastleRoad extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 23 || this.props.charPosition.x == 13 && this.props.charPosition.y == 23 || this.props.charPosition.x == 14 && this.props.charPosition.y == 23){
+            this.props.setCharacterPosition(14, 3);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('OutsideCastle');
+            
+        }
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 11){
+            this.props.setCharacterPosition(23, 12);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('ToFarm');
+            
+        }
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 11){
+            this.props.setCharacterPosition(3, 12);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Forest Near Beach');
+            
+        }
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(13, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Town North Enter');
+            
+        }
         
         return(
             <div id="castleroad"> 

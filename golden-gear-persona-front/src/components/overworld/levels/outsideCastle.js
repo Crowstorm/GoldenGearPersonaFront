@@ -89,14 +89,6 @@ class OutsideCastle extends React.Component{
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Corridor');
                 }
-
-                if(this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2)
-                {
-                    this.props.setCharacterPosition(13, 23);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('CastleRoad');
-                }
-                break;
             }
             default: { return }
         }
@@ -111,6 +103,13 @@ class OutsideCastle extends React.Component{
     render(){
        
         
+
+        if(this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2)
+        {
+            this.props.setCharacterPosition(13, 22);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('CastleRoad');
+        }
         return(
             <div id="outsidecastle"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

@@ -85,19 +85,8 @@ class GuildOutside extends React.Component{
             case 'Enter': {
                
                 
-                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 2 || this.props.charPosition.x == 19 && this.props.charPosition.y == 2 || this.props.charPosition.x == 20 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(19, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Peasants House');
-                    break;
-                }
                 
-                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 24 || this.props.charPosition.x == 19 && this.props.charPosition.y == 24 || this.props.charPosition.x == 20 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(19, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('West Gate');
-                    break;
-                }
+                
                 break;
                 
             }
@@ -113,7 +102,12 @@ class GuildOutside extends React.Component{
 
     render(){
        
-        
+        if(this.props.charPosition.x == 18 && this.props.charPosition.y == 24 || this.props.charPosition.x == 19 && this.props.charPosition.y == 24 || this.props.charPosition.x == 20 && this.props.charPosition.y == 24){
+            this.props.setCharacterPosition(19, 3);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('West Gate');
+            
+        }
         return(
             <div id="guildoutside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

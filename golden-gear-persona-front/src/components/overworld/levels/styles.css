@@ -110,6 +110,14 @@
     float: right;
 }
 
+#grocerystore{
+    background-image: url('../../assets/GroceryStore.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
 #peasantshouse{
     background-image: url('../../assets/PeasantsHouse.png');
     box-sizing: border-box;
@@ -134,6 +142,14 @@
     float: right;
 }
 
+#carnival{
+    background-image: url('../../assets/Carnival.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
 #blacksmith{
     background-image: url('../../assets/Blacksmith.png');
     box-sizing: border-box;
@@ -152,6 +168,14 @@
 
 #innoutside{
     background-image: url('../../assets/InnOutside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#peasantsinside{
+    background-image: url('../../assets/PeasantsInside.png');
     box-sizing: border-box;
     height:800px;
     width:800px;

@@ -84,34 +84,13 @@ class NorthGate extends React.Component{
             }
             case 'Enter': {
                
-                
-                if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(24, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Peasants House');
-                    break;
-                }
-                
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(13, 24);
+                    this.props.setCharacterPosition(13, 4);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Town North Enter');
-                    break;
+                    
                 }
-
-                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(13, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Blacksmith');
-                    break;
-                }
-
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(2, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Inn Outside');
-                    break;
-                }
+                
                 break;
                 
             }
@@ -127,6 +106,35 @@ class NorthGate extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(23, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Peasants House');
+           
+        }
+        
+        
+
+        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(13, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Carnival');
+            
+        }
+
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(3, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Inn Outside');
+          
+        }
+
+        if(this.props.charPosition.x == 11 && this.props.charPosition.y == 5 || this.props.charPosition.x == 11 && this.props.charPosition.y == 6 || this.props.charPosition.x == 11 && this.props.charPosition.y == 7){
+            this.props.setCharacterPosition(10, 6);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Grocery Store');
+            
+        }
         
         return(
             <div id="northgate"> 

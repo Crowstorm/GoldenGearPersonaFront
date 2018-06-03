@@ -110,7 +110,7 @@ class Corridor extends React.Component{
     }
 
     render(){
-       
+        
         
         return(
             <div id="corridor"> 

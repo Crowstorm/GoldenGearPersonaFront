@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_Campfire } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_Peasant } from '../grids'
 
-class Campfire extends React.Component{
+class PeasantsInside extends React.Component{
 
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -29,7 +29,7 @@ class Campfire extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_Campfire, cell => {
+                _.forEach(BLOCKED_Peasant, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class Campfire extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_Campfire, cell => {
+                _.forEach(BLOCKED_Peasant, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class Campfire extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_Campfire, cell => {
+                _.forEach(BLOCKED_Peasant, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class Campfire extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_Campfire, cell => {
+                _.forEach(BLOCKED_Peasant, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -84,8 +84,20 @@ class Campfire extends React.Component{
             }
             case 'Enter': {
                
-                
-                 break;
+                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+                    this.props.setCharacterPosition(2, 13);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('North Gate');
+                    break;
+                }
+
+                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 2 || this.props.charPosition.x == 19 && this.props.charPosition.y == 2 || this.props.charPosition.x == 20 && this.props.charPosition.y == 2){
+                    this.props.setCharacterPosition(19, 24);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('West Gate');
+                    break;
+                }
+                break;
                 
             }
             default: { return }
@@ -100,20 +112,14 @@ class Campfire extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 18 || this.props.charPosition.x == 24 && this.props.charPosition.y == 19 || this.props.charPosition.x == 24 && this.props.charPosition.y == 20 || this.props.charPosition.x == 24 && this.props.charPosition.y == 21 || this.props.charPosition.x == 24 && this.props.charPosition.y == 22 || this.props.charPosition.x == 24 && this.props.charPosition.y == 23){
-            this.props.setCharacterPosition(3, 21);
-            document.removeEventListener("keydown", this.handleKeyDown);
-            this.props.changeLevel('Town North Enter');
+        if(this.props.charPosition.x == 17 && this.props.charPosition.y == 17){
+            this.props.setCharacterPosition(18, 17);
+           document.removeEventListener("keydown", this.handleKeyDown);
+           this.props.changeLevel('Peasants House');
+       }
         
-        }
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 9 || this.props.charPosition.x == 24 && this.props.charPosition.y == 8 || this.props.charPosition.x == 24 && this.props.charPosition.y == 7 || this.props.charPosition.x == 24 && this.props.charPosition.y == 6 || this.props.charPosition.x == 24 && this.props.charPosition.y == 5 || this.props.charPosition.x == 24 && this.props.charPosition.y == 4){
-            this.props.setCharacterPosition(3, 5);
-            document.removeEventListener("keydown", this.handleKeyDown);
-            this.props.changeLevel('Town North Enter');
-        
-        }
         return(
-            <div id="campfire"> 
+            <div id="peasantsinside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -122,4 +128,4 @@ class Campfire extends React.Component{
     }
 }
 
-export default Campfire;
+export default PeasantsInside;

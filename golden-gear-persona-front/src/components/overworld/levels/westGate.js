@@ -85,25 +85,7 @@ class WestGate extends React.Component{
             case 'Enter': {
                
                 
-                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 2 || this.props.charPosition.x == 19 && this.props.charPosition.y == 2 || this.props.charPosition.x == 20 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(19, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Guild Outside');
-                    break;
-                }
                 
-                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 24 || this.props.charPosition.x == 19 && this.props.charPosition.y == 24 || this.props.charPosition.x == 20 && this.props.charPosition.y == 24){
-                    this.props.setCharacterPosition(19, 2);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Peasants House');
-                    break;
-                }
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(2, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Blacksmith');
-                    break;
-                }
                 break;
                 
             }
@@ -119,7 +101,25 @@ class WestGate extends React.Component{
 
     render(){
        
+        if(this.props.charPosition.x == 18 && this.props.charPosition.y == 2 || this.props.charPosition.x == 19 && this.props.charPosition.y == 2 || this.props.charPosition.x == 20 && this.props.charPosition.y == 2){
+            this.props.setCharacterPosition(19, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Guild Outside');
+            
+        }
         
+        if(this.props.charPosition.x == 18 && this.props.charPosition.y == 24 || this.props.charPosition.x == 19 && this.props.charPosition.y == 24 || this.props.charPosition.x == 20 && this.props.charPosition.y == 24){
+            this.props.setCharacterPosition(19, 3);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Peasants House');
+           
+        }
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(3, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Carnival');
+            
+        }
         return(
             <div id="westgate"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
