@@ -9,7 +9,9 @@ let initial_state = [
         classGame: null,
         portrait: null,
         stats: {
+            maxHp:25,
             hp: 25,
+            maxMp: null,
             mp: null,
             strength: null,
             defence: null,
@@ -46,7 +48,9 @@ let initial_state = [
         classGame: 'warrior',
         portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/6/6b/Haru_All_Out.png/revision/latest?cb=20170202222551',
         stats: {
+            maxHp: 30,
             hp: 30,
+            maxMp:10,
             mp: 10,
             strength: 7,
             defence: 6,
@@ -76,7 +80,9 @@ let initial_state = [
         classGame: 'healer',
         portrait: 'https://i.pinimg.com/originals/dc/d7/47/dcd7478c648772f151db89da329e0a25.png',
         stats: {
+            maxHp:15,
             hp: 15,
+            maxMp: 30,
             mp: 30,
             strength: 3,
             defence: 6,
@@ -106,7 +112,9 @@ let initial_state = [
         classGame: 'warrior',
         portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/2/25/Ann_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221932',
         stats: {
+            maxHp: 20,
             hp: 20,
+            maxMp: 25,
             mp: 25,
             strength: 4,
             defence: 4,
@@ -136,7 +144,7 @@ export default (state = initial_state, action) => {
     switch (action.type) {
         case FETCH_CHARACTER: {
             const { name, title, classGame, portrait, statistics } = action.payload;
-            const { hp, mp, strength, defence, magic, magicResist, agility, luck, speed } = statistics;
+            const { hp, mp, strength, defence, magic, magicResist, agility, luck, speed, maxHp, maxMp } = statistics;
             return [
                 ...state.slice(0, 0),
                 {
@@ -146,7 +154,9 @@ export default (state = initial_state, action) => {
                     classGame,
                     portrait,
                     stats: {
+                        maxHp,
                         hp,
+                        maxMp,
                         mp,
                         strength,
                         defence,
