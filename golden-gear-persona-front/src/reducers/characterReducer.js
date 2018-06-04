@@ -39,7 +39,6 @@ let initial_state = [
         consumables: [
             items.healingPotion,
             items.manaPotion
-
         ]
     },
     {

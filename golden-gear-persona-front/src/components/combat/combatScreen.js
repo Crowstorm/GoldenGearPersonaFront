@@ -2,8 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import AttackInterface from './subPanels/attackInterface';
 
+import './combat.css'
+
 import necromancer from '../assets/necro.png'
 import beholder from '../assets/beholderCombat.png'
+import background from '../assets/battleBackground.png'
 
 
 class CombatScreen extends React.Component {
@@ -20,7 +23,7 @@ class CombatScreen extends React.Component {
         let i = this.props.mechanics.attackingAllyIndex
         let renderAllyTurnInterface = (this.props.mechanics.turn === 'ally') ? this.getAllyTurnInterface() : null
         return (
-            <div className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600, position: 'relative' }}>
+            <div  id="combatScreen" className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600, position: 'relative', backgroundImage: {background} }}>
             <img src={necromancer}
             style={{height: "100px", position: 'absolute', left: '11px', top: '30px'}} />
             <img src={necromancer}
