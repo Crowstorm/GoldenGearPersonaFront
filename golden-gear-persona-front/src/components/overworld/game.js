@@ -29,6 +29,17 @@ import InnOutside from './levels/innOutside'
 import PeasantsInside from './levels/peasantsInside'
 import GroceryStore from './levels/groceryStore'
 import Carnival from './levels/carnival'
+import StorageOutside from './levels/storageOutside'
+import StorageInside from './levels/storageInside'
+import Park from './levels/park'
+import MemorialPark from './levels/memorialPark'
+import Graveyard from './levels/graveyard'
+import JailOutside from './levels/jailOutside'
+import JailInside from './levels/jailInside'
+import ArmoryOutside from './levels/armoryOutside'
+import ArmoryInside from './levels/armoryInside'
+import ChurchOutside from './levels/churchOutside'
+import ChurchInside from './levels/churchInside'
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -196,6 +207,88 @@ class Game extends React.Component {
                     )
                     break;
                 }
+
+                case "Storage Outside":{
+                    return(
+                        <StorageOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Storage Inside":{
+                    return(
+                        <StorageInside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Park":{
+                    return(
+                        <Park {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Memorial Park":{
+                    return(
+                        <MemorialPark {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Graveyard":{
+                    return(
+                        <Graveyard {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Jail Outside":{
+                    return(
+                        <JailOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Jail Inside":{
+                    return(
+                        <JailInside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Armory Outside":{
+                    return(
+                        <ArmoryOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Armory Inside":{
+                    return(
+                        <ArmoryInside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Church Outside":{
+                    return(
+                        <ChurchOutside {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Church Inside":{
+                    return(
+                        <ChurchInside {...this.props} />
+                    )
+                    break;
+                }
+
+
+
+
+
 
 
                 default: { return }     

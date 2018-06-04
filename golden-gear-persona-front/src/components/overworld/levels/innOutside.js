@@ -120,6 +120,13 @@ class InnOutside extends React.Component{
            
         }
 
+        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+            this.props.setCharacterPosition(3, 13);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Church Outside');
+           
+        }
+
         
         return(
             <div id="innoutside"> 

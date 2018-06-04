@@ -101,14 +101,14 @@ class ForestNearBeach extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 14 || this.props.charPosition.x == 24 && this.props.charPosition.y == 15){
+        if((this.props.charPosition.x === 24 && this.props.charPosition.y === 14) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 15)){
             this.props.setCharacterPosition(3, 13);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Upper Beach');
             
         
         }
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 14)){
             this.props.setCharacterPosition(23, 12);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('CastleRoad');

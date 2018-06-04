@@ -100,7 +100,7 @@ class Blacksmith extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 15 && this.props.charPosition.y == 4 || this.props.charPosition.x == 15 && this.props.charPosition.y == 5 || this.props.charPosition.x == 15 && this.props.charPosition.y == 6){
+        if((this.props.charPosition.x === 15 && this.props.charPosition.y === 4) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 6)){
             this.props.setCharacterPosition(14, 5);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Carnival');

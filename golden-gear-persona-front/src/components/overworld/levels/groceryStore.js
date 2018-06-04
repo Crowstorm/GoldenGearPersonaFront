@@ -102,7 +102,7 @@ class GroceryStore extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 11 && this.props.charPosition.y == 5 || this.props.charPosition.x == 11 && this.props.charPosition.y == 6 || this.props.charPosition.x == 11 && this.props.charPosition.y == 7){
+        if((this.props.charPosition.x === 11 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 6) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 7)){
             this.props.setCharacterPosition(12, 6);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('North Gate');

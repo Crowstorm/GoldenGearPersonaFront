@@ -181,3 +181,91 @@
     width:800px;
     float: right;
 }
+
+#storageoutside{
+    background-image: url('../../assets/Storage Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#storageinside{
+    background-image: url('../../assets/Storage.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#park{
+    background-image: url('../../assets/Park.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#memorialpark{
+    background-image: url('../../assets/Memorial Park.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#graveyard{
+    background-image: url('../../assets/Graveyard.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#jailoutside{
+    background-image: url('../../assets/Jail Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#jailinside{
+    background-image: url('../../assets/Jail Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#armoryoutside{
+    background-image: url('../../assets/Armory Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#armoryinside{
+    background-image: url('../../assets/Armory Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#churchoutside{
+    background-image: url('../../assets/Church Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#churchinside{
+    background-image: url('../../assets/Church Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

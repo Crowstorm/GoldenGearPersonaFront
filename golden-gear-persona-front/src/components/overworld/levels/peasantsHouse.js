@@ -99,7 +99,7 @@ class PeasantsHouse extends React.Component{
     }
 
     render(){
-        if(this.props.charPosition.x == 17 && this.props.charPosition.y == 17){
+        if((this.props.charPosition.x === 17 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 17 && this.props.charPosition.y === 16)){
               this.props.setCharacterPosition(16, 17);
              document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Peasants Inside');

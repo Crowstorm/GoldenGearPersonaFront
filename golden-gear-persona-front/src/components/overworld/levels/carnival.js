@@ -101,31 +101,38 @@ class Carnival extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 14){
+        if((this.props.charPosition.x === 12 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(13, 3);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('North Gate');
             
         }
         
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 12 || this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 14)){
             this.props.setCharacterPosition(23, 13);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('West Gate');
            
         }
 
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
+        if((this.props.charPosition.x === 24 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 14)){
             this.props.setCharacterPosition(3, 13);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Town Hall');
             
         }
 
-        if(this.props.charPosition.x == 15 && this.props.charPosition.y == 4 || this.props.charPosition.x == 15 && this.props.charPosition.y == 5 || this.props.charPosition.x == 15 && this.props.charPosition.y == 6){
+        if((this.props.charPosition.x === 15 && this.props.charPosition.y === 4) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 6)){
             this.props.setCharacterPosition(16, 5);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Blacksmith');
+            
+        }
+
+        if((this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 2)){
+            this.props.setCharacterPosition(13, 23);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Storage Outside');
             
         }
         return(
