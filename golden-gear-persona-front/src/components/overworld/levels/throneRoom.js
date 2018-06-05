@@ -99,7 +99,7 @@ class ThroneRoom extends React.Component {
                 break;
             }
             case 'Enter': {
-                if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
+                if ((this.props.charPosition.x === 11 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16)) {
                     const ziomek = {
                         name: 'Stupid Boy',
                         portrait: 'https://d1u5p3l4wpay3k.cloudfront.net/crafttheworld_gamepedia/b/b8/Beholder.png',
@@ -119,13 +119,13 @@ class ThroneRoom extends React.Component {
                     this.props.setQuest('Save the Princess');
                     // document.removeEventListener("keydown", this.handleKeyDown);
                 }
-                if (this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 11 && this.props.charPosition.y == 2) {
+                if ((this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 2)) {
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.setCharacterPosition(12, 23);
                     this.props.changeLevel('Corridor');
                 }
                 if (this.props.charPosition.x === 12 && this.props.charPosition.y === 3) {
-                    this.props.setInfoText('Jebiesz kaszą');
+                    this.props.setInfoText('Ja pierniczę, działa');
                     this.props.setInfoState(true);
                 }
                 break;

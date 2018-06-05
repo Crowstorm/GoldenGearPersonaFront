@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_Village } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_Cave1 } from '../grids'
 
-class Village extends React.Component{
+class Cave1 extends React.Component{
 
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -29,7 +29,7 @@ class Village extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_Village, cell => {
+                _.forEach(BLOCKED_Cave1, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class Village extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_Village, cell => {
+                _.forEach(BLOCKED_Cave1, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class Village extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_Village, cell => {
+                _.forEach(BLOCKED_Cave1, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class Village extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_Village, cell => {
+                _.forEach(BLOCKED_Cave1, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -85,7 +85,10 @@ class Village extends React.Component{
             case 'Enter': {
                
                 
+                
+                
                 break;
+                
             }
             default: { return }
         }
@@ -99,14 +102,15 @@ class Village extends React.Component{
 
     render(){
        
-        if((this.props.charPosition.x === 9 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 10 && this.props.charPosition.y === 2)|| (this.props.charPosition.x === 11 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 2)){
-            this.props.setCharacterPosition(12, 23);
+        if((this.props.charPosition.x === 12 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 16 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 17 && this.props.charPosition.y === 24)){
+            this.props.setCharacterPosition(13, 3);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('ToFarm');
+            
         }
-
+        
         return(
-            <div id="village"> 
+            <div id="cave1"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -115,4 +119,4 @@ class Village extends React.Component{
     }
 }
 
-export default Village;
+export default Cave1;

@@ -100,13 +100,13 @@ class UpperBeach extends React.Component{
 
     render(){
         
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 13 || this.props.charPosition.x == 2 && this.props.charPosition.y == 14){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 14)){
             this.props.setCharacterPosition(23, 14);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Forest Near Beach');
             
         }
-        if(this.props.charPosition.x == 4 && this.props.charPosition.y == 2 || this.props.charPosition.x == 5 && this.props.charPosition.y == 2){
+        if((this.props.charPosition.x === 4 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 5 && this.props.charPosition.y === 2)){
             this.props.setCharacterPosition(5, 23);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Lower Beach');

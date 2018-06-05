@@ -111,13 +111,13 @@ class LowerBeach extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 21 ||this.props.charPosition.x == 2 && this.props.charPosition.y == 22 || this.props.charPosition.x == 2 && this.props.charPosition.y == 23 || this.props.charPosition.x == 2 && this.props.charPosition.y == 24){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 21) ||(this.props.charPosition.x === 2 && this.props.charPosition.y === 22) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 23) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(23, 23);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Road To Beach');
         
         }
-        if(this.props.charPosition.x == 3 && this.props.charPosition.y == 24 || this.props.charPosition.x == 4 && this.props.charPosition.y == 24 || this.props.charPosition.x == 5 && this.props.charPosition.y == 24 || this.props.charPosition.x == 6 && this.props.charPosition.y == 24 ){
+        if((this.props.charPosition.x === 3 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 4 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 5 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 6 && this.props.charPosition.y === 24 )){
             this.props.setCharacterPosition(5, 3);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Upper Beach');

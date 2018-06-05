@@ -107,31 +107,31 @@ class TownNorthEnter extends React.Component{
 
     render(){
        
-        if(this.props.charPosition.x == 11 && this.props.charPosition.y == 24 || this.props.charPosition.x == 12 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24 || this.props.charPosition.x == 14 && this.props.charPosition.y == 24 || this.props.charPosition.x == 15 && this.props.charPosition.y == 24){
+        if((this.props.charPosition.x === 11 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(12, 3);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('CastleRoad');
             
         }
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 19 || this.props.charPosition.x == 24 && this.props.charPosition.y == 20 || this.props.charPosition.x == 24 && this.props.charPosition.y == 21 || this.props.charPosition.x == 24 && this.props.charPosition.y == 22 || this.props.charPosition.x == 24 && this.props.charPosition.y == 23 || this.props.charPosition.x == 24 && this.props.charPosition.y == 24){
+        if((this.props.charPosition.x === 24 && this.props.charPosition.y === 19) || (this.props.charPosition.x == 24 && this.props.charPosition.y === 20) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 21) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 22) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 23) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(3, 22);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Road To Beach');
         
         }
-        if(this.props.charPosition.x == 24 && this.props.charPosition.y == 3 || this.props.charPosition.x == 24 && this.props.charPosition.y == 4 || this.props.charPosition.x == 24 && this.props.charPosition.y == 5 || this.props.charPosition.x == 24 && this.props.charPosition.y == 6 || this.props.charPosition.x == 24 && this.props.charPosition.y == 7 || this.props.charPosition.x == 24 && this.props.charPosition.y == 8 || this.props.charPosition.x == 24 && this.props.charPosition.y == 9 || this.props.charPosition.x == 24 && this.props.charPosition.y == 10){
+        if((this.props.charPosition.x === 24 && this.props.charPosition.y === 3) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 4) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 6) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 7) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 8) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 9) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 10)){
             this.props.setCharacterPosition(3, 5);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Road To Beach');
             
         }
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 22 || this.props.charPosition.x == 2 && this.props.charPosition.y == 23 || this.props.charPosition.x == 2 && this.props.charPosition.y == 24){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 22) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 23) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(23, 22);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Campfire');
             
         }
-        if(this.props.charPosition.x == 2 && this.props.charPosition.y == 3 || this.props.charPosition.x == 2 && this.props.charPosition.y == 4 || this.props.charPosition.x == 2 && this.props.charPosition.y == 5 || this.props.charPosition.x == 2 && this.props.charPosition.y == 6 || this.props.charPosition.x == 2 && this.props.charPosition.y == 7 || this.props.charPosition.x == 2 && this.props.charPosition.y == 8 || this.props.charPosition.x == 2 && this.props.charPosition.y == 9 || this.props.charPosition.x == 2 && this.props.charPosition.y == 10){
+        if((this.props.charPosition.x === 2 && this.props.charPosition.y === 3) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 4) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 6) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 7) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 8) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 9) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 10)){
             this.props.setCharacterPosition(23, 5);
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('Campfire');

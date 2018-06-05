@@ -84,7 +84,7 @@ class OutsideCastle extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 14 && this.props.charPosition.y == 24 || this.props.charPosition.x == 13 && this.props.charPosition.y == 24){
+                if((this.props.charPosition.x === 14 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 24)){
                     this.props.setCharacterPosition(12,2);
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Corridor');
@@ -104,7 +104,7 @@ class OutsideCastle extends React.Component{
        
         
 
-        if(this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2)
+        if((this.props.charPosition.x === 13 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 2))
         {
             this.props.setCharacterPosition(13, 22);
             document.removeEventListener("keydown", this.handleKeyDown);

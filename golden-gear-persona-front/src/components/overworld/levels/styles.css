@@ -292,3 +292,11 @@
     width:800px;
     float: right;
 }
+
+#cave1{
+    background-image: url('../../assets/cave1.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

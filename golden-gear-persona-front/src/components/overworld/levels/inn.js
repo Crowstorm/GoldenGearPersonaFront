@@ -88,7 +88,7 @@ class Inn extends React.Component{
                 break;
             }
             case 'Enter': {
-                if ((this.props.charPosition.x == 11 && this.props.charPosition.y == 16) || (this.props.charPosition.x == 12 && this.props.charPosition.y == 16)) {
+                if ((this.props.charPosition.x === 11 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16)) {
                     this.props.setDialogueState(true);
                 }
                 

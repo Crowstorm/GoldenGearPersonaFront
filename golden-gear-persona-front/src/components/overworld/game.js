@@ -10,6 +10,7 @@ import ThroneRoom from './levels/throneRoom'
 import CastleRoad from './levels/castleRoad';
 import Inn from './levels/inn'
 import ToFarm from './levels/toFarm'
+import Cave1 from './levels/cave1'
 import Village from './levels/village'
 import Corridor from './levels/corridor'
 import CastleSecondFloor from './levels/castleSecondFloor'
@@ -79,6 +80,13 @@ class Game extends React.Component {
                 case "ToFarm":{
                     return(
                         <ToFarm {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Cave Near Farm":{
+                    return(
+                        <Cave1 {...this.props} />
                     )
                     break;
                 }
