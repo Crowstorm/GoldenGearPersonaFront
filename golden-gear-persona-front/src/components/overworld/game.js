@@ -12,6 +12,7 @@ import Inn from './levels/inn'
 import ToFarm from './levels/toFarm'
 import Village from './levels/village'
 import Corridor from './levels/corridor'
+import CastleSecondFloor from './levels/castleSecondFloor'
 import OutsideCastle from './levels/outsideCastle'
 import TownNorthEnter from './levels/townNorthEnter'
 import ForestNearBeach from './levels/forestNearBeach'
@@ -23,8 +24,10 @@ import NorthGate from './levels/northGate'
 import PeasantsHouse from './levels/peasantsHouse'
 import WestGate from './levels/westGate'
 import GuildOutside from './levels/guildOutside'
+import GuildInside from './levels/guildInside'
 import Blacksmith from './levels/blacksmith'
 import TownHall from './levels/townHall'
+import Hall from './levels/hall'
 import InnOutside from './levels/innOutside'
 import PeasantsInside from './levels/peasantsInside'
 import GroceryStore from './levels/groceryStore'
@@ -40,6 +43,8 @@ import ArmoryOutside from './levels/armoryOutside'
 import ArmoryInside from './levels/armoryInside'
 import ChurchOutside from './levels/churchOutside'
 import ChurchInside from './levels/churchInside'
+
+
 //lista zablokowanych pol
 // const BLOCKED = [
 
@@ -86,6 +91,13 @@ class Game extends React.Component {
                 case "Corridor":{
                     return(
                         <Corridor {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Castle Second Floor":{
+                    return(
+                        <CastleSecondFloor {...this.props} />
                     )
                     break;
                 }
@@ -180,6 +192,13 @@ class Game extends React.Component {
                     break;
                 }
 
+                case "Guild Inside":{
+                    return(
+                        <GuildInside {...this.props} />
+                    )
+                    break;
+                }
+
                 case "Carnival":{
                     return(
                         <Carnival {...this.props} />
@@ -197,6 +216,13 @@ class Game extends React.Component {
                 case "Town Hall":{
                     return(
                         <TownHall {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Hall":{
+                    return(
+                        <Hall {...this.props} />
                     )
                     break;
                 }

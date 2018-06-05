@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_GuildO } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_Hall } from '../grids'
 
-class GuildOutside extends React.Component{
+class Hall extends React.Component{
 
     renderPosition = (cell) => {
         if (this.props.charPosition.x === cell.x && this.props.charPosition.y === cell.y) {
@@ -29,7 +29,7 @@ class GuildOutside extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_GuildO, cell => {
+                _.forEach(BLOCKED_Hall, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class GuildOutside extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_GuildO, cell => {
+                _.forEach(BLOCKED_Hall, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class GuildOutside extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_GuildO, cell => {
+                _.forEach(BLOCKED_Hall, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class GuildOutside extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_GuildO, cell => {
+                _.forEach(BLOCKED_Hall, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -85,10 +85,10 @@ class GuildOutside extends React.Component{
             case 'Enter': {
                
                 
-                if((this.props.charPosition.x === 19 && this.props.charPosition.y === 11)){
-                    this.props.setCharacterPosition(13, 3);
+                if((this.props.charPosition.x === 2 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 13)){
+                    this.props.setCharacterPosition(14, 13);
                     document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('Guild Inside');
+                    this.props.changeLevel('Town Hall');
                     
                 }
                 
@@ -107,14 +107,9 @@ class GuildOutside extends React.Component{
 
     render(){
        
-        if((this.props.charPosition.x === 18 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 19 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 20 && this.props.charPosition.y === 24)){
-            this.props.setCharacterPosition(19, 3);
-            document.removeEventListener("keydown", this.handleKeyDown);
-            this.props.changeLevel('West Gate');
-            
-        }
+        
         return(
-            <div id="guildoutside"> 
+            <div id="hall"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>
@@ -123,4 +118,4 @@ class GuildOutside extends React.Component{
     }
 }
 
-export default GuildOutside;
+export default Hall;

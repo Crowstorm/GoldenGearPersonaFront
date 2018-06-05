@@ -85,9 +85,12 @@ class TownHall extends React.Component{
             case 'Enter': {
                
                 
-                
-
-
+                if((this.props.charPosition.x === 15 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 14)){
+                    this.props.setCharacterPosition(3, 13);
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    this.props.changeLevel('Hall');
+                    
+                }
                 break;
                 
             }

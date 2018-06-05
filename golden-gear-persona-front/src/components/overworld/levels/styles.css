@@ -142,6 +142,13 @@
     float: right;
 }
 
+#guildinside{
+    background-image: url('../../assets/GuildInside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
 #carnival{
     background-image: url('../../assets/Carnival.png');
     box-sizing: border-box;
@@ -264,6 +271,22 @@
 
 #churchinside{
     background-image: url('../../assets/Church Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#hall{
+    background-image: url('../../assets/Hall.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#castlesecondfloor{
+    background-image: url('../../assets/CastleSecondFloor.png');
     box-sizing: border-box;
     height:800px;
     width:800px;

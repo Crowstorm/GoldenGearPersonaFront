@@ -90,6 +90,7 @@ class Corridor extends React.Component{
                     this.props.changeLevel('ThroneRoom');
                     break;
                 }
+
                 if((this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 2)){
                     this.props.setCharacterPosition(14, 24);
                     document.removeEventListener("keydown", this.handleKeyDown);
@@ -111,7 +112,18 @@ class Corridor extends React.Component{
 
     render(){
         
-        
+        if((this.props.charPosition.x === 21 && this.props.charPosition.y === 24) ||( this.props.charPosition.x === 20 && this.props.charPosition.y === 24)){
+            this.props.setCharacterPosition(22, 22);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Castle Second Floor');
+        }
+
+        if((this.props.charPosition.x === 5 && this.props.charPosition.y === 24) ||( this.props.charPosition.x === 4 && this.props.charPosition.y === 24) || ( this.props.charPosition.x === 3 && this.props.charPosition.y === 24)){
+            this.props.setCharacterPosition(5, 22);
+            document.removeEventListener("keydown", this.handleKeyDown);
+            this.props.changeLevel('Castle Second Floor');
+        }
+
         return(
             <div id="corridor"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
