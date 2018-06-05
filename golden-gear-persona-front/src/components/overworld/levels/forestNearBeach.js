@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 
 
-import { GRID_ThroneRoom, BLOCKED_NorthEnter } from '../grids'
+import { GRID_ThroneRoom, BLOCKED_ForestNearBeach } from '../grids'
 
 class ForestNearBeach extends React.Component{
 
@@ -29,7 +29,7 @@ class ForestNearBeach extends React.Component{
             case "ArrowUp": {
                 let err = [];
 
-                _.forEach(BLOCKED_NorthEnter, cell => {
+                _.forEach(BLOCKED_ForestNearBeach, cell => {
                     if (this.props.charPosition.y + 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -43,7 +43,7 @@ class ForestNearBeach extends React.Component{
             case "ArrowDown": {
                 let err = [];
 
-                _.forEach(BLOCKED_NorthEnter, cell => {
+                _.forEach(BLOCKED_ForestNearBeach, cell => {
                     if (this.props.charPosition.y - 1 === cell.y && this.props.charPosition.x === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -57,7 +57,7 @@ class ForestNearBeach extends React.Component{
             case "ArrowLeft": {
                 let err = [];
 
-                _.forEach(BLOCKED_NorthEnter, cell => {
+                _.forEach(BLOCKED_ForestNearBeach, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x - 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
@@ -71,7 +71,7 @@ class ForestNearBeach extends React.Component{
             case "ArrowRight": {
                 let err = [];
 
-                _.forEach(BLOCKED_NorthEnter, cell => {
+                _.forEach(BLOCKED_ForestNearBeach, cell => {
                     if (this.props.charPosition.y === cell.y && this.props.charPosition.x + 1 === cell.x) {
                         console.log('blocked')
                         err.push('blocked');
