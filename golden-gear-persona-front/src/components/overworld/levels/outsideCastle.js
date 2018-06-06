@@ -97,7 +97,7 @@ class OutsideCastle extends React.Component{
                 if((this.props.charPosition.x === 7 && this.props.charPosition.y === 22)){
                     const GuardGhost = {
                         name: 'Rude Ghost',
-                        portrait: '../../assets/Enemies/ghost-portrait.png',
+                        portrait: 'https://i.imgur.com/4GdmF4E.png',
                         stats: {
                             hp: 2,
                             mp: 0,
