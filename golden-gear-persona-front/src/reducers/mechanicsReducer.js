@@ -8,6 +8,9 @@ let initial_state = {
     dmgPayload: null,
     combat: false,
     currentLevel: 'ThroneRoom',
+
+    //quests
+    spirit: ''
 };
 
 export default (state = initial_state, action) => {
@@ -84,6 +87,13 @@ export default (state = initial_state, action) => {
             return{
                 ...state,
                 currentLevel: action.newLevel
+            }
+        }
+
+        case 'QUEST_STATUS':{
+            return{
+                ...state,
+                [action.name]: action.status 
             }
         }
         default: {

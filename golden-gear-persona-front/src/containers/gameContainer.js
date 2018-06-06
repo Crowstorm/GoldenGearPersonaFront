@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft } from '../actions/index'
-import { changeLevel, setCharacterPosition, pickUpItem, setQuest, startCombat, stopCombat } from '../actions/mechanicsActions'
+import { changeLevel, setCharacterPosition, pickUpItem, setQuest, startCombat, stopCombat, questStatus } from '../actions/mechanicsActions'
 import { addEnemy} from '../actions/enemyActions'
 import { setDialogueState, setInfoState, setInfoText } from '../actions/modals'
 
@@ -95,7 +95,10 @@ function mapDispatchToProps(dispatch) {
         },
         setInfoText: (text) =>{
             dispatch(setInfoText(text));
-        }
+        },
+        questStatus: (name, status) =>{
+            dispatch(questStatus(name, status))
+        },
     }
 }
 

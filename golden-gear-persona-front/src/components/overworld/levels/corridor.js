@@ -90,7 +90,8 @@ class Corridor extends React.Component{
                
                 if((this.props.charPosition.x === 16 && this.props.charPosition.y === 14)){
                     this.props.setDialogueState(true);
-
+                    this.props.setQuest('Retrieve pendant')
+                    this.props.questStatus('spirit', 'started');
                     break;
                 }
 
@@ -128,7 +129,9 @@ class Corridor extends React.Component{
         
         const dialogue = [
 
-            {text: "You shall not pass, peasant.", portrait: "Guard1"},
+            {text: "I will let you in only after you retrieve a pendant from the grave of my friend", name: "Guard"},
+            {text: "I tried to do it myself, but the spirit would attack me every time", name: "Guard"},
+            {text: "And don't you dare talking on to His Majesty", name: "Guard"},
         ]
 
         console.log(this.props);

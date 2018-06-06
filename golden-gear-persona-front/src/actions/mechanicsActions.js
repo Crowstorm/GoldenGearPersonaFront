@@ -27,6 +27,12 @@ export const combatStart2 = () => {
                                 dispatch({
                                     type: 'LEVEL_UP2'
                                 })
+                                dispatch({
+                                    type: 'LEVEL_UP3'
+                                })
+                                dispatch({
+                                    type: 'LEVEL_UP4'
+                                })
                                 return 0;
                             }
                         }
@@ -283,6 +289,16 @@ export const stopCombat = ()=>{
     return function(dispatch){
         dispatch({
             type: 'STOP_COMBAT',
+        })
+    }
+}
+
+export const questStatus = (name, status) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'QUEST_STATUS',
+            name,
+            status
         })
     }
 }

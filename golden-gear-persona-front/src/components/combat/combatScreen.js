@@ -33,7 +33,23 @@ class CombatScreen extends React.Component {
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} />
                 )
             } else {
+                return (
+                    <img src={mainCharCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} />                )
+            }
+        }
 
+        let  renderThanuker = () =>{
+            if(this.props.mainChar[1].name ==='Setsuna'){
+                return(
+                    <img src={healerCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '160px' }} />
+                )
+            } else {
+                return (
+                    <img src={mainCharCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '160px' }} />
+                )
             }
         }
 
@@ -44,7 +60,24 @@ class CombatScreen extends React.Component {
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} />
                 )
             } else {
+                return (
+                    <img src={mainCharCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} />
+                )
+            }
+        }
 
+        let renderMiserion = () => {
+            if (this.props.mainChar[3].name === 'Setsuna') {
+                return (
+                    <img src={healerCombat}
+                        style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
+                )
+            } else {
+                return (
+                    <img src={mainCharCombat}
+                        style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
+                )
             }
         }
 
@@ -55,14 +88,9 @@ class CombatScreen extends React.Component {
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} /> */}
                 
                 {renderMainChar()}
-                <img src={necromancer}
-                    style={{ height: "100px", position: 'absolute', left: '11px', top: '160px' }} />
-                {/* <img src={healerCombat}
-                    style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} /> */}
-                <img src={necromancer}
-                    style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
-
+                {renderThanuker()}
                 {renderSetsuna()}    
+                {renderMiserion()}
 
                 <img src={beholder}
                     style={{ height: "100px", position: 'absolute', left: '520px', top: '30px' }} />
