@@ -90,6 +90,7 @@ class Corridor extends React.Component{
                
                 if((this.props.charPosition.x === 16 && this.props.charPosition.y === 14)){
                     if(this.props.mechanics.spirit === 'completed'){
+                        this.props.setDialogueState(true);
                         this.props.setQuest('Save the Princess')
                     }
                     else{
@@ -132,18 +133,19 @@ class Corridor extends React.Component{
 
     render(){
         
-        const dialogue = [
+        let dialogue;
 
-            {text: "I will let you in only after you retrieve a pendant from the grave of my friend", name: "Guard"},
-            {text: "I tried to do it myself, but the spirit would attack me every time", name: "Guard"},
-            {text: "And don't you dare talking on to His Majesty", name: "Guard"},
-        ]
-
-        const dialogue2 = [
-
-            {text: "Thank you very much, my friend!", name: "Guard"},
-            
-        ]
+        if(this.props.mechanics.spirit === 'completed'){
+            dialogue = [
+                { text: 'Yes... Its his... Thank you. May his soul rest in peace', name: 'Guard'},
+            ]
+        } else {
+            dialogue = [
+                {text: "I will let you in only after you retrieve a pendant from the grave of my friend", name: "Guard"},
+                {text: "I tried to do it myself, but the spirit would attack me every time", name: "Guard"},
+                {text: "And don't you dare talking on to His Majesty", name: "Guard"},
+            ]
+        }
 
         console.log(this.props);
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';

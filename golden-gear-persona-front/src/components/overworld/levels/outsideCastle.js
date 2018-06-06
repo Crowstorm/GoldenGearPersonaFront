@@ -117,6 +117,8 @@ class OutsideCastle extends React.Component{
                     
                     if(this.props.mechanics.cave === 'completed')
                     { 
+                        this.props.setDialogueState(true);
+                        
                         this.props.setQuest('Give guard his pendant');
                         this.props.questStatus('spirit', 'completed');
                     }
@@ -144,11 +146,25 @@ class OutsideCastle extends React.Component{
 
     render(){
        
-        const dialogue = [
-            { text: 'I see. I will give you what you want, if you do something for me.', name: 'Rude Ghost'},
-            { text: 'Avenge me. Kill those stupid dogs that had eaten me alive.', name: 'Rude Ghost'},
-            { text: 'You can find them in a cave on the road to village. Kill them then we can talk.', name: 'Rude Ghost'},
-        ]
+        let dialogue;
+        // = [
+        //     { text: 'I see. I will give you what you want, if you do something for me.', name: 'Rude Ghost'},
+        //     { text: 'Avenge me. Kill those stupid dogs that had eaten me alive.', name: 'Rude Ghost'},
+        //     { text: 'You can find them in a cave on the road to village. Kill them then we can talk.', name: 'Rude Ghost'},
+        // ]
+
+        if(this.props.mechanics.cave === 'completed'){
+            dialogue = [
+                { text: 'Thank you. Now I can rest in peace. Take this and tell Robert Im sorry', name: 'Rude Ghost'},
+               
+            ]
+        } else {
+            dialogue = [
+                { text: 'I see. I will give you what you want, if you do something for me.', name: 'Rude Ghost'},
+                { text: 'Avenge me. Kill those stupid dogs that had eaten me alive.', name: 'Rude Ghost'},
+                { text: 'You can find them in a cave on the road to village. Kill them then we can talk.', name: 'Rude Ghost'},
+            ]
+        }
 
         console.log(this.props);
         let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';

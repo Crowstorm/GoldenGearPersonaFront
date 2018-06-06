@@ -10,7 +10,7 @@ let initial_state = {
     currentLevel: 'ThroneRoom',
 
     //quests
-    spirit: ''
+    spirit: 'completed'
 };
 
 export default (state = initial_state, action) => {
