@@ -1,8 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
 
+import './styles.css'
 import Sadman from '../../assets/NPC/sadman-right.png';
 import Kid from '../../assets/NPC/kid1-front.png';
+
+import Ghost from '../../assets/NPC/ghost-npc.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 import { GRID_ThroneRoom, BLOCKED_OutsideCastle } from '../grids'
 
 class OutsideCastle extends React.Component{
@@ -90,6 +94,29 @@ class OutsideCastle extends React.Component{
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Corridor');
                 }
+                if((this.props.charPosition.x === 3 && this.props.charPosition.y === 23)){
+                    const GuardGhost = {
+                        name: 'Rude Ghost',
+                        portrait: '../../assets/Enemies/ghost-portrait.png',
+                        stats: {
+                            hp: 2,
+                            mp: 0,
+                            defence: 5,
+                            agility: 7,
+                            speed: 12,
+                            strength: 5
+                        }
+                    }
+                    this.props.addEnemy(GuardGhost);
+                    this.props.startCombat();
+                    document.removeEventListener("keydown", this.handleKeyDown);
+                    
+                }
+
+                if((this.props.charPosition.x === 5 && this.props.charPosition.y === 21) || (this.props.charPosition.x === 7 && this.props.charPosition.y === 21)){
+
+                    this.props.setDialogueState(true);
+                }
             }
             default: { return }
         }
@@ -101,11 +128,16 @@ class OutsideCastle extends React.Component{
         document.addEventListener("keydown", this.handleKeyDown);
         document.getElementById('d22_16').innerHTML = `<img src=${Sadman} />`
         document.getElementById('d22_9').innerHTML = `<img src=${Kid} />`
+        document.getElementById('d6_21').innerHTML = `<img src=${Ghost} />`
+
     }
 
     render(){
        
-        
+        const dialogue = [
+            { text: 'Dont you dare touching my gravestone!', name: 'Rude Ghost'},
+            { text: 'Or else i will get rid of you.', name: 'Rude Ghost'},
+    ]
 
         if((this.props.charPosition.x === 13 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 2))
         {
@@ -113,6 +145,8 @@ class OutsideCastle extends React.Component{
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('CastleRoad');
         }
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
         return(
             <div id="outsidecastle"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>

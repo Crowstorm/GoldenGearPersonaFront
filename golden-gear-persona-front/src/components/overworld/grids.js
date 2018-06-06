@@ -1059,7 +1059,7 @@ export const BLOCKED_OutsideCastle = [
     {x: 3, y: 16 },
     {x: 22, y: 16 },
     {x: 6, y: 16 },
-    
+    {x: 6, y: 21},
     {x: 9, y: 16 },
     
     {x: 3, y: 22 },

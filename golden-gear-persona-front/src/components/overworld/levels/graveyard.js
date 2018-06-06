@@ -1,8 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import Ghost from '../../assets/NPC/ghost-npc.png';
-import Dialogue from '../../extraInterfaces/dialogue';
+
 import { GRID_ThroneRoom, BLOCKED_Graveyard } from '../grids'
 
 class Graveyard extends React.Component{
@@ -85,29 +84,7 @@ class Graveyard extends React.Component{
             }
             case 'Enter': {
                
-                if((this.props.charPosition.x === 3 && this.props.charPosition.y === 23)){
-                    const GuardGhost = {
-                        name: 'Rude Ghost',
-                        portrait: '../../assets/Enemies/ghost-portrait.png',
-                        stats: {
-                            hp: 2,
-                            mp: 0,
-                            defence: 5,
-                            agility: 7,
-                            speed: 12,
-                            strength: 5
-                        }
-                    }
-                    this.props.addEnemy(GuardGhost);
-                    this.props.startCombat();
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    
-                }
-
-                if((this.props.charPosition.x === 5 && this.props.charPosition.y === 23)){
-
-                    this.props.setDialogueState(true);
-                }
+                
                 break;
                 
             }
@@ -119,15 +96,11 @@ class Graveyard extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        document.getElementById('d4_23').innerHTML = `<img src=${Ghost} />`
     }
 
     render(){
        
-        const dialogue = [
-                { text: 'Dont you dare touching my gravestone!', name: 'Rude Ghost'},
-                { text: 'Or else i will get rid of you.', name: 'Rude Ghost'},
-        ]
+        
 
         if((this.props.charPosition.x === 2 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 14)){
             this.props.setCharacterPosition(23, 13);
@@ -135,8 +108,7 @@ class Graveyard extends React.Component{
             this.props.changeLevel('Memorial Park');
             
         }
-        console.log(this.props);
-        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+        
         return(
             <div id="graveyard"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
