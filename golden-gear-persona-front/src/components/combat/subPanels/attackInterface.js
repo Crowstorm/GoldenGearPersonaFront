@@ -2,6 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 import * as skillList from '../skillMechanics'
 
+import '../combat.css'
+
+
 class AttackInterface extends React.Component {
     constructor(props) {
         super(props);

@@ -3,6 +3,8 @@ import {useBackstab} from './skillMechanics'
 
 import _ from 'lodash';
 
+import './combat.css'
+
 class EnemyInterface extends React.Component {
     handleTakeDamage = (index) => {
         let charIndex = this.props.mechanics.attackingAllyIndex;
@@ -70,7 +72,7 @@ class EnemyInterface extends React.Component {
     render() {
         let enemiesRenderer = this.renderEnemies();
         return (
-            <div style={{ float: 'right', border: '1px solid red', width: 200, height: 800 }}>
+            <div id='enemyInterface' style={{ float: 'right', border: '1px solid red', width: 200, height: 800 }}>
                 <div id="gowno" className="container d-flex flex-column justify-content-center">
                     {enemiesRenderer}
                 </div>

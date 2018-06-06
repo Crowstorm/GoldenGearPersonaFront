@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash'
 
+import './combat.css'
+
 class InfoPanel extends React.Component{
 
     // handleBattleWon(){
@@ -24,7 +26,7 @@ class InfoPanel extends React.Component{
         // console.log('propsy kombatu info', this.props)
         let renderDmgInfo = this.handleDmgInfo();
         return(
-            <div className="align-self-end d-flex justify-content-center align-items-center flex-column"style={{border: '1px solid blue', height: 200, width: 600, position: 'absolute', marginLeft: 200, overflowY:'auto'}}> 
+            <div id='infoPanel' className="align-self-end d-flex justify-content-center align-items-center flex-column"style={{border: '1px solid blue', height: 200, width: 600, position: 'absolute', marginLeft: 200, overflowY:'auto'}}> 
                 <p> Tura: {this.props.mechanics.turn} </p>
                 {/* <p> {this.props.mechanics.infoArray} </p> */}
                 {renderDmgInfo}

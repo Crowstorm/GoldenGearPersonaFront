@@ -6,6 +6,8 @@ import thrill from './thrill.mp3'
 
 import king from '../assets/king.png'
 
+import './styles.css';
+
 class Dialogue extends React.Component {
     constructor(props) {
         super(props);
@@ -19,7 +21,7 @@ class Dialogue extends React.Component {
     dialogueReceiver = (array) => {
 
         const increment = () => {
-            
+
             //this.playSound('thrill');
             if (this.state.i === array.length - 1) {
                 this.props.setDialogueState(false);
@@ -30,13 +32,16 @@ class Dialogue extends React.Component {
         }
 
         return (
-            
-            <div className="d-flex flex-row align-items-center" style={{ width: '600px', height: '150px' }}>
-            {/* <audio ref="thrill" src={thrill} type="audio/mpeg"></audio> */}
-                <img src={king} style={{ height: "150px" }} />
-                <div className="d-flex align-items-center"  style={{ width: '430px', justifyContent: 'center', textAlign: 'center' }}> {array[this.state.i].text} </div>
-                {/* dopoki jest length to next, nie ma to konczy dialog przekaz dlugosc tablicy do finckji onclick*/}
-                <div onClick={() => increment()}> NEXT </div>
+
+            <div id='dialogue' className="d-flex flex-column align-items-center" style={{ width: '600px', height: '150px' }}>
+                {/* <audio ref="thrill" src={thrill} type="audio/mpeg"></audio> */}
+                {/* <img src={`${port}`} style={{ height: "150px" }} /> */}
+                <div className="d-flex flex-column align-items-center" style={{ width: '430px', justifyContent: 'center', textAlign: 'center' }}>
+                    <h5> {array[this.state.i].name} </h5>
+                    <div> {array[this.state.i].text} </div>
+
+                </div>
+                <div onClick={() => increment()} style={{ paddingTop: 20 }}> NEXT </div>
             </div>
         )
     }
@@ -50,7 +55,7 @@ class Dialogue extends React.Component {
             marginTop: 450,
             marginLeft: 100
         }
-       // let dialogueRenderer = (this.props.modals.dialogueVisibility) ? this.dialogueReceiver(this.array) : '';
+        // let dialogueRenderer = (this.props.modals.dialogueVisibility) ? this.dialogueReceiver(this.array) : '';
         return (
             <div className=" d-flex align-items-center justify-content-center" style={dialogueStyle}>
                 {this.dialogueReceiver(this.props.dialogue)}

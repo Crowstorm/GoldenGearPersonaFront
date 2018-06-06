@@ -44,7 +44,7 @@ class GridGenerator extends React.Component {
 
         return (
             <div style={{ position: 'absolute' }}>
-                {this.renderGrid()}
+                {/* {this.renderGrid()} */}
                <div className="d-flex flex-row"> {this.blockedGridRender()} </div>
             </div>
            

@@ -1,6 +1,8 @@
 import React from 'react'
 import _ from 'lodash'
 
+import './combat.css'
+
 
 class AllyInterface extends React.Component {
     componentDidMount() {
@@ -34,7 +36,7 @@ class AllyInterface extends React.Component {
     render() {
         let renderCharacters = this.props.mainChar ? this.getCharactersForCombat() : 'Loading';
         return (
-            <div style={{ float: 'left', border: "1px solid green", width: 200, height: 800 }}>
+            <div id="allyInterface" style={{ float: 'left', border: "1px solid green", width: 200, height: 800 }}>
                 <div className="container d-flex justify-content-center flex-column">
                     {renderCharacters}
                 </div>

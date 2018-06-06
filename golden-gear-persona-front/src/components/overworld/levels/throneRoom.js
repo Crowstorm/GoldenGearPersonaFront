@@ -117,6 +117,7 @@ class ThroneRoom extends React.Component {
                     // this.props.addEnemy(ziomek);
                     // this.props.startCombat();
                     this.props.setQuest('Save the Princess');
+                    
                     // document.removeEventListener("keydown", this.handleKeyDown);
                 }
                 if ((this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 2)) {
@@ -147,13 +148,13 @@ class ThroneRoom extends React.Component {
 
     render() {
         const dialogue = [
-            { text: "Thank you for coming. As you already heard, the princess had been kidnapped.", portrait: "king" },
-            { text: "And in this time of need we know that we can count on you." },
-            { text: "We've already sent our best men, but the truth is anyone could be involved in her disappearance." },
-            { text: "It is to our understanding that you care deeply for our daughter. If you save her you shall be offered her hand." },
-            { text: "Essentialy making you the Prince of the Realm." },
-            { text: "She was last seen on the streets near the Inn. That's not the first time something bad happened there. During the night bandits are patrolling this area." },
-            { text: "Now go, my friend, and save the Princess. Time might be running short." }
+            { text: "Thank you for coming. As you already heard, the princess had been kidnapped.", name: "King Horace" },
+            { text: "And in this time of need we know that we can count on you.", name: "King Horace" },
+            { text: "We've already sent our best men, but the truth is anyone could be involved in her disappearance.", name: "King Horace" },
+            { text: "It is to our understanding that you care deeply for our daughter. If you save her you shall be offered her hand.", name: "King Horace" },
+            { text: "Essentialy making you the Prince of the Realm.", name: "King Horace" },
+            { text: "She was last seen on the streets near the Inn. That's not the first time something bad happened there. During the night bandits are patrolling this area.", name: "King Horace" },
+            { text: "Now go, my friend, and save the Princess. Time might be running short.", name: "King Horace" }
         ]
 
         
