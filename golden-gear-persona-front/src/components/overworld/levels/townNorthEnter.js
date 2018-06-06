@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Guard from '../../assets/NPC/guard-back.png';
 
 import { GRID_ThroneRoom, BLOCKED_NorthEnter } from '../grids'
 
@@ -103,6 +104,9 @@ class TownNorthEnter extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d16_2').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d10_2').innerHTML = `<img src=${Guard} />`
+
     }
 
     render(){

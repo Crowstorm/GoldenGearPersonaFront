@@ -84,7 +84,14 @@ class CastleRoad extends React.Component{
             }
             case 'Enter': {
                
-                
+                if ((this.props.charPosition.x === 9 && this.props.charPosition.y === 14) || (this.props.charPosition.x === 10 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 14)){
+                    this.props.setInfoText('Left to the Village, Right to the Beach');
+                    this.props.setInfoState(true);
+                }
+                if ((this.props.charPosition.x === 11 && this.props.charPosition.y === 8) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 9) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 10)){
+                    this.props.setInfoText('Road to Nevermore Town');
+                    this.props.setInfoState(true);
+                }
                 break;
                 
             }

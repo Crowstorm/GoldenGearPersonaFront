@@ -1,6 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Guard1 from '../../assets/NPC/guard-front.png';
+import Guard from '../../assets/NPC/guard-back.png';
+import Monk from '../../assets/NPC/praying-monk-front.png';
 
 import { GRID_ThroneRoom, BLOCKED_CastleSecondFloor } from '../grids'
 
@@ -96,6 +99,12 @@ class CastleSecondFloor extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d21_23').innerHTML = `<img src=${Guard1} />`
+        document.getElementById('d14_17').innerHTML = `<img src=${Guard1} />`
+        document.getElementById('d14_11').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d5_8').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d22_8').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d14_4').innerHTML = `<img src=${Monk} />`
     }
 
     render(){

@@ -1,6 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-
+import './styles.css'
+import Guard1 from '../../assets/NPC/guard-left.png';
+import Guard from '../../assets/NPC/guard-back.png';
+import Nobility from '../../assets/NPC/nobility1-front.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_Corridor } from '../grids'
 
@@ -84,6 +88,12 @@ class Corridor extends React.Component{
             }
             case 'Enter': {
                
+                if((this.props.charPosition.x === 16 && this.props.charPosition.y === 14)){
+                    this.props.setDialogueState(true);
+
+                    break;
+                }
+
                 if((this.props.charPosition.x === 12 && this.props.charPosition.y === 24) ||( this.props.charPosition.x === 13 && this.props.charPosition.y === 24)){
                     this.props.setCharacterPosition(12, 2);
                     document.removeEventListener("keydown", this.handleKeyDown);
@@ -108,10 +118,22 @@ class Corridor extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d17_14').innerHTML = `<img src=${Guard1} />`
+        document.getElementById('d6_12').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d3_12').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d21_18').innerHTML = `<img src=${Nobility} />`
     }
 
     render(){
         
+        const dialogue = [
+
+            {text: "You shall not pass, peasant.", portrait: "Guard1"},
+        ]
+
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+
         if((this.props.charPosition.x === 21 && this.props.charPosition.y === 24) ||( this.props.charPosition.x === 20 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(22, 22);
             document.removeEventListener("keydown", this.handleKeyDown);
@@ -126,6 +148,7 @@ class Corridor extends React.Component{
 
         return(
             <div id="corridor"> 
+            {dialogueRenderer}
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
                     {this.renderGrid()}
                 </div>

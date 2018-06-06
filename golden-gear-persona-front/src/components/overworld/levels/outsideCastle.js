@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
-
+import Sadman from '../../assets/NPC/sadman-right.png';
+import Kid from '../../assets/NPC/kid1-front.png';
 import { GRID_ThroneRoom, BLOCKED_OutsideCastle } from '../grids'
 
 class OutsideCastle extends React.Component{
@@ -98,6 +99,8 @@ class OutsideCastle extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d22_16').innerHTML = `<img src=${Sadman} />`
+        document.getElementById('d22_9').innerHTML = `<img src=${Kid} />`
     }
 
     render(){

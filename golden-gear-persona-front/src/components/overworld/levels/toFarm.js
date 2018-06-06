@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import monster from '../../assets/beholder.png'
+// import monster from '../../assets/beholder.png'
 
 
 import { GRID_ThroneRoom, BLOCKED_toFarm } from '../grids'
@@ -107,7 +107,7 @@ class ToFarm extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
+        // document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
 
     }
 

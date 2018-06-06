@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Logger from '../../assets/NPC/logger1-front.png';
 
 import { GRID_ThroneRoom, BLOCKED_Village } from '../grids'
 
@@ -95,6 +96,7 @@ class Village extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d22_9').innerHTML = `<img src=${Logger} />`
     }
 
     render(){
