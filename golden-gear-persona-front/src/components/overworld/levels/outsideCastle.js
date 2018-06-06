@@ -137,7 +137,10 @@ class OutsideCastle extends React.Component{
         const dialogue = [
             { text: 'Dont you dare touching my gravestone!', name: 'Rude Ghost'},
             { text: 'Or else i will get rid of you.', name: 'Rude Ghost'},
-    ]
+        ]
+
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
 
         if((this.props.charPosition.x === 13 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 2))
         {
@@ -145,11 +148,11 @@ class OutsideCastle extends React.Component{
             document.removeEventListener("keydown", this.handleKeyDown);
             this.props.changeLevel('CastleRoad');
         }
-        console.log(this.props);
-        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+        
         return(
             <div id="outsidecastle"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

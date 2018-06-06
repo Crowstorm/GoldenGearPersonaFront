@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
 
-
 import { GRID_ThroneRoom, BLOCKED_Cave1 } from '../grids'
 
+
+import Wolf from '../../assets/Enemies/wolf.png';
 class Cave1 extends React.Component{
 
     renderPosition = (cell) => {
@@ -98,6 +99,8 @@ class Cave1 extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d13_16').innerHTML = `<img src=${Wolf} />`
+
     }
 
     render(){
@@ -108,6 +111,28 @@ class Cave1 extends React.Component{
             this.props.changeLevel('ToFarm');
             
         }
+
+        if((this.props.charPosition.x === 13 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 15)){
+            const Wolf1 = {
+                name: 'Wolf',
+                portrait: 'https://i.imgur.com/lvGPlRJ.png',
+                stats: {
+                    hp: 2,
+                    mp: 0,
+                    defence: 5,
+                    agility: 7,
+                    speed: 12,
+                    strength: 5
+                }
+            }
+            this.props.addEnemy(Wolf1);
+            this.props.addEnemy(Wolf1);
+            this.props.addEnemy(Wolf1);
+            this.props.startCombat();
+            
+        }
+
+
         
         return(
             <div id="cave1"> 
