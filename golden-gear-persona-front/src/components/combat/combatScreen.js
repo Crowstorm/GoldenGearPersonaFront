@@ -9,7 +9,7 @@ import beholder from '../assets/beholderCombat.png'
 import background from '../assets/battleBackground.png'
 
 import mainCharCombat from '../assets/mainCharCombat.gif';
-import necroCombat from '../assets/necroCombat.gif';
+import healerCombat from '../assets/healerCombat.gif';
 
 
 class CombatScreen extends React.Component {
@@ -25,16 +25,44 @@ class CombatScreen extends React.Component {
         //    let renderAllyAttackOptions = (this.props.mechanics.turn === "ally") ? 'ally' : "enemy";
         let i = this.props.mechanics.attackingAllyIndex
         let renderAllyTurnInterface = (this.props.mechanics.turn === 'ally') ? this.getAllyTurnInterface() : null
+
+        let renderMainChar = () =>{
+            if(this.props.mainChar[0]){
+                return(
+                    <img src={mainCharCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} />
+                )
+            } else {
+
+            }
+        }
+
+       let  renderSetsuna = () =>{
+            if(this.props.mainChar[2].name ==='Setsuna'){
+                return(
+                    <img src={healerCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} />
+                )
+            } else {
+
+            }
+        }
+
         return (
             <div id="combatScreen" className="d-flex flex-wrap align-content-center justify-content-center" style={{ border: '1px solid blue', height: 600, width: 600, position: 'relative', backgroundImage: { background } }}>
-                <img src={mainCharCombat}
-                    style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} />
+                
+                {/* <img src={mainCharCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '30px' }} /> */}
+                
+                {renderMainChar()}
                 <img src={necromancer}
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '160px' }} />
-                <img src={necroCombat}
-                    style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} />
+                {/* <img src={healerCombat}
+                    style={{ height: "100px", position: 'absolute', left: '11px', top: '290px' }} /> */}
                 <img src={necromancer}
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
+
+                {renderSetsuna()}    
 
                 <img src={beholder}
                     style={{ height: "100px", position: 'absolute', left: '520px', top: '30px' }} />

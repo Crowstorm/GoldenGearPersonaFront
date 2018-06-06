@@ -42,7 +42,7 @@ let initial_state = [
         ]
     },
     {
-        name: 'Axe Girl',
+        name: 'Tanukher',
         title: 'Brak',
         classGame: 'warrior',
         portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/6/6b/Haru_All_Out.png/revision/latest?cb=20170202222551',
@@ -74,7 +74,7 @@ let initial_state = [
         ]
     },
     {
-        name: 'Healing Cat',
+        name: 'Setsuna',
         title: 'Brak',
         classGame: 'healer',
         portrait: 'https://i.pinimg.com/originals/dc/d7/47/dcd7478c648772f151db89da329e0a25.png',
@@ -106,7 +106,7 @@ let initial_state = [
         ]
     },
     {
-        name: 'Fire Grill',
+        name: 'Miserion',
         title: 'Brak',
         classGame: 'warrior',
         portrait: 'https://vignette.wikia.nocookie.net/megamitensei/images/2/25/Ann_All_Out.png/revision/latest/scale-to-width-down/480?cb=20170202221932',
