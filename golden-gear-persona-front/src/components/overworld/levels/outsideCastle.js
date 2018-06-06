@@ -115,7 +115,7 @@ class OutsideCastle extends React.Component{
 
                 if((this.props.charPosition.x === 5 && this.props.charPosition.y === 21) || (this.props.charPosition.x === 7 && this.props.charPosition.y === 21)){
                     
-                    if(this.props.mechanics.spirit === 'started')
+                    if(this.props.mechanics.cave === 'completed')
                     { 
                         this.props.setQuest('Give guard his pendant');
                         this.props.questStatus('spirit', 'completed');
