@@ -238,6 +238,104 @@ export default (state = initial_state, action) => {
                 ...state.slice(1)
             ]
         }
+
+        case 'LEVEL_UP1':{
+            return [
+                ...state.slice(0, 0),
+                {
+                    ...state[0],
+                    stats: {
+                        ...state[0].stats,
+                        maxHp: state[0].stats.maxHp +1,
+                        hp: state[0].stats.hp +1,
+                        maxMp: state[0].stats.maxMp +1,
+                        mp: state[0].stats.mp +1,
+                        strenght: state[0].stats.strength +1,
+                        agility: state[0].stats.agility +1,
+                        defence: state[0].stats.defence +1,
+                        magic: state[0].stats.magic +1,
+                        magicResist: state[0].stats.magicResist +1,
+                        luck: state[0].stats.luck +1,
+                        speed: state[0].stats.speed +1,
+                        defence: state[0].stats.defence +1,
+                    }
+                },
+                ...state.slice(0 + 1)
+            ]
+        }
+
+        case 'LEVEL_UP2':{
+            return [
+                ...state.slice(0, 1),
+                {
+                    ...state[1],
+                    stats: {
+                        ...state[1].stats,
+                        maxHp: state[1].stats.maxHp +1,
+                        hp: state[1].stats.hp +1,
+                        maxMp: state[1].stats.maxMp +1,
+                        mp: state[1].stats.mp +1,
+                        strenght: state[1].stats.strength +1,
+                        agility: state[1].stats.agility +1,
+                        defence: state[1].stats.defence +1,
+                        magic: state[1].stats.magic +1,
+                        magicResist: state[1].stats.magicResist +1,
+                        luck: state[1].stats.luck +1,
+                        speed: state[1].stats.speed +1,
+                        defence: state[1].stats.defence +1,
+                    }
+                },
+                ...state.slice(1 + 1)
+            ]
+        }
+
+        case 'LEVEL_UP1':{
+            return [
+                ...state.slice(0, 0),
+                {
+                    ...state[0],
+                    stats: {
+                        ...state[0].stats,
+                        maxHp: state[0].stats.maxHp +1,
+                        hp: state[0].stats.hp +1,
+                        maxMp: state[0].stats.maxMp +1,
+                        strenght: state[0].stats.strength +1,
+                        agility: state[0].stats.agility +1,
+                        defence: state[0].stats.defence +1,
+                        magic: state[0].stats.magic +1,
+                        magicResist: state[0].stats.magicResist +1,
+                        luck: state[0].stats.luck +1,
+                        speed: state[0].stats.speed +1,
+                        defence: state[0].stats.defence +1,
+                    }
+                },
+                ...state.slice(0 + 1)
+            ]
+        }
+
+        case 'LEVEL_UP4':{
+            return [
+                ...state.slice(0, 0),
+                {
+                    ...state[0],
+                    stats: {
+                        ...state[0].stats,
+                        maxHp: state[0].stats.maxHp +1,
+                        hp: state[0].stats.hp +1,
+                        maxMp: state[0].stats.maxMp +1,
+                        strenght: state[0].stats.strength +1,
+                        agility: state[0].stats.agility +1,
+                        defence: state[0].stats.defence +1,
+                        magic: state[0].stats.magic +1,
+                        magicResist: state[0].stats.magicResist +1,
+                        luck: state[0].stats.luck +1,
+                        speed: state[0].stats.speed +1,
+                        defence: state[0].stats.defence +1,
+                    }
+                },
+                ...state.slice(0 + 1)
+            ]
+        }
         default: {
             return state;
         }
