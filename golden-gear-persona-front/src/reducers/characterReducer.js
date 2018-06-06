@@ -38,7 +38,6 @@ let initial_state = [
         ],
         consumables: [
             items.healingPotion,
-            items.healingPotion
         ],
         questItems: [
 
@@ -223,9 +222,10 @@ export default (state = initial_state, action) => {
                 ...state.slice(0, 0),
                 {
                     ...state[0],
-                    consumables: [
-                        ...state[0].consumables,
-                        items[`${action.item}`]
+                    questItems: [
+                        ...state[0].questItems,
+                        // items[`${action.item}`]
+                        action.item
                     ]
                 },
                 ...state.slice(1)

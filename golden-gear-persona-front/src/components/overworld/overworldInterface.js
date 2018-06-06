@@ -18,10 +18,11 @@ class OverworldInterface extends React.Component {
 
     renderQuestItems = () => {
         return _.map(this.props.mainChar[0].questItems, (el)=>{
+            // console.log(el)
             return (
                 <div style={{margin: 10}}>
                     {/* <img style={{ height: 25 }} src={el.icon} /> */}
-                    {el.name}
+                    {el}
                 </div>
             )
         })

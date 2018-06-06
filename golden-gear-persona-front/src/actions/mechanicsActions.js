@@ -21,9 +21,9 @@ export const combatStart2 = () => {
                             //Logika prawdopodobnie przeniesiona
                             if (getState().enemies.length === 0) {
                                
-                                dispatch({
-                                    type: 'LEVEL_UP1'
-                                })
+                                // dispatch({
+                                //     type: 'LEVEL_UP1'
+                                // })
                                 // dispatch({
                                 //     type: 'LEVEL_UP2'
                                 // })
