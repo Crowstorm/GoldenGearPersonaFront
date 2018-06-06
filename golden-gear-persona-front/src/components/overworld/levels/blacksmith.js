@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-
+import Smith from '../../assets/NPC/villager3-left.png';
 import { GRID_ThroneRoom, BLOCKED_Blacksmith } from '../grids'
 
 class Blacksmith extends React.Component{
@@ -96,6 +96,8 @@ class Blacksmith extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d21_6').innerHTML = `<img src=${Smith} />`
+
     }
 
     render(){

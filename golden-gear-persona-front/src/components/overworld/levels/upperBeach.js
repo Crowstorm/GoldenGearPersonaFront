@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-
+import Girl from '../../assets/NPC/girl1-right.png';
 import { GRID_ThroneRoom, BLOCKED_UBeach } from '../grids'
 
 class UpperBeach extends React.Component{
@@ -96,6 +96,7 @@ class UpperBeach extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d11_18').innerHTML = `<img src=${Girl} />`
     }
 
     render(){

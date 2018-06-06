@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-
+import Thief from '../../assets/NPC/villager2-front.png';
 import { GRID_ThroneRoom, BLOCKED_Campfire } from '../grids'
 
 class Campfire extends React.Component{
@@ -96,6 +96,8 @@ class Campfire extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d1_25').innerHTML = `<img src=${Thief} />`
+
     }
 
     render(){

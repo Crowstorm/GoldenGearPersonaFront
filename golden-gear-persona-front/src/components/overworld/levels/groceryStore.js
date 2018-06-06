@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-
+import Seller from '../../assets/NPC/woman1-right.png';
 import { GRID_ThroneRoom, BLOCKED_NorthGate } from '../grids'
 
 class GroceryStore extends React.Component{
@@ -98,6 +98,7 @@ class GroceryStore extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d7_6').innerHTML = `<img src=${Seller} />`
     }
 
     render(){

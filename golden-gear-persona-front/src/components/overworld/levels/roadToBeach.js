@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Girl from '../../assets/NPC/girl1-front.png';
 
 import { GRID_ThroneRoom, BLOCKED_RoadToBeach } from '../grids'
 
@@ -96,6 +97,8 @@ class RoadToBeach extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d5_17').innerHTML = `<img src=${Girl} />`
+
     }
 
     render(){

@@ -91,6 +91,21 @@ class NorthGate extends React.Component{
                     
                 }
                 
+                if ((this.props.charPosition.x === 7 && this.props.charPosition.y === 15) || (this.props.charPosition.x === 19 && this.props.charPosition.y === 15) ){
+                    this.props.setInfoText('Barracks. I have no business in there.');
+                    this.props.setInfoState(true);
+                }
+
+                if ((this.props.charPosition.x === 22 && this.props.charPosition.y === 14)){
+                    this.props.setInfoText('To Church');
+                    this.props.setInfoState(true);
+                }
+
+                if ((this.props.charPosition.x === 4 && this.props.charPosition.y === 14)){
+                    this.props.setInfoText('To West Gate');
+                    this.props.setInfoState(true);
+                }
+
                 break;
                 
             }

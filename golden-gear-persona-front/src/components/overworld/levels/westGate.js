@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Guard from '../../assets/NPC/guard-left.png';
 
 import { GRID_ThroneRoom, BLOCKED_WestGate } from '../grids'
 
@@ -84,7 +85,10 @@ class WestGate extends React.Component{
             }
             case 'Enter': {
                
-                
+                if ((this.props.charPosition.x === 17 && this.props.charPosition.y === 4)){
+                    this.props.setInfoText('Nothing is there');
+                    this.props.setInfoState(true);
+                }
                 
                 break;
                 
@@ -97,6 +101,9 @@ class WestGate extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d12_11').innerHTML = `<img src=${Guard} />`
+        document.getElementById('d12_15').innerHTML = `<img src=${Guard} />`
+
     }
 
     render(){
