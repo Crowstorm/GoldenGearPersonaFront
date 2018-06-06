@@ -17,3 +17,11 @@ export const allyRestoreHP = (amount, whoToHealIndex) => {
         })
     }
 }
+
+export const healEveryone = ()=>{
+    return function (dispatch) {
+        dispatch({
+            type: 'HEAL_EVERYONE',
+        })
+    }
+}

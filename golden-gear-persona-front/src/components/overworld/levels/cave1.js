@@ -135,7 +135,7 @@ class Cave1 extends React.Component{
                 this.props.startCombat();
                 document.removeEventListener("keydown", this.handleKeyDown);
                 this.props.setQuest('Talk with spirit')
-                this.props.questStatus('spirit', 'started');
+                this.props.questStatus('spirit', 'gowno');
 
 
                 

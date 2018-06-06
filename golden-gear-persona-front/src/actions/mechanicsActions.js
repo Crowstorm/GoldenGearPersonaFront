@@ -24,15 +24,15 @@ export const combatStart2 = () => {
                                 dispatch({
                                     type: 'LEVEL_UP1'
                                 })
-                                dispatch({
-                                    type: 'LEVEL_UP2'
-                                })
-                                dispatch({
-                                    type: 'LEVEL_UP3'
-                                })
-                                dispatch({
-                                    type: 'LEVEL_UP4'
-                                })
+                                // dispatch({
+                                //     type: 'LEVEL_UP2'
+                                // })
+                                // dispatch({
+                                //     type: 'LEVEL_UP3'
+                                // })
+                                // dispatch({
+                                //     type: 'LEVEL_UP4'
+                                // })
                                 return 0;
                             }
                         }
@@ -66,6 +66,10 @@ export const combatStart2 = () => {
                         let success = true;
                         //hit chance
                         let allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //    while(getState().mainChar[allyIndex].stats.hp <= 0){
+                    //         allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //     } 
+                        //  if(getState().mainChar[allyIndex].stats.hp <= 0)
                         let randomHitChance = Math.floor((Math.random() * 100) + 1);
                         let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
                         let playerEvasion = getState().mainChar[allyIndex].stats.agility;

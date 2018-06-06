@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { moveChar, moveCharUp, moveCharDown, moveCharRight, moveCharLeft } from '../actions/index'
 import { changeLevel, setCharacterPosition, pickUpItem, setQuest, startCombat, stopCombat, questStatus } from '../actions/mechanicsActions'
 import { addEnemy} from '../actions/enemyActions'
+import {healEveryone} from '../actions/allyActions'
 import { setDialogueState, setInfoState, setInfoText } from '../actions/modals'
 
 
@@ -99,6 +100,9 @@ function mapDispatchToProps(dispatch) {
         questStatus: (name, status) =>{
             dispatch(questStatus(name, status))
         },
+        healEveryone: ()=>{
+            dispatch(healEveryone());
+        }
     }
 }
 
