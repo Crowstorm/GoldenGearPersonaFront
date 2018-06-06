@@ -94,7 +94,7 @@ class OutsideCastle extends React.Component{
                     document.removeEventListener("keydown", this.handleKeyDown);
                     this.props.changeLevel('Corridor');
                 }
-                if((this.props.charPosition.x === 3 && this.props.charPosition.y === 23)){
+                if((this.props.charPosition.x === 7 && this.props.charPosition.y === 22)){
                     const GuardGhost = {
                         name: 'Rude Ghost',
                         portrait: '../../assets/Enemies/ghost-portrait.png',
