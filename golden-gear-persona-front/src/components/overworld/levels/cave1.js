@@ -112,24 +112,34 @@ class Cave1 extends React.Component{
             
         }
 
-        if((this.props.charPosition.x === 13 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 15)){
-            const Wolf1 = {
-                name: 'Wolf',
-                portrait: 'https://i.imgur.com/lvGPlRJ.png',
-                stats: {
-                    hp: 2,
-                    mp: 0,
-                    defence: 5,
-                    agility: 7,
-                    speed: 12,
-                    strength: 5
-                }
-            }
-            this.props.addEnemy(Wolf1);
-            this.props.addEnemy(Wolf1);
-            this.props.addEnemy(Wolf1);
-            this.props.startCombat();
+        
             
+        if(this.props.mechanics.cave === 'started'){
+
+            if((this.props.charPosition.x === 13 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 15)){
+                const Wolf1 = {
+                    name: 'Wolf',
+                    portrait: 'https://i.imgur.com/lvGPlRJ.png',
+                    stats: {
+                        hp: 2,
+                        mp: 0,
+                        defence: 5,
+                        agility: 7,
+                        speed: 12,
+                        strength: 5
+                    }
+                }
+                this.props.addEnemy(Wolf1);
+                this.props.addEnemy(Wolf1);
+                
+                this.props.startCombat();
+                document.removeEventListener("keydown", this.handleKeyDown);
+                this.props.setQuest('Talk with spirit')
+                this.props.questStatus('spirit', 'started');
+
+
+                
+            }
         }
 
 

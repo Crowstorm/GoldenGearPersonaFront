@@ -89,10 +89,15 @@ class Corridor extends React.Component{
             case 'Enter': {
                
                 if((this.props.charPosition.x === 16 && this.props.charPosition.y === 14)){
-                    this.props.setDialogueState(true);
-                    this.props.setQuest('Retrieve pendant')
-                    this.props.questStatus('spirit', 'started');
-                    break;
+                    if(this.props.mechanics.spirit === 'completed'){
+                        this.props.setQuest('Save the Princess')
+                    }
+                    else{
+                        this.props.setDialogueState(true);
+                        this.props.setQuest('Retrieve pendant')
+                        this.props.questStatus('ghost', 'started');
+                        break;
+                    } 
                 }
 
                 if((this.props.charPosition.x === 12 && this.props.charPosition.y === 24) ||( this.props.charPosition.x === 13 && this.props.charPosition.y === 24)){
@@ -132,6 +137,12 @@ class Corridor extends React.Component{
             {text: "I will let you in only after you retrieve a pendant from the grave of my friend", name: "Guard"},
             {text: "I tried to do it myself, but the spirit would attack me every time", name: "Guard"},
             {text: "And don't you dare talking on to His Majesty", name: "Guard"},
+        ]
+
+        const dialogue2 = [
+
+            {text: "Thank you very much, my friend!", name: "Guard"},
+            
         ]
 
         console.log(this.props);

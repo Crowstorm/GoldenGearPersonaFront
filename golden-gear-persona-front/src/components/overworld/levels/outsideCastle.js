@@ -114,8 +114,18 @@ class OutsideCastle extends React.Component{
                 }
 
                 if((this.props.charPosition.x === 5 && this.props.charPosition.y === 21) || (this.props.charPosition.x === 7 && this.props.charPosition.y === 21)){
-
-                    this.props.setDialogueState(true);
+                    
+                    if(this.props.mechanics.spirit === 'started')
+                    { 
+                        this.props.setQuest('Give guard his pendant');
+                        this.props.questStatus('spirit', 'completed');
+                    }
+                    else
+                    {
+                        this.props.setDialogueState(true);
+                        this.props.setQuest('Find the cave');
+                        this.props.questStatus('cave', 'started');
+                    }
                 }
             }
             default: { return }
@@ -135,8 +145,9 @@ class OutsideCastle extends React.Component{
     render(){
        
         const dialogue = [
-            { text: 'Dont you dare touching my gravestone!', name: 'Rude Ghost'},
-            { text: 'Or else i will get rid of you.', name: 'Rude Ghost'},
+            { text: 'I see. I will give you what you want, if you do something for me.', name: 'Rude Ghost'},
+            { text: 'Avenge me. Kill those stupid dogs that had eaten me alive.', name: 'Rude Ghost'},
+            { text: 'You can find them in a cave on the road to village. Kill them then we can talk.', name: 'Rude Ghost'},
         ]
 
         console.log(this.props);
