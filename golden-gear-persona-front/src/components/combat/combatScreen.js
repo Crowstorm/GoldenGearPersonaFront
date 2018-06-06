@@ -10,6 +10,8 @@ import background from '../assets/battleBackground.png'
 
 import mainCharCombat from '../assets/mainCharCombat.gif';
 import healerCombat from '../assets/healerCombat.gif';
+import necroCombat from '../assets/necroCombat.gif'
+import tankCombat from '../assets/tankCombat.gif'
 
 
 class CombatScreen extends React.Component {
@@ -42,7 +44,7 @@ class CombatScreen extends React.Component {
         let  renderThanuker = () =>{
             // if(this.props.mainChar[1].name ==='Setsuna'){
                 return(
-                    <img src={healerCombat}
+                    <img src={tankCombat}
                     style={{ height: "100px", position: 'absolute', left: '11px', top: '160px' }} />
                 )
         //     } else {
@@ -70,7 +72,7 @@ class CombatScreen extends React.Component {
         let renderMiserion = () => {
             // if (this.props.mainChar[3].name === 'Setsuna') {
                 return (
-                    <img src={healerCombat}
+                    <img src={necroCombat}
                         style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
                 )
             // } else {
@@ -79,6 +81,26 @@ class CombatScreen extends React.Component {
             //             style={{ height: "100px", position: 'absolute', left: '11px', top: '420px' }} />
             //     )
             // }
+        }
+
+        let renderEnemies = () => {
+            const { enemies } = this.props;
+            return _.map(enemies, (enemy, index) => {
+                //console.log('index', index)
+                console.log(enemy);
+                let height;
+                if(index === 0){
+                     height = 50;
+                } else {
+                     height = 50 +(130 * (index));
+                }
+                console.log(height, index);
+                return (
+                    <img src={`${enemy.combatGif}`}
+                    style={{ height: "100px", position: 'absolute', left: '500px', top: `${height}px` }} />
+                )
+    
+            })
         }
 
         return (
@@ -92,12 +114,14 @@ class CombatScreen extends React.Component {
                 {renderSetsuna()}    
                 {renderMiserion()}
 
-                <img src={beholder}
+                {renderEnemies()}
+
+                {/* <img src={beholder}
                     style={{ height: "100px", position: 'absolute', left: '520px', top: '30px' }} />
                 <img src={beholder}
                     style={{ height: "100px", position: 'absolute', left: '520px', top: '160px' }} />
                 <img src={beholder}
-                    style={{ height: "100px", position: 'absolute', left: '520px', top: '290px' }} />
+                    style={{ height: "100px", position: 'absolute', left: '520px', top: '290px' }} /> */}
                 <div className="d-flex ">
                     {/* <button onClick={() => this.handleEnemyAttack()}> Enemy Attack </button> */}
                 </div>

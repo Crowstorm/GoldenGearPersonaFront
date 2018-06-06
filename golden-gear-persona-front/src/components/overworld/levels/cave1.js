@@ -120,6 +120,7 @@ class Cave1 extends React.Component{
                 const Wolf1 = {
                     name: 'Wolf',
                     portrait: 'https://i.imgur.com/lvGPlRJ.png',
+                    combatGif: 'https://i.imgur.com/R5xhCzA.png',
                     stats: {
                         hp: 2,
                         mp: 0,
@@ -135,11 +136,7 @@ class Cave1 extends React.Component{
                 this.props.startCombat();
                 document.removeEventListener("keydown", this.handleKeyDown);
                 this.props.setQuest('Talk with spirit')
-<<<<<<< HEAD
-                this.props.questStatus('spirit', 'gowno');
-=======
                 this.props.questStatus('cave', 'completed');
->>>>>>> a374e9ea77fc1b94fba09ccbe871ddc982e545af
 
 
                 

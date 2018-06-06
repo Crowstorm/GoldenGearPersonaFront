@@ -4,6 +4,7 @@ const enemyDefaultState = [
     {
         name: 'European Boy',
         portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
+        combatGif: 'https://i.imgur.com/R5xhCzA.png',
         stats: {
             hp: 2,
             mp: 0,
@@ -12,7 +13,33 @@ const enemyDefaultState = [
             speed: 6,
             strength: 31
         }
+    },
 
+    {
+        name: 'European Boy',
+        portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
+        combatGif: 'https://i.imgur.com/R5xhCzA.png',
+        stats: {
+            hp: 2,
+            mp: 0,
+            defence: 4,
+            agility: 7,
+            speed: 6,
+            strength: 31
+        }
+    },
+    {
+        name: 'European Boy',
+        portrait: 'https://i.pinimg.com/originals/ce/48/b5/ce48b5ff66a976011a24ac8d7f722d5e.png',
+        combatGif: 'https://i.imgur.com/R5xhCzA.png',
+        stats: {
+            hp: 2,
+            mp: 0,
+            defence: 4,
+            agility: 7,
+            speed: 6,
+            strength: 31
+        }
     }
 
 ]
