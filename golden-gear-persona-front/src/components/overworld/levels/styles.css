@@ -13,3 +13,298 @@
     width:800px;
     float: right;
 }
+
+#castleroad{
+    background-image: url('../../assets/droga.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#tofarm{
+    background-image: url('../../assets/roadtofarm.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#village{
+    background-image: url('../../assets/village.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#corridor{
+    background-image: url('../../assets/corridor.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#outsidecastle{
+    background-image: url('../../assets/outsidecastle.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#townnorthenter{
+    background-image: url('../../assets/TownNorthEnter.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#forestnearbeach{
+    background-image: url('../../assets/ForestNearBeach.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#upperbeach{
+    background-image: url('../../assets/UpperBeach.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#lowerbeach{
+    background-image: url('../../assets/LowerBeach.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#roadtobeach{
+    background-image: url('../../assets/RoadToBeach.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#campfire{
+    background-image: url('../../assets/Campfire.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#northgate{
+    background-image: url('../../assets/NorthGate.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#grocerystore{
+    background-image: url('../../assets/GroceryStore.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#peasantshouse{
+    background-image: url('../../assets/PeasantsHouse.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#westgate{
+    background-image: url('../../assets/WestGate.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#guildoutside{
+    background-image: url('../../assets/GuildOutside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#guildinside{
+    background-image: url('../../assets/GuildInside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+#carnival{
+    background-image: url('../../assets/Carnival.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#blacksmith{
+    background-image: url('../../assets/Blacksmith.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#townhall{
+    background-image: url('../../assets/TownHall.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#innoutside{
+    background-image: url('../../assets/InnOutside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#peasantsinside{
+    background-image: url('../../assets/PeasantsInside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#storageoutside{
+    background-image: url('../../assets/Storage Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#storageinside{
+    background-image: url('../../assets/Storage.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#park{
+    background-image: url('../../assets/Park.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#memorialpark{
+    background-image: url('../../assets/Memorial Park.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#graveyard{
+    background-image: url('../../assets/Graveyard.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#jailoutside{
+    background-image: url('../../assets/Jail Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#jailinside{
+    background-image: url('../../assets/Jail Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#armoryoutside{
+    background-image: url('../../assets/Armory Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#armoryinside{
+    background-image: url('../../assets/Armory Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#churchoutside{
+    background-image: url('../../assets/Church Outside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#churchinside{
+    background-image: url('../../assets/Church Inside.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#hall{
+    background-image: url('../../assets/Hall.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#castlesecondfloor{
+    background-image: url('../../assets/CastleSecondFloor.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#cave1{
+    background-image: url('../../assets/cave1.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}
+
+#graveyardghoul{
+    background-image: url('../../assets/Graveyard.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

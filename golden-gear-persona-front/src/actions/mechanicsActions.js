@@ -18,8 +18,21 @@ export const combatStart2 = () => {
                                 let i = 'dziala'
                                 resolve(i)
                             }
+                            //Logika prawdopodobnie przeniesiona
                             if (getState().enemies.length === 0) {
-                                alert('wygrales');
+                               
+                                // dispatch({
+                                //     type: 'LEVEL_UP1'
+                                // })
+                                // dispatch({
+                                //     type: 'LEVEL_UP2'
+                                // })
+                                // dispatch({
+                                //     type: 'LEVEL_UP3'
+                                // })
+                                // dispatch({
+                                //     type: 'LEVEL_UP4'
+                                // })
                                 return 0;
                             }
                         }
@@ -53,6 +66,10 @@ export const combatStart2 = () => {
                         let success = true;
                         //hit chance
                         let allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //    while(getState().mainChar[allyIndex].stats.hp <= 0){
+                    //         allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //     } 
+                        //  if(getState().mainChar[allyIndex].stats.hp <= 0)
                         let randomHitChance = Math.floor((Math.random() * 100) + 1);
                         let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
                         let playerEvasion = getState().mainChar[allyIndex].stats.agility;
@@ -173,6 +190,15 @@ export const attackReady = (isReady) => {
     }
 }
 
+export const healReady = (isReady) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'HEAL_READY',
+            isReady
+        })
+    }
+}
+
 export const switchTurn = (whoseTurn) => {
     return function (dispatch) {
         dispatch({
@@ -199,6 +225,15 @@ export const calculateDmg = (dmg) => {
     }
 }
 
+export const calculateHeal = (amount) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'CALCULATE_HEAL',
+            amount
+        })
+    }
+}
+
 export const addInfoToArray = (info) => {
     return function (dispatch) {
         dispatch({
@@ -213,6 +248,61 @@ export const changeLevel = (newLevel) =>{
         dispatch({
             type:'SET_LEVEL',
             newLevel
+        })
+    }
+}
+
+export const setCharacterPosition = (x, y) =>{
+    return function(dispatch){
+        dispatch({
+            type:'SET_CHARACTER_POSITION',
+            x, y
+        })
+    }
+}
+
+export const pickUpItem = (item) =>{
+    console.log(item)
+    return function(dispatch){
+        dispatch({
+            type: 'ITEM_PICK_UP',
+            item
+        })
+    }
+}
+
+export const setQuest = (quest) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'SET_QUEST',
+            quest
+        })
+    }
+}
+
+export const startCombat = ()=>{
+    return function(dispatch){
+        dispatch({
+            type: 'START_COMBAT',
+        })
+    }
+}
+
+export const stopCombat = ()=>{
+    console.log('1');
+    return function(dispatch){
+        dispatch({
+            type: 'STOP_COMBAT',
+        })
+    }
+}
+
+export const questStatus = (name, status) =>{
+    return function(dispatch){
+        dispatch({
+            type: 'QUEST_STATUS',
+            name,
+            status
         })
     }
 }
