@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Guard from '../../assets/NPC/guard-right.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_MemorialPark } from '../grids'
 
@@ -83,7 +85,10 @@ class MemorialPark extends React.Component{
                 break;
             }
             case 'Enter': {
-               
+                if((this.props.charPosition.x === 3 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 2 && this.props.charPosition.y === 14)){
+                    
+                        this.props.setDialogueState(true);
+                    }
             
                 
                 break;
@@ -97,18 +102,40 @@ class MemorialPark extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d2_13').innerHTML = `<img src=${Guard} />`
     }
 
     render(){
        
+        let dialogue = [
 
-        if((this.props.charPosition.x === 24 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 13 ) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 14)){
-            this.props.setCharacterPosition(3, 13);
-            document.removeEventListener("keydown", this.handleKeyDown);
-            this.props.changeLevel('Graveyard');
-          
+            {text: 'This place is off limits for now. Get out of my sight.', name: 'Guard'},
+
+        ];
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+
+        if(this.props.mechanics.ghouls === 'started' || this.props.mechanics.ghouls === 'semi')
+        {
+
+            if((this.props.charPosition.x === 24 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 13 ) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 14)){
+                this.props.setCharacterPosition(3, 13);
+                document.removeEventListener("keydown", this.handleKeyDown);
+                this.props.changeLevel('Ghoul Graveyard');
+                
+            }
         }
+        else
+        {
 
+            if((this.props.charPosition.x === 24 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 13 ) || (this.props.charPosition.x === 24 && this.props.charPosition.y === 14)){
+                this.props.setCharacterPosition(3, 13);
+                document.removeEventListener("keydown", this.handleKeyDown);
+                this.props.changeLevel('Graveyard');
+                
+            }
+        }
+            
         if((this.props.charPosition.x === 12 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 24) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 24)){
             this.props.setCharacterPosition(13, 3);
             document.removeEventListener("keydown", this.handleKeyDown);
@@ -119,6 +146,7 @@ class MemorialPark extends React.Component{
         return(
             <div id="memorialpark"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

@@ -98,6 +98,7 @@ class OutsideCastle extends React.Component{
                     const GuardGhost = {
                         name: 'Rude Ghost',
                         portrait: 'https://i.imgur.com/4GdmF4E.png',
+                        combatGif: 'https://i.imgur.com/vQefxGI.png',
                         stats: {
                             hp: 2,
                             mp: 0,
@@ -129,6 +130,13 @@ class OutsideCastle extends React.Component{
                         this.props.questStatus('cave', 'started');
                     }
                 }
+
+                if((this.props.charPosition.x === 22 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 21 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 22 && this.props.charPosition.y === 15)){
+                    
+                    this.props.setDialogueState(true);
+
+                }
+
             }
             default: { return }
         }
@@ -164,6 +172,14 @@ class OutsideCastle extends React.Component{
                 { text: 'Avenge me. Kill those stupid dogs that had eaten me alive.', name: 'Rude Ghost'},
                 { text: 'You can find them in a cave on the road to village. Kill them then we can talk.', name: 'Rude Ghost'},
             ]
+        }
+        if((this.props.charPosition.x === 22 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 21 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 22 && this.props.charPosition.y === 15)){
+                    
+            dialogue = [
+                { text: 'I really miss my wife...', name: 'Sad man'},
+               
+            ]
+
         }
 
         console.log(this.props);

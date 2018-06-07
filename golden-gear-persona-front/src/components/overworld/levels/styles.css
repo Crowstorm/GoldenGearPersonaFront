@@ -300,3 +300,11 @@
     width:800px;
     float: right;
 }
+
+#graveyardghoul{
+    background-image: url('../../assets/Graveyard.png');
+    box-sizing: border-box;
+    height:800px;
+    width:800px;
+    float: right;
+}

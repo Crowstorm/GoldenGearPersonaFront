@@ -4546,7 +4546,7 @@ export const BLOCKED_MemorialPark = [
     
 
     {x: 23, y: 23 },
-
+    {x: 2, y: 13 },
     {x: 22, y: 23 },
     
     {x: 22, y: 24 },
@@ -6047,7 +6047,7 @@ export const BLOCKED_Hall = [
     {x: 5, y: 2 },
     
     {x: 6, y: 2 },
-    
+    {x: 18, y: 13},
     {x: 7, y: 2 },
     
     {x: 6, y: 3 },
