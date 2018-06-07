@@ -1,6 +1,11 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Girl from '../../assets/NPC/woman2-left.png';
+import Kid from '../../assets/NPC/kid1-front.png';
+import Oldman from '../../assets/NPC/oldman-front.png';
+import Girl2 from '../../assets/NPC/girl1-front.png';
+import Guard from '../../assets/NPC/guard-back.png';
 import Smith from '../../assets/NPC/villager3-left.png';
 import { GRID_ThroneRoom, BLOCKED_Blacksmith } from '../grids'
 
@@ -97,6 +102,11 @@ class Blacksmith extends React.Component{
 
         document.addEventListener("keydown", this.handleKeyDown);
         document.getElementById('d21_6').innerHTML = `<img src=${Smith} />`
+        document.getElementById('d4_7').innerHTML = `<img src=${Kid} />`
+        document.getElementById('d9_6').innerHTML = `<img src=${Girl} />`
+        document.getElementById('d3_3').innerHTML = `<img src=${Oldman} />`
+        document.getElementById('d6_10').innerHTML = `<img src=${Girl2} />`
+        document.getElementById('d20_19').innerHTML = `<img src=${Guard} />`
 
     }
 

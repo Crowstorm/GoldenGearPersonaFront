@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Oldman from '../../assets/NPC/old-noble-left.png'
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_Hall } from '../grids'
 
@@ -91,6 +93,19 @@ class Hall extends React.Component{
                     this.props.changeLevel('Town Hall');
                     
                 }
+
+                if((this.props.charPosition.x === 17 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 18 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 18 && this.props.charPosition.y === 14)){
+                    if(this.props.mechanics.ghouls === 'completed'){
+                        this.props.setDialogueState(true);
+                        this.props.setQuest('Save the Princess')
+                    }
+                    else{
+                        this.props.setDialogueState(true);
+                        this.props.setQuest('Find ghouls on cemetery')
+                        this.props.questStatus('ghouls', 'started');
+                        break;
+                    } 
+                }
                 
                 break;
                 
@@ -103,14 +118,32 @@ class Hall extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d18_13').innerHTML = `<img src=${Oldman} />`
+
     }
 
     render(){
-       
+        let dialogue;
+
+        if(this.props.mechanics.ghouls === 'completed'){
+            dialogue = [
+                { text: 'Much appreciated. Now, get out my eye!', name: 'Noble Man'},
+            ]
+        } else {
+            dialogue = [
+                {text: "This town needs you help, stranger.", name: "Noble Man"},
+                {text: "Ghouls occupy our cemetry, find them and deal with them.", name: "Noble Man"},
+            ]
+        }
+
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
         
         return(
             <div id="hall"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

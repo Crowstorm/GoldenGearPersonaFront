@@ -38,6 +38,7 @@ import StorageInside from './levels/storageInside'
 import Park from './levels/park'
 import MemorialPark from './levels/memorialPark'
 import Graveyard from './levels/graveyard'
+import GraveyardGhoul from './levels/graveyardGhoul'
 import JailOutside from './levels/jailOutside'
 import JailInside from './levels/jailInside'
 import ArmoryOutside from './levels/armoryOutside'
@@ -273,6 +274,13 @@ class Game extends React.Component {
                 case "Graveyard":{
                     return(
                         <Graveyard {...this.props} />
+                    )
+                    break;
+                }
+
+                case "Ghoul Graveyard":{
+                    return(
+                        <GraveyardGhoul {...this.props} />
                     )
                     break;
                 }

@@ -101,15 +101,15 @@ class Inn extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
+        // document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
         
     }
 
     render(){
-        if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
-            this.props.startCombat()
-            // window.location.href = "combat"
-        }
+        //  if((this.props.charPosition.x == 12 && this.props.charPosition.y == 15)){
+        //     this.props.startCombat()
+        //      window.location.href = "combat"
+        // }
         
         if(this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2){
             this.props.setCharacterPosition(13, 14);
