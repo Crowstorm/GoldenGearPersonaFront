@@ -75,7 +75,7 @@ class EnemyInterface extends React.Component {
     render() {
         let enemiesRenderer = this.renderEnemies();
         return (
-            <div id='enemyInterface' style={{ float: 'right', width: 200, height: 800 }}>
+            <div id='enemyInterface' style={{ float: 'right', border: '1px solid red', width: 200, height: 800 }}>
                 <div id="gowno" className="container d-flex flex-column justify-content-center">
                     {enemiesRenderer}
                 </div>
