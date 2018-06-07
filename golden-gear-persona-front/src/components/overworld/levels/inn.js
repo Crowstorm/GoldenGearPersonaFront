@@ -92,6 +92,8 @@ class Inn extends React.Component{
                     this.props.setDialogueState(true);
                 }
                 if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2){
+                    document.removeEventListener("keydown", this.handleKeyDown);
+
                     this.props.changeLevel('ThroneRoom');
                 }
                 break;
@@ -101,6 +103,7 @@ class Inn extends React.Component{
     }
 
     componentDidMount() {
+        console.log(document)
 
         document.addEventListener("keydown", this.handleKeyDown);
         document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
