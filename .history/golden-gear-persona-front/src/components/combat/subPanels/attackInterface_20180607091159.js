@@ -74,13 +74,14 @@ class AttackInterface extends React.Component {
                         <img src={skill.icon} style={{ height: 50 }} /> 
                         <p> {skill.description}</p>
                         <p> Cost: {skill.cost} {skill.costType} </p>
-                        <button style={{color: 'black'}}onClick={() => skillList.useBackstab(this.props)}> Use </button>
+                        <button onClick={() => skillList.useBackstab(this.props)}> Use </button>
                     </div>
                 </div>
             )
         })
         return (
             <div>
+                <div> x </div>
                 {mapper}
             </div>
         )
@@ -119,7 +120,7 @@ class AttackInterface extends React.Component {
         let renderAdditionalMenus = this.handleRenderMenus();
         console.log('propsy ataku', this.props)
         return (
-            <div id='attackInterface'>
+            <div>
                 <div className='d-flex flex-column align-items-center justify-content-center' style={{ position: 'absolute', width: 360, height: 450 }}>
                     {renderAdditionalMenus}
                 </div>

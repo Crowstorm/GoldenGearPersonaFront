@@ -31,7 +31,7 @@ let initial_state = [
         },
         skills: [
             skills.backstab,
-            // skills.heal
+            skills.heal
         ],
         magic: [
             skills.heal

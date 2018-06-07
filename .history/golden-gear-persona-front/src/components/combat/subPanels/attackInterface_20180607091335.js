@@ -74,7 +74,7 @@ class AttackInterface extends React.Component {
                         <img src={skill.icon} style={{ height: 50 }} /> 
                         <p> {skill.description}</p>
                         <p> Cost: {skill.cost} {skill.costType} </p>
-                        <button style={{color: 'black'}}onClick={() => skillList.useBackstab(this.props)}> Use </button>
+                        <button onClick={() => skillList.useBackstab(this.props)}> Use </button>
                     </div>
                 </div>
             )
