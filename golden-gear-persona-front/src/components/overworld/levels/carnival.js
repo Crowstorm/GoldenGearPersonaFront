@@ -92,7 +92,10 @@ class Carnival extends React.Component{
             }
             case 'Enter': {
                
-                
+                if ((this.props.charPosition.x === 8 && this.props.charPosition.y === 15)){
+                    this.props.setInfoText('Someones inside.');
+                    this.props.setInfoState(true);
+                }
                 
                 break;
                 

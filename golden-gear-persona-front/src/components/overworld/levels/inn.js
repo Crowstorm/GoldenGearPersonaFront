@@ -4,7 +4,9 @@ import _ from 'lodash';
 
 import { GRID_ThroneRoom, BLOCKED_Inn } from '../grids'
 
-import monster from '../../assets/beholder.png'
+import Barman from '../../assets/NPC/villager-front.png'
+import Dialogue from '../../extraInterfaces/dialogue';
+
 
 class Inn extends React.Component{
       //Funckja ktora zwraca img z ludzikiem
@@ -88,7 +90,7 @@ class Inn extends React.Component{
                 break;
             }
             case 'Enter': {
-                if ((this.props.charPosition.x === 11 && this.props.charPosition.y === 16) || (this.props.charPosition.x === 12 && this.props.charPosition.y === 16)) {
+                if ((this.props.charPosition.x === 8 && this.props.charPosition.y === 18)) {
                     this.props.setDialogueState(true);
                 }
                 
@@ -101,7 +103,7 @@ class Inn extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        // document.getElementById('d12_16').innerHTML = `<img src=${monster} />`
+         document.getElementById('d8_21').innerHTML = `<img src=${Barman} />`
         
     }
 
@@ -110,7 +112,15 @@ class Inn extends React.Component{
         //     this.props.startCombat()
         //      window.location.href = "combat"
         // }
-        
+        let dialogue = [
+
+            { text: 'Beer for adults only.', name: 'Bar keeper'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+
+
         if(this.props.charPosition.x == 11 && this.props.charPosition.y == 2 || this.props.charPosition.x == 12 && this.props.charPosition.y == 2 || this.props.charPosition.x == 13 && this.props.charPosition.y == 2 || this.props.charPosition.x == 14 && this.props.charPosition.y == 2 || this.props.charPosition.x == 15 && this.props.charPosition.y == 2){
             this.props.setCharacterPosition(13, 14);
             document.removeEventListener("keydown", this.handleKeyDown);
@@ -120,6 +130,7 @@ class Inn extends React.Component{
         return(
             <div id="inn"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

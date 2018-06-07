@@ -4,6 +4,9 @@ import _ from 'lodash';
 
 import { GRID_ThroneRoom, BLOCKED_Church } from '../grids'
 
+import Beliver from '../../assets/NPC/church.gif'
+import Dialogue from '../../extraInterfaces/dialogue';
+
 class ChurchInside extends React.Component{
 
     renderPosition = (cell) => {
@@ -83,7 +86,9 @@ class ChurchInside extends React.Component{
                 break;
             }
             case 'Enter': {
-               
+                if ((this.props.charPosition.x === 16 && this.props.charPosition.y === 15) | (this.props.charPosition.x === 16 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 17 && this.props.charPosition.y === 14)  ) {
+                    this.props.setDialogueState(true);
+                }
                 
                 break;
                 
@@ -96,11 +101,20 @@ class ChurchInside extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d16_14').innerHTML = `<img src=${Beliver} />`
+
     }
 
     render(){
         
-        
+        let dialogue = [
+
+            { text: 'Do not disturb my prayers!', name: 'Beliver'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+
 
         if((this.props.charPosition.x === 6 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 7 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 8 && this.props.charPosition.y === 17)){
             this.props.setCharacterPosition(7, 16);
@@ -114,6 +128,7 @@ class ChurchInside extends React.Component{
         return(
             <div id="churchinside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

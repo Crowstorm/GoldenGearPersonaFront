@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Plebs from '../../assets/NPC/oldman-front.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_Peasant } from '../grids'
 
@@ -84,18 +86,8 @@ class PeasantsInside extends React.Component{
             }
             case 'Enter': {
                
-                if(this.props.charPosition.x == 24 && this.props.charPosition.y == 12 || this.props.charPosition.x == 24 && this.props.charPosition.y == 13 || this.props.charPosition.x == 24 && this.props.charPosition.y == 14){
-                    this.props.setCharacterPosition(2, 13);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('North Gate');
-                    break;
-                }
-
-                if(this.props.charPosition.x == 18 && this.props.charPosition.y == 2 || this.props.charPosition.x == 19 && this.props.charPosition.y == 2 || this.props.charPosition.x == 20 && this.props.charPosition.y == 2){
-                    this.props.setCharacterPosition(19, 24);
-                    document.removeEventListener("keydown", this.handleKeyDown);
-                    this.props.changeLevel('West Gate');
-                    break;
+                if((this.props.charPosition.x === 14 && this.props.charPosition.y === 20) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 21) || (this.props.charPosition.x === 14 && this.props.charPosition.y === 22) || (this.props.charPosition.x === 15 && this.props.charPosition.y === 21)){
+                    this.props.setDialogueState(true);
                 }
                 break;
                 
@@ -108,10 +100,20 @@ class PeasantsInside extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d14_21').innerHTML = `<img src=${Plebs} />`
+
     }
 
     render(){
        
+        let dialogue = [
+
+            { text: 'Why am I so poor?', name: 'Poor man with beard'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
+
         if((this.props.charPosition.x === 17 && this.props.charPosition.y === 17) || (this.props.charPosition.x === 17 && this.props.charPosition.y === 16)){
             this.props.setCharacterPosition(18, 17);
            document.removeEventListener("keydown", this.handleKeyDown);
@@ -121,6 +123,7 @@ class PeasantsInside extends React.Component{
         return(
             <div id="peasantsinside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

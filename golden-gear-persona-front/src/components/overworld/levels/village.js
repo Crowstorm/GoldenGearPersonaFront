@@ -96,7 +96,7 @@ class Village extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
-        document.getElementById('d22_9').innerHTML = `<img src=${Logger} />`
+        document.getElementById('d22_13').innerHTML = `<img src=${Logger} />`
     }
 
     render(){

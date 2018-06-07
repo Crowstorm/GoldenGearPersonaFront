@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import GuildMember from '../../assets/NPC/guild1-front.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_GuildI } from '../grids'
 
@@ -85,6 +87,10 @@ class GuildInside extends React.Component{
             case 'Enter': {
                
                 
+                if ((this.props.charPosition.x === 21 && this.props.charPosition.y === 13) || (this.props.charPosition.x === 22 && this.props.charPosition.y === 12) || (this.props.charPosition.x === 23 && this.props.charPosition.y === 13)) {
+                    this.props.setDialogueState(true);
+                }
+
                 if((this.props.charPosition.x === 12 && this.props.charPosition.y === 2) || (this.props.charPosition.x === 13 && this.props.charPosition.y === 2)){
                     this.props.setCharacterPosition(19, 10);
                     document.removeEventListener("keydown", this.handleKeyDown);
@@ -103,14 +109,23 @@ class GuildInside extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d22_13').innerHTML = `<img src=${GuildMember} />`
+
     }
 
     render(){
        
-        
+        let dialogue = [
+
+            { text: 'How... HOW DID YOU FIND US?!', name: 'Guild Member'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
         return(
             <div id="guildinside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

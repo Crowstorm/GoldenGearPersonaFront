@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 
 import Seller from '../../assets/NPC/woman1-right.png';
+import Dialogue from '../../extraInterfaces/dialogue';
+
 import { GRID_ThroneRoom, BLOCKED_NorthGate } from '../grids'
 
 class GroceryStore extends React.Component{
@@ -86,7 +88,9 @@ class GroceryStore extends React.Component{
                
                 
                 
-                
+                if((this.props.charPosition.x === 9 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 9 && this.props.charPosition.y === 6)){
+                    this.props.setDialogueState(true);
+                }
                 break;
                 
             }
@@ -102,6 +106,13 @@ class GroceryStore extends React.Component{
     }
 
     render(){
+        let dialogue = [
+
+            { text: 'Hello, how may I help you?', name: 'Pretty Saleswoman'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
        
         if((this.props.charPosition.x === 11 && this.props.charPosition.y === 5) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 6) || (this.props.charPosition.x === 11 && this.props.charPosition.y === 7)){
             this.props.setCharacterPosition(12, 6);
@@ -112,6 +123,7 @@ class GroceryStore extends React.Component{
         return(
             <div id="grocerystore"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>

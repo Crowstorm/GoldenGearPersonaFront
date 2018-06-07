@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import Guard from '../../assets/NPC/guard-left.png';
+import Dialogue from '../../extraInterfaces/dialogue';
 
 import { GRID_ThroneRoom, BLOCKED_Jail } from '../grids'
 
@@ -84,7 +86,9 @@ class JailInside extends React.Component{
             }
             case 'Enter': {
                
-                
+                if ((this.props.charPosition.x === 7 && this.props.charPosition.y === 6)) {
+                    this.props.setDialogueState(true);
+                }
                 break;
                 
             }
@@ -96,11 +100,19 @@ class JailInside extends React.Component{
     componentDidMount() {
 
         document.addEventListener("keydown", this.handleKeyDown);
+        document.getElementById('d8_6').innerHTML = `<img src=${Guard} />`
+
     }
 
     render(){
         
-        
+        let dialogue = [
+
+            { text: 'I cant let you in until you do something bad.', name: 'Guard'},
+           
+        ]
+        console.log(this.props);
+        let dialogueRenderer = (this.props.modals.dialogueVisibility) ? <Dialogue dialogue={dialogue} /> : '';
         if((this.props.charPosition.x === 6 && this.props.charPosition.y === 11) || (this.props.charPosition.x === 7 && this.props.charPosition.y === 11)){
             this.props.setCharacterPosition(7, 12);
             document.removeEventListener("keydown", this.handleKeyDown);
@@ -113,6 +125,7 @@ class JailInside extends React.Component{
         return(
             <div id="jailinside"> 
             <div onKeyDown={this.handleKeyDown} style={{ width: 800 }}>
+                    {dialogueRenderer}
                     {this.renderGrid()}
                 </div>
              </div>
