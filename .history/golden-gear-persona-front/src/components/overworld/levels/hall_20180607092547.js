@@ -127,12 +127,12 @@ class Hall extends React.Component{
 
         if(this.props.mechanics.ghouls === 'completed'){
             dialogue = [
-                { text: 'Ah, at long last... Good job, now get out my face!', name: 'Noble Man'},
+                { text: 'Much appreciated. Now, get out my eye!', name: 'Noble Man'},
             ]
         } else {
             dialogue = [
-                {text: "This town needs your help, stranger.", name: "Noble Man"},
-                {text: "Ghouls occupy our cemetary, find them and take care of them.", name: "Noble Man"},
+                {text: "This town needs you help, stranger.", name: "Noble Man"},
+                {text: "Ghouls occupy our cemetry, find them and deal with them.", name: "Noble Man"},
             ]
         }
 
