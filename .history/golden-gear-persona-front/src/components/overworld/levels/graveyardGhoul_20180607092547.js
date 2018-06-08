@@ -112,7 +112,7 @@ class GraveyardGhoul extends React.Component{
                     portrait: 'https://i.imgur.com/9iHG1ZY.png',
                     combatGif: 'https://i.imgur.com/S38P3SM.png',
                     stats: {
-                        hp: 12,
+                        hp: 2,
                         mp: 0,
                         defence: 5,
                         agility: 7,
@@ -150,7 +150,7 @@ class GraveyardGhoul extends React.Component{
                     portrait: 'https://i.imgur.com/9iHG1ZY.png',
                     combatGif: 'https://i.imgur.com/S38P3SM.png',
                     stats: {
-                        hp: 12,
+                        hp: 2,
                         mp: 0,
                         defence: 5,
                         agility: 7,

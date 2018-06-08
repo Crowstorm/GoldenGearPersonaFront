@@ -100,12 +100,12 @@ class OutsideCastle extends React.Component{
                         portrait: 'https://i.imgur.com/4GdmF4E.png',
                         combatGif: 'https://i.imgur.com/vQefxGI.png',
                         stats: {
-                            hp: 120,
+                            hp: 2,
                             mp: 0,
                             defence: 5,
-                            agility: 8,
+                            agility: 7,
                             speed: 12,
-                            strength: 16
+                            strength: 5
                         }
                     }
                     this.props.addEnemy(GuardGhost);

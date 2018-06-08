@@ -53,6 +53,10 @@ export const combatStart2 = () => {
                         let success = true;
                         //hit chance
                         let allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //    while(getState().mainChar[allyIndex].stats.hp <= 0){
+                    //         allyIndex = Math.floor((Math.random() * getState().mainChar.length));
+                    //     } 
+                        //  if(getState().mainChar[allyIndex].stats.hp <= 0)
                         let randomHitChance = Math.floor((Math.random() * 100) + 1);
                         let enemyHitChance = 70 + fighters[index].stats.agility * 1.5;
                         let playerEvasion = getState().mainChar[allyIndex].stats.agility;
@@ -75,6 +79,11 @@ export const combatStart2 = () => {
                             }, 1000);
                         } else {
                             setTimeout(function () {
+                                // let info = `${fighters[index].name} missed!`;
+                                // dispatch({
+                                //     type: 'ADD_INFO_TO_ARRAY',
+                                //     info
+                                // })
                                 data = {name: fighters[index].name, missed: true, allyIndex: allyIndex};
                                 resolve(data);
                             }, 1000);

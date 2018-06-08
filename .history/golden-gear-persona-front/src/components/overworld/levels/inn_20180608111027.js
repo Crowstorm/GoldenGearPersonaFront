@@ -93,7 +93,15 @@ class Inn extends React.Component{
                 if ((this.props.charPosition.x === 8 && this.props.charPosition.y === 18)) {
                     this.props.setDialogueState(true);
                 }
+<<<<<<< HEAD
+                if(this.props.charPosition.x == 12 && this.props.charPosition.y == 2){
+                    document.removeEventListener("keydown", this.handleKeyDown);
+
+                    this.props.changeLevel('ThroneRoom');
+                }
+=======
                 
+>>>>>>> 7da5fe7849802aea3e169243bd72cddbe7efa2db
                 break;
             }
             default: { return }

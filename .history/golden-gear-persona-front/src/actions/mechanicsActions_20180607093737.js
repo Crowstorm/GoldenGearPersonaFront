@@ -75,6 +75,11 @@ export const combatStart2 = () => {
                             }, 1000);
                         } else {
                             setTimeout(function () {
+                                // let info = `${fighters[index].name} missed!`;
+                                // dispatch({
+                                //     type: 'ADD_INFO_TO_ARRAY',
+                                //     info
+                                // })
                                 data = {name: fighters[index].name, missed: true, allyIndex: allyIndex};
                                 resolve(data);
                             }, 1000);
